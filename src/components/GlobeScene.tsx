@@ -81,47 +81,7 @@ function WireframeGlobe() {
  * Equator text ring using a canvas texture mapped onto a thin cylinder.
  * Much more performant and visually clean than per-character Text components.
  */
-function EquatorTextRing() {
-  const meshRef = useRef<THREE.Mesh>(null);
-
-  const texture = useMemo(() => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 4096;
-    canvas.height = 384;
-    const ctx = canvas.getContext("2d")!;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "hsl(230, 56%, 6%)";
-    ctx.font = "700 128px Inter, Arial, sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(
-      "GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL",
-      canvas.width / 2,
-      canvas.height / 2
-    );
-
-    const tex = new THREE.CanvasTexture(canvas);
-    tex.wrapS = THREE.RepeatWrapping;
-    tex.wrapT = THREE.ClampToEdgeWrapping;
-    tex.anisotropy = 16;
-    tex.needsUpdate = true;
-    return tex;
-  }, []);
-
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.08;
-    }
-  });
-
-  return (
-    <mesh ref={meshRef}>
-      <cylinderGeometry args={[2.18, 2.18, 0.28, 256, 1, true]} />
-      <meshBasicMaterial map={texture} transparent alphaTest={0.05} side={THREE.FrontSide} />
-    </mesh>
-  );
-}
+// EquatorTextRing removed
 
 function LuxuryRing({ radius = 3.2, speed = 0.03 }: { radius?: number; speed?: number }) {
   const mesh = useRef<THREE.Mesh>(null);
@@ -181,7 +141,6 @@ const GlobeScene = () => {
       >
         <ambientLight intensity={0.4} />
         <WireframeGlobe />
-        <EquatorTextRing />
         <GoldParticles count={180} />
         <LuxuryRing radius={3.2} speed={0.03} />
         <LuxuryRing radius={3.6} speed={-0.02} />

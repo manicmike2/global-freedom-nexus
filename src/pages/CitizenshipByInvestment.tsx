@@ -21,11 +21,11 @@ const benefits = [
 ];
 
 const programs = [
-  { country: "Grenada", investment: "From $150,000", timeline: "4-6 months", highlight: "Only Caribbean CBI with E-2 Treaty access to the U.S. Ideal for investors who want a Caribbean passport and the ability to live and work in America.", visaFree: "145+" },
-  { country: "Saint Kitts & Nevis", investment: "From $250,000", timeline: "3-6 months", highlight: "The world's oldest and most established CBI program, operating since 1984. Trusted by families worldwide for its proven track record.", visaFree: "157+" },
-  { country: "Antigua & Barbuda", investment: "From $230,000", timeline: "3-6 months", highlight: "Family-friendly with reduced rates for larger families. Includes a short residency requirement of just 5 days over 5 years.", visaFree: "151+" },
-  { country: "Dominica", investment: "From $100,000", timeline: "3-4 months", highlight: "Most cost-effective citizenship by investment globally. Consistently ranked among the world's top CBI programs by independent assessments.", visaFree: "145+" },
-  { country: "Saint Lucia", investment: "From $100,000", timeline: "3-5 months", highlight: "One of the Caribbean's newest and most competitive CBI programs, offering flexible investment options including government bonds, real estate, and enterprise projects.", visaFree: "146+" },
+  { country: "Grenada", investment: "From $235,000 (Donation) · From $270,000 (Real Estate)", timeline: "4-6 months", highlight: "Only Caribbean CBI with E-2 Treaty access to the U.S. Ideal for investors who want a Caribbean passport and the ability to live and work in America.", visaFree: "145+" },
+  { country: "Saint Kitts & Nevis", investment: "From $250,000 (Donation) · From $325,000 (Real Estate)", timeline: "3-6 months", highlight: "The world's oldest and most established CBI program, operating since 1984. Trusted by families worldwide for its proven track record.", visaFree: "157+" },
+  { country: "Antigua & Barbuda", investment: "From $230,000 (Donation) · From $325,000 (Real Estate)", timeline: "3-6 months", highlight: "Family-friendly with reduced rates for larger families. Includes a short residency requirement of just 5 days over 5 years.", visaFree: "151+" },
+  { country: "Dominica", investment: "From $200,000 (Donation) · From $200,000 (Real Estate)", timeline: "3-4 months", highlight: "Most cost-effective citizenship by investment globally. Consistently ranked among the world's top CBI programs by independent assessments.", visaFree: "145+" },
+  { country: "Saint Lucia", investment: "From $240,000 (Donation) · From $300,000 (Real Estate)", timeline: "3-5 months", highlight: "One of the Caribbean's newest and most competitive CBI programs, offering flexible investment options including government bonds, real estate, and enterprise projects.", visaFree: "146+" },
 ];
 
 const considerations = [
