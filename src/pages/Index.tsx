@@ -622,7 +622,52 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA with dramatic reveal */}
+      {/* Client Testimonial / Quote Section */}
+      <section className="py-24 lg:py-36 relative overflow-hidden border-t border-border">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-transparent to-card/30" />
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="font-serif text-5xl lg:text-7xl text-primary/20 mb-8">&ldquo;</div>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed italic mb-8">
+              Global Freedom Capital gave our family the clarity and confidence to navigate an incredibly complex process. Their discretion and expertise are unmatched.
+            </blockquote>
+            <div className="w-16 h-px bg-primary/40 mx-auto mb-6" />
+            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+              Private Client — New York
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Horizontal Scroll Marquee — Jurisdictions */}
+      <section className="py-12 border-y border-border overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -1200] }}
+          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          className="flex gap-12 whitespace-nowrap"
+        >
+          {[...Array(2)].map((_, setIdx) => (
+            <div key={setIdx} className="flex gap-12">
+              {["Portugal", "Malta", "Greece", "Grenada", "Saint Kitts & Nevis", "Turkey", "UAE", "Panama", "Antigua & Barbuda", "Dominica", "Montenegro", "Spain"].map((name, i) => (
+                <span
+                  key={`${setIdx}-${i}`}
+                  className="text-sm tracking-[0.15em] uppercase text-muted-foreground/40 font-sans"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+
       <section className="py-24 lg:py-40 relative overflow-hidden">
         <ParticleField />
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
