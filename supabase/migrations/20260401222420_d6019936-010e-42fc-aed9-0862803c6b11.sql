@@ -1,0 +1,1 @@
+CREATE POLICY "anon_insert_contact_us" ON public.contact_us_submissions FOR INSERT TO anon WITH CHECK (true);
