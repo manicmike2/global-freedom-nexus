@@ -37,7 +37,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           <Link to="/" className="flex flex-col">
             <span className="font-serif text-lg lg:text-xl tracking-wide text-foreground">
               Global Freedom Capital
@@ -48,7 +48,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}

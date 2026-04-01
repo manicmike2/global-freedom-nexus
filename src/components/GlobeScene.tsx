@@ -12,7 +12,7 @@ function GoldParticles({ count = 200 }) {
     for (let i = 0; i < count; i++) {
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
-      const r = 3.5 + Math.random() * 1.5;
+      const r = 2.5 + Math.random() * 1.5;
       positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
       positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
       positions[i * 3 + 2] = r * Math.cos(phi);
@@ -23,8 +23,8 @@ function GoldParticles({ count = 200 }) {
 
   useFrame((_, delta) => {
     if (mesh.current) {
-      mesh.current.rotation.y += delta * 0.03;
-      mesh.current.rotation.x += delta * 0.01;
+      mesh.current.rotation.y += delta * 0.05;
+      mesh.current.rotation.x += delta * 0.02;
     }
   });
 
@@ -55,71 +55,25 @@ function GoldParticles({ count = 200 }) {
   );
 }
 
-function PedestalStand() {
-  // Axis rod bottom in world space is approximately (-0.63, -2.23, -0.84)
-  // Pedestal top plate is at y+1.22, so base y = -3.45
-  return (
-    <group position={[-0.63, -3.45, -0.84]}>
-      {/* Wide base */}
-      <mesh>
-        <cylinderGeometry args={[1.0, 1.15, 0.12, 32]} />
-        <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.2} />
-      </mesh>
-      {/* Base rim top */}
-      <mesh position={[0, 0.07, 0]}>
-        <torusGeometry args={[1.02, 0.015, 8, 48]} />
-        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
-      </mesh>
-      {/* Base rim bottom */}
-      <mesh position={[0, -0.06, 0]}>
-        <torusGeometry args={[1.12, 0.015, 8, 48]} />
-        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
-      </mesh>
-      {/* Tapered column */}
-      <mesh position={[0, 0.65, 0]}>
-        <cylinderGeometry args={[0.08, 0.15, 1.1, 16]} />
-        <meshStandardMaterial color="#c9a96e" metalness={0.85} roughness={0.2} />
-      </mesh>
-      {/* Column mid-ring */}
-      <mesh position={[0, 0.45, 0]}>
-        <torusGeometry args={[0.13, 0.012, 8, 24]} />
-        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
-      </mesh>
-      {/* Top plate */}
-      <mesh position={[0, 1.22, 0]}>
-        <cylinderGeometry args={[0.22, 0.1, 0.06, 24]} />
-        <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.15} />
-      </mesh>
-    </group>
-  );
-}
-
 function WireframeGlobe() {
   const mesh = useRef<THREE.Mesh>(null);
 
   useFrame((_, delta) => {
     if (mesh.current) {
-      mesh.current.rotation.y += delta * 0.03;
+      mesh.current.rotation.y += delta * 0.08;
     }
   });
 
   return (
-    <group position={[0, -0.3, 0]} rotation={[0.4, 0.2, -0.23]}>
-      <mesh ref={mesh}>
-        <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial
-          color="#c9a96e"
-          wireframe
-          transparent
-          opacity={0.12}
-        />
-      </mesh>
-      {/* Axis rod through the globe */}
-      <mesh>
-        <cylinderGeometry args={[0.015, 0.015, 4.4, 8]} />
-        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
-      </mesh>
-    </group>
+    <mesh ref={mesh}>
+      <sphereGeometry args={[2, 32, 32]} />
+      <meshBasicMaterial
+        color="#c9a96e"
+        wireframe
+        transparent
+        opacity={0.12}
+      />
+    </mesh>
   );
 }
 
@@ -174,18 +128,16 @@ const GlobeScene = () => {
   return (
     <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
       <Canvas
-        camera={{ position: [0, 0.5, 9], fov: 42 }}
+        camera={{ position: [0, 0, 6], fov: 50 }}
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.3} />
-        <directionalLight position={[3, 5, 4]} intensity={0.4} color="#ffd89b" />
-        <PedestalStand />
         <WireframeGlobe />
         <GoldParticles count={150} />
-        <LuxuryRing radius={3.2} speed={0.02} />
-        <LuxuryRing radius={3.6} speed={-0.015} />
+        <LuxuryRing radius={3.2} speed={0.03} />
+        <LuxuryRing radius={3.6} speed={-0.02} />
         <FloatingDiamond />
         <FloatingGem position={[-3, -1.5, 0.5]} />
         <FloatingGem position={[2, -2, 1]} />
