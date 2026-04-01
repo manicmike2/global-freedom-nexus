@@ -14,18 +14,19 @@ import heroBg from "@/assets/hero-bg.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
 import destPortugal from "@/assets/dest-portugal.jpg";
-import destCaribbean from "@/assets/dest-caribbean.jpg";
 import destMalta from "@/assets/dest-malta.jpg";
 import destUae from "@/assets/dest-uae.jpg";
 import destPanama from "@/assets/dest-panama.jpg";
 import destTurkey from "@/assets/dest-turkey.jpg";
+import destGrenada from "@/assets/dest-grenada.jpg";
+import destStkitts from "@/assets/dest-stkitts.jpg";
 
 const destinations = [
   { name: "Portugal", region: "Europe", investment: "From €500,000", ideal: "Families & entrepreneurs", advantage: "EU residency & citizenship pathway", image: destPortugal },
   { name: "Malta", region: "Europe", investment: "From €690,000", ideal: "UHNW individuals", advantage: "EU citizenship by naturalization", image: destMalta },
   { name: "Greece", region: "Europe", investment: "From €250,000", ideal: "Investors & retirees", advantage: "Golden Visa with EU access", image: destGreece },
-  { name: "Grenada", region: "Caribbean", investment: "From $150,000", ideal: "U.S.-based families", advantage: "E-2 treaty access to U.S.", image: destCaribbean },
-  { name: "Saint Kitts & Nevis", region: "Caribbean", investment: "From $250,000", ideal: "Global entrepreneurs", advantage: "Oldest CBI program", image: destCaribbean },
+  { name: "Grenada", region: "Caribbean", investment: "From $150,000", ideal: "U.S.-based families", advantage: "E-2 treaty access to U.S.", image: destGrenada },
+  { name: "Saint Kitts & Nevis", region: "Caribbean", investment: "From $250,000", ideal: "Global entrepreneurs", advantage: "Oldest CBI program", image: destStkitts },
   { name: "Turkey", region: "Global", investment: "From $400,000", ideal: "Business investors", advantage: "Citizenship in 3-6 months", image: destTurkey },
   { name: "UAE", region: "Global", investment: "From $550,000", ideal: "Executives & families", advantage: "Tax-free residency", image: destUae },
   { name: "Panama", region: "Global", investment: "From $300,000", ideal: "Retirees & investors", advantage: "Friendly Nations Visa", image: destPanama },
