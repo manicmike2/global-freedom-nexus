@@ -167,12 +167,14 @@ const GlobeScene = () => {
   return (
     <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
       <Canvas
-        camera={{ position: [0, 0, 6], fov: 50 }}
+        camera={{ position: [0, 0.5, 7], fov: 45 }}
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
       >
         <ambientLight intensity={0.3} />
+        <directionalLight position={[3, 5, 4]} intensity={0.4} color="#ffd89b" />
+        <Pedestal />
         <WireframeGlobe />
         <GoldParticles count={150} />
         <LuxuryRing radius={3.2} speed={0.03} />
