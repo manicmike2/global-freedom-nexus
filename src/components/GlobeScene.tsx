@@ -1,6 +1,6 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial } from "@react-three/drei";
+import { Float, MeshDistortMaterial, Text } from "@react-three/drei";
 import * as THREE from "three";
 
 function GoldParticles({ count = 200 }) {
@@ -45,10 +45,10 @@ function GoldParticles({ count = 200 }) {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
-        color="#c9a96e"
+        size={0.025}
+        color="#b8943e"
         transparent
-        opacity={0.6}
+        opacity={0.8}
         sizeAttenuation
       />
     </points>
@@ -66,14 +66,55 @@ function WireframeGlobe() {
 
   return (
     <mesh ref={mesh}>
-      <sphereGeometry args={[2, 32, 32]} />
+      <sphereGeometry args={[2, 40, 40]} />
       <meshBasicMaterial
-        color="#c9a96e"
+        color="#b8943e"
         wireframe
         transparent
-        opacity={0.12}
+        opacity={0.25}
       />
     </mesh>
+  );
+}
+
+/** Equator text ring: "GLOBAL FREEDOM CAPITAL" repeated around the sphere */
+function EquatorTextRing() {
+  const groupRef = useRef<THREE.Group>(null);
+  const radius = 2.15;
+  const text = "GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  ";
+  const chars = text.split("");
+  const anglePerChar = (Math.PI * 2) / chars.length;
+
+  useFrame((_, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.08; // same speed as globe
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      {chars.map((char, i) => {
+        const angle = i * anglePerChar;
+        const x = Math.cos(angle) * radius;
+        const z = Math.sin(angle) * radius;
+        return (
+          <Text
+            key={i}
+            position={[x, 0, z]}
+            rotation={[0, -angle + Math.PI / 2, 0]}
+            fontSize={0.13}
+            color="#b8943e"
+            anchorX="center"
+            anchorY="middle"
+            font={undefined}
+            letterSpacing={0.05}
+          >
+            {char}
+            <meshBasicMaterial color="#b8943e" transparent opacity={0.7} />
+          </Text>
+        );
+      })}
+    </group>
   );
 }
 
@@ -89,8 +130,8 @@ function LuxuryRing({ radius = 3.2, speed = 0.03 }: { radius?: number; speed?: n
 
   return (
     <mesh ref={mesh}>
-      <torusGeometry args={[radius, 0.005, 16, 100]} />
-      <meshBasicMaterial color="#c9a96e" transparent opacity={0.25} />
+      <torusGeometry args={[radius, 0.008, 16, 100]} />
+      <meshBasicMaterial color="#b8943e" transparent opacity={0.35} />
     </mesh>
   );
 }
@@ -101,10 +142,10 @@ function FloatingDiamond() {
       <mesh position={[3.5, 1.5, -1]} scale={0.3}>
         <octahedronGeometry args={[1, 0]} />
         <MeshDistortMaterial
-          color="#c9a96e"
+          color="#b8943e"
           wireframe
           transparent
-          opacity={0.3}
+          opacity={0.35}
           distort={0.1}
           speed={2}
         />
@@ -118,7 +159,7 @@ function FloatingGem({ position }: { position: [number, number, number] }) {
     <Float speed={2} rotationIntensity={1} floatIntensity={0.8}>
       <mesh position={position} scale={0.15}>
         <icosahedronGeometry args={[1, 0]} />
-        <meshBasicMaterial color="#c9a96e" wireframe transparent opacity={0.2} />
+        <meshBasicMaterial color="#b8943e" wireframe transparent opacity={0.25} />
       </mesh>
     </Float>
   );
@@ -133,9 +174,10 @@ const GlobeScene = () => {
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
       >
-        <ambientLight intensity={0.3} />
+        <ambientLight intensity={0.4} />
         <WireframeGlobe />
-        <GoldParticles count={150} />
+        <EquatorTextRing />
+        <GoldParticles count={180} />
         <LuxuryRing radius={3.2} speed={0.03} />
         <LuxuryRing radius={3.6} speed={-0.02} />
         <FloatingDiamond />
