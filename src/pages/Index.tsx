@@ -11,7 +11,7 @@ import GlobeScene from "@/components/GlobeScene";
 import ParticleField from "@/components/ParticleField";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionReveal from "@/components/SectionReveal";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-yacht.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
 import destPortugal from "@/assets/dest-portugal.jpg";
