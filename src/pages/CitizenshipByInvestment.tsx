@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useHashScroll } from "@/hooks/use-hash-scroll";
+import { toAnchorId } from "@/lib/destinations";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -61,6 +63,7 @@ const faqItems = [
 ];
 
 const CitizenshipByInvestment = () => {
+  useHashScroll();
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
@@ -209,11 +212,12 @@ const CitizenshipByInvestment = () => {
             {programs.map((p, i) => (
               <motion.div
                 key={i}
+                id={toAnchorId(p.country)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 bg-card border border-border hover:border-primary/30 transition-all"
+                className="p-8 bg-card border border-border hover:border-primary/30 transition-all scroll-mt-28"
               >
                 <h3 className="font-serif text-2xl text-foreground mb-2">{p.country}</h3>
                 <div className="flex flex-wrap gap-4 mb-4 text-xs text-muted-foreground">

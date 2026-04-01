@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useHashScroll } from "@/hooks/use-hash-scroll";
+import { toAnchorId } from "@/lib/destinations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
@@ -102,6 +104,7 @@ const faqItems = [
 ];
 
 const GoldenVisas = () => {
+  useHashScroll();
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
@@ -224,11 +227,12 @@ const GoldenVisas = () => {
             {programs.map((p, i) => (
               <motion.div
                 key={i}
+                id={toAnchorId(p.country)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-border overflow-hidden hover:border-primary/20 transition-colors"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-border overflow-hidden hover:border-primary/20 transition-colors scroll-mt-28"
               >
                 <div className="aspect-video lg:aspect-auto overflow-hidden">
                   <img src={p.image} alt={`${p.country} Golden Visa program`} className="w-full h-full object-cover" loading="lazy" width={800} height={600} />
