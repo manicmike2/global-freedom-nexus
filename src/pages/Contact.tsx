@@ -6,6 +6,7 @@ import PageSEO from "@/components/PageSEO";
 import InternalLink from "@/components/InternalLink";
 import { MessageCircle, Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const expectations = [
   "A confidential, obligation-free conversation with a senior advisor",
@@ -21,13 +22,37 @@ const Contact = () => {
     name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for your inquiry",
-      description: "A member of our advisory team will be in touch within 24 hours.",
+    setIsSubmitting(true);
+    
+    const { error } = await supabase.from("contact_us_submissions").insert({
+      full_name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      i_am: formData.type,
+      primary_interest: formData.interest || null,
+      help_message: formData.message,
     });
-    setFormData({ name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "" });
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } else {
+      console.log("Submission saved successfully");
+      toast({
+        title: "Thank you for your inquiry",
+        description: "A member of our advisory team will be in touch within 24 hours.",
+      });
+      setFormData({ name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "" });
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -154,8 +179,8 @@ const Contact = () => {
                   <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 bg-background border border-border text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none" placeholder="Tell us about your objectives, timeline, and any specific jurisdictions of interest..." />
                 </div>
 
-                <button type="submit" className="w-full py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors">
-                  Submit Inquiry
+                <button type="submit" disabled={isSubmitting} className="w-full py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors disabled:opacity-50">
+                  {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
 
                 <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
