@@ -86,26 +86,29 @@ function EquatorTextRing() {
 
   const texture = useMemo(() => {
     const canvas = document.createElement("canvas");
-    canvas.width = 2048;
-    canvas.height = 128;
+    canvas.width = 4096;
+    canvas.height = 256;
     const ctx = canvas.getContext("2d")!;
 
-    // Transparent background
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw text
-    ctx.fillStyle = "#b8943e";
-    ctx.font = "bold 42px 'Inter', 'Helvetica Neue', Arial, sans-serif";
+    // Dark navy blue matching the foreground palette
+    ctx.fillStyle = "#0b1225";
+    ctx.font = "700 92px 'Inter', 'Helvetica Neue', Arial, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
 
-    const text = "GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  ";
-    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+    ctx.fillText(
+      "GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL",
+      canvas.width / 2,
+      canvas.height / 2
+    );
 
     const tex = new THREE.CanvasTexture(canvas);
     tex.wrapS = THREE.RepeatWrapping;
     tex.wrapT = THREE.ClampToEdgeWrapping;
-    tex.repeat.set(1, 1);
+    tex.anisotropy = 16;
+    tex.needsUpdate = true;
     return tex;
   }, []);
 
@@ -116,12 +119,11 @@ function EquatorTextRing() {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[0, 0, 0]}>
-      <cylinderGeometry args={[2.18, 2.18, 0.14, 64, 1, true]} />
+    <mesh ref={meshRef} rotation={[Math.PI / 2, 0, 0]}>
+      <cylinderGeometry args={[2.18, 2.18, 0.09, 256, 1, true]} />
       <meshBasicMaterial
         map={texture}
         transparent
-        opacity={0.85}
         side={THREE.DoubleSide}
       />
     </mesh>
