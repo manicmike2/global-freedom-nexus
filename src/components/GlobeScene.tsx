@@ -87,11 +87,12 @@ function EquatorTextRing() {
   const texture = useMemo(() => {
     const canvas = document.createElement("canvas");
     canvas.width = 4096;
-    canvas.height = 256;
+    canvas.height = 384;
     const ctx = canvas.getContext("2d")!;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#0b1225";
-    ctx.font = "700 92px Inter, Arial, sans-serif";
+    ctx.fillStyle = "hsl(230, 56%, 6%)";
+    ctx.font = "700 128px Inter, Arial, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(
@@ -99,11 +100,12 @@ function EquatorTextRing() {
       canvas.width / 2,
       canvas.height / 2
     );
+
     const tex = new THREE.CanvasTexture(canvas);
     tex.wrapS = THREE.RepeatWrapping;
-    // Flip UVs so text reads outward toward the camera
-    tex.repeat.x = -1;
-    tex.offset.x = 1;
+    tex.wrapT = THREE.ClampToEdgeWrapping;
+    tex.anisotropy = 16;
+    tex.needsUpdate = true;
     return tex;
   }, []);
 
@@ -113,11 +115,10 @@ function EquatorTextRing() {
     }
   });
 
-  // No rotation — cylinder's default Y-axis aligns with the globe's equator
   return (
     <mesh ref={meshRef}>
-      <cylinderGeometry args={[2.18, 2.18, 0.09, 256, 1, true]} />
-      <meshBasicMaterial map={texture} transparent side={THREE.FrontSide} />
+      <cylinderGeometry args={[2.18, 2.18, 0.28, 256, 1, true]} />
+      <meshBasicMaterial map={texture} transparent alphaTest={0.05} side={THREE.FrontSide} />
     </mesh>
   );
 }
