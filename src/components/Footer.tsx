@@ -116,7 +116,7 @@ const Footer = () => {
           </p>
           <p className="text-[10px] text-primary-foreground/40 leading-relaxed max-w-xl text-center md:text-right">
             Global Freedom Capital provides advisory services related to citizenship and residency by investment programs. 
-            We are not a law firm and do not provide legal advice. All programs are subject to the laws and regulations of their respective jurisdictions.
+            We are not a law firm and do not provide legal, tax and/or financial advice. All programs are subject to the laws and regulations of their respective jurisdictions.
           </p>
         </div>
       </div>
