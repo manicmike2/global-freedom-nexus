@@ -44,6 +44,7 @@ const faqItems = [
 ];
 
 const Destinations = () => {
+  useHashScroll();
   const [activeRegion, setActiveRegion] = useState("All");
   const filtered = activeRegion === "All" ? allDestinations : allDestinations.filter((d) => d.region === activeRegion);
 
