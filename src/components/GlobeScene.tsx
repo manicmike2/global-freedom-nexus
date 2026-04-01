@@ -1,6 +1,6 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, Text } from "@react-three/drei";
+import { Float, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 function GoldParticles({ count = 200 }) {
@@ -77,44 +77,54 @@ function WireframeGlobe() {
   );
 }
 
-/** Equator text ring: "GLOBAL FREEDOM CAPITAL" repeated around the sphere */
+/**
+ * Equator text ring using a canvas texture mapped onto a thin cylinder.
+ * Much more performant and visually clean than per-character Text components.
+ */
 function EquatorTextRing() {
-  const groupRef = useRef<THREE.Group>(null);
-  const radius = 2.15;
-  const text = "GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  ";
-  const chars = text.split("");
-  const anglePerChar = (Math.PI * 2) / chars.length;
+  const meshRef = useRef<THREE.Mesh>(null);
+
+  const texture = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 2048;
+    canvas.height = 128;
+    const ctx = canvas.getContext("2d")!;
+
+    // Transparent background
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw text
+    ctx.fillStyle = "#b8943e";
+    ctx.font = "bold 42px 'Inter', 'Helvetica Neue', Arial, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    const text = "GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  GLOBAL FREEDOM CAPITAL  ·  ";
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.wrapS = THREE.RepeatWrapping;
+    tex.wrapT = THREE.ClampToEdgeWrapping;
+    tex.repeat.set(1, 1);
+    return tex;
+  }, []);
 
   useFrame((_, delta) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.08; // same speed as globe
+    if (meshRef.current) {
+      meshRef.current.rotation.y += delta * 0.08;
     }
   });
 
   return (
-    <group ref={groupRef}>
-      {chars.map((char, i) => {
-        const angle = i * anglePerChar;
-        const x = Math.cos(angle) * radius;
-        const z = Math.sin(angle) * radius;
-        return (
-          <Text
-            key={i}
-            position={[x, 0, z]}
-            rotation={[0, -angle + Math.PI / 2, 0]}
-            fontSize={0.13}
-            color="#b8943e"
-            anchorX="center"
-            anchorY="middle"
-            font={undefined}
-            letterSpacing={0.05}
-          >
-            {char}
-            <meshBasicMaterial color="#b8943e" transparent opacity={0.7} />
-          </Text>
-        );
-      })}
-    </group>
+    <mesh ref={meshRef} rotation={[0, 0, 0]}>
+      <cylinderGeometry args={[2.18, 2.18, 0.14, 64, 1, true]} />
+      <meshBasicMaterial
+        map={texture}
+        transparent
+        opacity={0.85}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
   );
 }
 
