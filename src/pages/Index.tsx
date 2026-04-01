@@ -15,7 +15,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
 import destPortugal from "@/assets/dest-portugal.jpg";
-import destMalta from "@/assets/dest-malta.jpg";
+import destUae from "@/assets/dest-uae.jpg";
 import destUae from "@/assets/dest-uae.jpg";
 import destPanama from "@/assets/dest-panama.jpg";
 import destTurkey from "@/assets/dest-turkey.jpg";

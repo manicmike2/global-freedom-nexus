@@ -14,11 +14,14 @@ export const destinationRoutes: Record<string, DestinationRoute> = {
   "Saint Kitts & Nevis":{ page: "/citizenship-by-investment", anchor: "saint-kitts-nevis" },
   "Antigua & Barbuda":  { page: "/citizenship-by-investment", anchor: "antigua-barbuda" },
   "Dominica":           { page: "/citizenship-by-investment", anchor: "dominica" },
+  "Saint Lucia":        { page: "/citizenship-by-investment", anchor: "saint-lucia" },
 
   // Europe → Golden Visas page
   "Portugal":           { page: "/golden-visas", anchor: "portugal" },
   "Greece":             { page: "/golden-visas", anchor: "greece" },
-  "Malta":              { page: "/golden-visas", anchor: "malta" },
+  "Latvia":             { page: "/golden-visas", anchor: "latvia" },
+  "Hungary":            { page: "/golden-visas", anchor: "hungary" },
+  "Bulgaria":           { page: "/golden-visas", anchor: "bulgaria" },
 
   // Global → Golden Visas page (UAE, Panama) or CBI (Turkey)
   "Turkey":             { page: "/citizenship-by-investment", anchor: "turkey" },
