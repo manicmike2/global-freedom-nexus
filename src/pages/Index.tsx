@@ -127,8 +127,8 @@ const Index = () => {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div className="absolute inset-0" style={{ y: heroImageY, scale: heroScale }}>
           <img src={heroBg} alt="Luxury coastal estate" className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-background/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/30" />
+          <div className="absolute inset-0 bg-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         </motion.div>
 
         <GlobeScene />
