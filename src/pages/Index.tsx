@@ -20,6 +20,9 @@ import destPanama from "@/assets/dest-panama.jpg";
 import destTurkey from "@/assets/dest-turkey.jpg";
 import destGrenada from "@/assets/dest-grenada.jpg";
 import destStkitts from "@/assets/dest-stkitts.jpg";
+import destAntigua from "@/assets/dest-antigua.jpg";
+import destStlucia from "@/assets/dest-stlucia.jpg";
+import destDominica from "@/assets/dest-dominica.jpg";
 
 const destinations = [
   { name: "Portugal", region: "Europe", investment: "From €500,000", ideal: "Families & entrepreneurs", advantage: "EU residency & citizenship pathway", image: destPortugal },
