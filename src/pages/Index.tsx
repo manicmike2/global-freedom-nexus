@@ -321,7 +321,7 @@ const Index = () => {
               variants={slideInRight}
               className="h-[400px] lg:h-[500px]"
             >
-              <LuxuryShowcase model="jet" />
+              <LuxuryShowcase />
             </motion.div>
           </div>
         </div>
