@@ -6,7 +6,7 @@ import PageSEO from "@/components/PageSEO";
 import InternalLink from "@/components/InternalLink";
 import { MessageCircle, Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client.ts";
 
 const expectations = [
   "A confidential, obligation-free conversation with a senior advisor",
