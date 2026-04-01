@@ -9,7 +9,6 @@ const navItems = [
   { label: "Citizenship by Investment", path: "/citizenship-by-investment" },
   { label: "Golden Visas", path: "/golden-visas" },
   { label: "Destinations", path: "/destinations" },
-  { label: "For Attorneys", path: "/for-attorneys" },
   { label: "Insights", path: "/insights" },
   { label: "Contact", path: "/contact" },
 ];
@@ -37,9 +36,9 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl px-6 xl:px-10">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex shrink-0 items-center gap-3 mr-8 xl:mr-12">
             <img src={logo} alt="Global Freedom Capital" className="h-12 lg:h-14 w-auto" />
             <div className="flex flex-col">
               <span className="font-serif text-lg lg:text-xl tracking-wide text-foreground whitespace-nowrap">
@@ -52,7 +51,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-6">
+          <nav className="hidden xl:flex flex-1 items-center justify-end gap-5">
             {navItems.map((item) => (
               <Link
                 key={item.path}
