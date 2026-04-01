@@ -179,8 +179,8 @@ const Contact = () => {
                   <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="w-full px-4 py-3 bg-background border border-border text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none" placeholder="Tell us about your objectives, timeline, and any specific jurisdictions of interest..." />
                 </div>
 
-                <button type="submit" className="w-full py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors">
-                  Submit Inquiry
+                <button type="submit" disabled={isSubmitting} className="w-full py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors disabled:opacity-50">
+                  {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
 
                 <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
