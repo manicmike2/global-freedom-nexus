@@ -104,6 +104,7 @@ const faqItems = [
 ];
 
 const GoldenVisas = () => {
+  useHashScroll();
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
