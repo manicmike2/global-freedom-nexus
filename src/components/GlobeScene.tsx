@@ -189,6 +189,7 @@ const GlobeScene = () => {
       >
         <ambientLight intensity={0.3} />
         <directionalLight position={[3, 5, 4]} intensity={0.4} color="#ffd89b" />
+        <PedestalStand />
         <Pedestal />
         <WireframeGlobe />
         <GoldParticles count={150} />
