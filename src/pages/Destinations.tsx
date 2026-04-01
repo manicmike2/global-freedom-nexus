@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useHashScroll } from "@/hooks/use-hash-scroll";
+import { getDestinationPath, toAnchorId } from "@/lib/destinations";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
