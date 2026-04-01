@@ -39,13 +39,16 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex flex-col">
-            <span className="font-serif text-lg lg:text-xl tracking-wide text-foreground">
-              Global Freedom Capital
-            </span>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-              Take the world. It's yours.
-            </span>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Global Freedom Capital" className="h-12 lg:h-14 w-auto" />
+            <div className="flex flex-col">
+              <span className="font-serif text-lg lg:text-xl tracking-wide text-foreground">
+                Global Freedom Capital
+              </span>
+              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+                Take the world. It's yours.
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
