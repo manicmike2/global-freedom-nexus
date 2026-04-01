@@ -26,7 +26,7 @@ const differentiators = [
 ];
 
 const timeline = [
-  { year: "Founded", title: "Established in the U.S.", desc: "Global Freedom Capital was established as a boutique advisory firm dedicated exclusively to investment migration and strategic residency solutions." },
+  { year: "Founded", title: "Established in the U.S.", desc: "Global Freedom Capital was established as an expert advisory firm dedicated exclusively to investment migration and strategic residency solutions." },
   { year: "Network", title: "Global Partnerships", desc: "Built relationships with government-approved programs, licensed agents, and legal professionals across the Caribbean, Europe, and the Middle East." },
   { year: "Expertise", title: "Advisory Excellence", desc: "Developed deep expertise across citizenship by investment, Golden Visa, and residency-by-investment programs spanning 15+ jurisdictions." },
   { year: "Today", title: "Trusted Advisory Partner", desc: "Serving high-net-worth individuals, multigenerational families, and the attorneys and advisors who represent them." },

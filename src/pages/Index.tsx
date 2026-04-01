@@ -370,7 +370,7 @@ const Index = () => {
               </span>
               <RevealText>
                 <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight mb-6">
-                  A Boutique Advisory Built on{" "}
+                  An Expert Advisory Built on{" "}
                   <span className="italic text-primary">Trust & Discretion</span>
                 </h2>
               </RevealText>
