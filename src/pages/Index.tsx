@@ -159,9 +159,9 @@ const Index = () => {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
+                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] whitespace-pre-line"
               >
-                <span className="italic text-primary">Optionality.</span>
+                <span className="italic text-primary">Optionality.{"\n"}</span>
               </motion.h1>
             </div>
 
