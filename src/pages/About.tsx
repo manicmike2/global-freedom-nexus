@@ -37,7 +37,7 @@ const faqItems = [
   { question: "How is Global Freedom Capital different from other firms?", answer: "We are a founder-led, relationship-driven advisory that works with a deliberately select number of clients. We do not operate as a high-volume processing center. Every client receives personalized strategic guidance, direct access to senior advisors, and white-glove service throughout the entire process." },
   { question: "Do you provide legal advice?", answer: "No. Global Freedom Capital is an advisory firm, not a law firm. We provide strategic guidance on investment migration programs and coordinate with licensed attorneys in each jurisdiction. For legal matters, we work alongside your existing legal counsel or connect you with qualified professionals." },
   { question: "Can I work with my existing attorney?", answer: "Absolutely. We frequently collaborate with our clients' existing legal counsel, wealth advisors, and family office professionals. We also have a dedicated partnership program for immigration attorneys. Learn more on our For Attorneys page." },
-  { question: "What programs do you specialize in?", answer: "We specialize in citizenship by investment programs (particularly Caribbean programs in Grenada, St Kitts, Antigua, and Dominica) and Golden Visa/residency programs (Portugal, Greece, Malta, UAE, and Panama). We continuously evaluate new programs and jurisdictions." },
+  { question: "What programs do you specialize in?", answer: "We specialize in citizenship by investment programs (particularly Caribbean programs in Grenada, St Kitts, Antigua, Dominica, and Saint Lucia) and Golden Visa/residency programs (Portugal, Greece, Latvia, Hungary, Bulgaria, UAE, and Panama). We continuously evaluate new programs and jurisdictions." },
   { question: "How do I get started?", answer: "Schedule a confidential, obligation-free consultation through our contact page. During this initial conversation, we'll discuss your objectives, timeline, and family situation to determine the best path forward." },
 ];
 
@@ -45,14 +45,14 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="About Global Freedom Capital – Boutique Investment Migration Advisory"
+        title="About Global Freedom Capital – Expert Investment Migration Advisory"
         description="U.S.-based, founder-led advisory firm specializing in citizenship by investment and Golden Visa programs. White-glove service for HNWIs, families, and their trusted advisors."
         canonical="https://globalfreedomcapital.com/about"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Global Freedom Capital",
-          description: "U.S.-based boutique advisory firm specializing in citizenship by investment and Golden Visa programs.",
+          description: "U.S.-based expert advisory firm specializing in citizenship by investment and Golden Visa programs.",
           url: "https://globalfreedomcapital.com",
           address: { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
         }}
@@ -68,7 +68,7 @@ const About = () => {
               The Private Advisory for <span className="italic text-primary rounded-none">Global Freedom</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Global Freedom Capital is a U.S.-based boutique advisory firm specializing in{" "}
+              Global Freedom Capital is a U.S.-based expert advisory firm specializing in{" "}
               <InternalLink to="/citizenship-by-investment">citizenship by investment</InternalLink>,{" "}
               <InternalLink to="/golden-visas">Golden Visa programs</InternalLink>, and strategic 
               residency solutions for the world's most discerning families.
@@ -82,8 +82,60 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section className="pb-24 lg:pb-32 border-b border-border">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+              <div className="aspect-[3/4] bg-muted/50 border border-border flex items-center justify-center overflow-hidden">
+                <div className="text-center p-8">
+                  <div className="w-32 h-32 rounded-full bg-primary/10 mx-auto mb-6 flex items-center justify-center">
+                    <Users className="w-16 h-16 text-primary/40" strokeWidth={1} />
+                  </div>
+                  <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Professional Photo</p>
+                  <p className="text-xs text-muted-foreground/60 mt-1">Coming Soon</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+              <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">Founder & Managing Director</span>
+              <h2 className="font-serif text-3xl lg:text-4xl text-foreground mb-2">Tatiana Muntean</h2>
+              <p className="text-sm text-primary mb-6 tracking-wide">Global Freedom Capital</p>
+              <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+                <p>
+                  Tatiana Muntean brings a distinguished international career spanning diplomacy, 
+                  global governance, and strategic advisory to her role as founder and managing 
+                  director of Global Freedom Capital.
+                </p>
+                <p>
+                  With professional experience at the <strong className="text-foreground">United Nations</strong>, 
+                  the <strong className="text-foreground">Organization for Security and Co-operation in Europe (OSCE)</strong>, 
+                  and the <strong className="text-foreground">Investment Migration Council (IMC)</strong>, Tatiana has 
+                  developed deep expertise in cross-border mobility, international policy frameworks, 
+                  and the complex intersection of immigration, investment, and family planning.
+                </p>
+                <p>
+                  Her career in international organizations provided a unique vantage point on global 
+                  mobility trends, regulatory frameworks, and the needs of high-net-worth individuals 
+                  navigating complex cross-border decisions. This foundation—combined with her hands-on 
+                  advisory work—positions her as a trusted partner for families, attorneys, and wealth 
+                  advisors seeking expert guidance on investment migration.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                {["United Nations", "OSCE", "Investment Migration Council"].map((org) => (
+                  <span key={org} className="text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 border border-border text-muted-foreground">
+                    {org}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Image + Story */}
-      <section className="pb-24 lg:pb-32">
+      <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="aspect-[4/3] overflow-hidden">
@@ -134,14 +186,7 @@ const About = () => {
           <SectionHeading label="Our Values" title="Built on Trust, Driven by Excellence" subtitle="Three principles that guide every client engagement and advisory decision." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((val, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 border border-border"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 border border-border">
                 <val.icon className="w-8 h-8 text-primary mb-4" strokeWidth={1} />
                 <h3 className="font-serif text-xl text-foreground mb-3">{val.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{val.desc}</p>
@@ -160,14 +205,7 @@ const About = () => {
           </h2>
           <ul className="space-y-4">
             {differentiators.map((item, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex items-start gap-3 text-sm text-foreground/80"
-              >
+              <motion.li key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-start gap-3 text-sm text-foreground/80">
                 <CheckCircle size={16} className="text-primary flex-shrink-0 mt-0.5" />
                 {item}
               </motion.li>
@@ -182,14 +220,7 @@ const About = () => {
           <SectionHeading label="Our Journey" title="Building a Trusted Advisory" align="left" />
           <div className="space-y-8">
             {timeline.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-6"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex gap-6">
                 <span className="text-xs tracking-[0.2em] uppercase text-primary w-20 flex-shrink-0 pt-1">{item.year}</span>
                 <div className="border-l border-border pl-6">
                   <h3 className="font-serif text-lg text-foreground mb-1">{item.title}</h3>
@@ -211,14 +242,7 @@ const About = () => {
               { icon: Globe, title: "Attorneys & Advisors", desc: "U.S. immigration attorneys, wealth advisors, and family office professionals who need a vetted outbound investment migration partner for their clients.", link: "/for-attorneys" },
               { icon: Shield, title: "Program Stakeholders", desc: "Government-approved citizenship programs and real estate developers seeking strategic distribution and representation in the American market.", link: "/contact" },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-8 border border-border hover:border-primary/20 transition-colors"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 border border-border hover:border-primary/20 transition-colors">
                 <item.icon className="w-8 h-8 text-primary mb-4" strokeWidth={1} />
                 <h3 className="font-serif text-lg text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.desc}</p>

@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
 import CitizenshipByInvestment from "./pages/CitizenshipByInvestment.tsx";
 import GoldenVisas from "./pages/GoldenVisas.tsx";
+import RealEstate from "./pages/RealEstate.tsx";
 import Destinations from "./pages/Destinations.tsx";
 import ForAttorneys from "./pages/ForAttorneys.tsx";
 import Insights from "./pages/Insights.tsx";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/citizenship-by-investment" element={<CitizenshipByInvestment />} />
           <Route path="/golden-visas" element={<GoldenVisas />} />
+          <Route path="/real-estate" element={<RealEstate />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/for-attorneys" element={<ForAttorneys />} />
           <Route path="/insights" element={<Insights />} />

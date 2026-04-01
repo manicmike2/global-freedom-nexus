@@ -11,7 +11,6 @@ import StrategicInsight from "@/components/StrategicInsight";
 import InternalLink from "@/components/InternalLink";
 import destPortugal from "@/assets/dest-portugal.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
-import destMalta from "@/assets/dest-malta.jpg";
 import destUae from "@/assets/dest-uae.jpg";
 import destPanama from "@/assets/dest-panama.jpg";
 import { CheckCircle, Clock, Globe, AlertTriangle, ChevronRight } from "lucide-react";
@@ -44,16 +43,42 @@ const programs = [
     ],
   },
   {
-    country: "Malta",
-    image: destMalta,
-    investment: "From €690,000",
-    pathway: "Residency → citizenship by naturalization",
-    highlight: "Full EU citizenship through Malta's Exceptional Investor Naturalization program. The gold standard for obtaining a European passport through investment.",
+    country: "Latvia",
+    image: destPortugal,
+    investment: "From €50,000",
+    pathway: "5-year temporary residency permit",
+    highlight: "An EU member state offering one of the most affordable residency-by-investment pathways in Europe. Latvia provides access to the Schengen Area and a high standard of living in the Baltics.",
     details: [
-      "Full EU citizenship and passport",
-      "English-speaking, stable jurisdiction",
-      "Strong banking and financial services infrastructure",
-      "Visa-free access to 185+ countries",
+      "Full Schengen Area access",
+      "Affordable real estate and subordinated capital options",
+      "EU residency with potential path to permanent residency",
+      "English widely spoken in business environments",
+    ],
+  },
+  {
+    country: "Hungary",
+    image: destGreece,
+    investment: "From €250,000",
+    pathway: "Guest Investor Visa → permanent residency",
+    highlight: "Hungary's Guest Investor Visa program offers a structured pathway to EU residency through investment in government bonds or real estate funds, with access to the Schengen Area.",
+    details: [
+      "EU and Schengen Area access",
+      "Government bond investment option available",
+      "Competitive cost of living in Central Europe",
+      "Strategic location with excellent connectivity",
+    ],
+  },
+  {
+    country: "Bulgaria",
+    image: destPortugal,
+    investment: "From €256,000",
+    pathway: "Permanent residency → citizenship in 5 years",
+    highlight: "Bulgaria offers a fast-track to EU permanent residency and eventual citizenship through its investor immigration program. One of the most competitive pathways to an EU passport.",
+    details: [
+      "Fast-track to EU citizenship in 5 years",
+      "Flat 10% income tax rate",
+      "Growing economy with strong tech sector",
+      "Low cost of living compared to Western Europe",
     ],
   },
   {
@@ -94,12 +119,12 @@ const idealClients = [
 
 const faqItems = [
   { question: "What is a Golden Visa?", answer: "A Golden Visa is a residency-by-investment program that grants foreign nationals the right to live, work, and in some cases eventually obtain citizenship in a country, in exchange for a qualifying investment—typically in real estate, government bonds, or a business. Unlike citizenship by investment, a Golden Visa grants residency first, with citizenship as a potential long-term outcome." },
-  { question: "What is the cheapest Golden Visa in Europe?", answer: "Greece currently offers Europe's most affordable Golden Visa at €250,000 for qualifying real estate investments, though this threshold has increased in prime areas like Athens. Other affordable options include Portugal (from €500,000) and Spain (from €500,000). Investment minimums can change, so it's important to work with current information." },
-  { question: "Can I get EU citizenship through a Golden Visa?", answer: "Yes, most European Golden Visa programs offer a pathway to citizenship after a period of legal residency, typically 5-7 years. Portugal offers one of the fastest paths at 5 years. You'll typically need to demonstrate basic language proficiency and ties to the country. Malta's program can lead to EU citizenship through a separate naturalization track." },
+  { question: "What is the cheapest Golden Visa in Europe?", answer: "Latvia currently offers one of Europe's most affordable residency-by-investment options starting at €50,000. Greece offers its Golden Visa at €250,000 for qualifying real estate investments. Other options include Hungary (from €250,000) and Bulgaria (from €256,000). Investment minimums can change, so it's important to work with current information." },
+  { question: "Can I get EU citizenship through a Golden Visa?", answer: "Yes, most European Golden Visa programs offer a pathway to citizenship after a period of legal residency, typically 5-7 years. Portugal offers one of the fastest paths at 5 years. Bulgaria also offers a 5-year path. You'll typically need to demonstrate basic language proficiency and ties to the country." },
   { question: "Do I have to live in the country to maintain my Golden Visa?", answer: "Requirements vary. Portugal requires an average of 7 days per year. Greece has no minimum stay for residency renewal, but requires physical presence for citizenship. The UAE Golden Visa requires periodic entry. Each program has specific rules, and we help you understand and plan for them." },
   { question: "How does a Golden Visa compare to citizenship by investment?", answer: "Golden Visas provide residency with a potential path to citizenship over time (5-7+ years). Citizenship by investment programs grant full citizenship and a passport within months. Golden Visas generally require lower investments and offer access to specific regions (like the EU), while CBI provides immediate global mobility. Learn more on our citizenship by investment page." },
-  { question: "Are Golden Visa investments recoverable?", answer: "Many Golden Visa investments are in real estate, which retains value and can appreciate. After the mandatory holding period (typically 5 years), you may sell the property while maintaining your residency in some jurisdictions. Government bond and fund investments are typically returned after the holding period. The specifics depend on the program." },
-  { question: "What are the tax implications of a Golden Visa?", answer: "Tax implications vary significantly by jurisdiction. Portugal's former NHR regime offered favorable tax treatment. The UAE has no personal income tax. Greece offers a flat tax option for foreign retirees. U.S. citizens should note they remain subject to worldwide taxation regardless of where they reside. We always recommend engaging a cross-border tax advisor." },
+  { question: "Are Golden Visa investments recoverable?", answer: "Many Golden Visa investments in real estate can be sold after a mandatory holding period (typically 5 years). Government bond investments are typically returned after the holding period. The specifics depend on the program." },
+  { question: "What are the tax implications of a Golden Visa?", answer: "Tax implications vary significantly by jurisdiction. Portugal's former NHR regime offered favorable tax treatment. The UAE has no personal income tax. Bulgaria has a flat 10% income tax. U.S. citizens should note they remain subject to worldwide taxation regardless of where they reside. We always recommend engaging a cross-border tax advisor." },
   { question: "Can I work in the country with a Golden Visa?", answer: "Most Golden Visa programs grant the right to live and work in the issuing country. In the EU, your residency may also allow you to travel freely throughout the Schengen Area, though working rights may be limited to the issuing country. The UAE Golden Visa explicitly permits employment and business ownership." },
 ];
 
@@ -109,7 +134,7 @@ const GoldenVisas = () => {
     <div className="min-h-screen bg-background">
       <PageSEO
         title="Golden Visa Programs 2026 – Residency by Investment Guide"
-        description="Compare Golden Visa programs in Portugal, Greece, Malta, UAE & Panama. Expert advisory on residency by investment for HNWIs seeking EU residency, tax optimization & global mobility."
+        description="Compare Golden Visa programs in Portugal, Greece, Latvia, Hungary, Bulgaria, UAE & Panama. Expert advisory on residency by investment for HNWIs seeking EU residency, tax optimization & global mobility."
         canonical="https://globalfreedomcapital.com/golden-visas"
         jsonLd={{
           "@context": "https://schema.org",
@@ -156,9 +181,9 @@ const GoldenVisas = () => {
             <p>
               European Golden Visa programs are in a period of significant evolution. Several countries 
               have increased investment thresholds or modified eligibility criteria in recent years. 
-              Portugal restructured its program in 2023, Greece has raised minimums in key areas, and 
-              Spain is considering changes. For families considering European residency, acting with 
-              informed urgency—not haste—is the strategic approach.
+              New programs in Central and Eastern Europe—Latvia, Hungary, and Bulgaria—are emerging as 
+              compelling alternatives, offering competitive pricing and fast-track EU residency pathways. 
+              For families considering European residency, acting with informed urgency is the strategic approach.
             </p>
           </StrategicInsight>
         </div>
@@ -192,11 +217,11 @@ const GoldenVisas = () => {
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between border-b border-border pb-3">
                   <span className="text-muted-foreground">Fastest to citizenship</span>
-                  <span className="text-foreground">Portugal (5 years)</span>
+                  <span className="text-foreground">Portugal / Bulgaria (5 years)</span>
                 </div>
                 <div className="flex justify-between border-b border-border pb-3">
                   <span className="text-muted-foreground">Lowest investment</span>
-                  <span className="text-foreground">Greece (€250,000)</span>
+                  <span className="text-foreground">Latvia (€50,000)</span>
                 </div>
                 <div className="flex justify-between border-b border-border pb-3">
                   <span className="text-muted-foreground">Tax-free residency</span>
@@ -204,7 +229,7 @@ const GoldenVisas = () => {
                 </div>
                 <div className="flex justify-between border-b border-border pb-3">
                   <span className="text-muted-foreground">EU passport pathway</span>
-                  <span className="text-foreground">Malta, Portugal</span>
+                  <span className="text-foreground">Portugal, Bulgaria</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Americas gateway</span>
@@ -268,11 +293,9 @@ const GoldenVisas = () => {
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <SectionHeading label="Head-to-Head" title="Portugal vs. Greece Golden Visa" subtitle="Two of Europe's most popular Golden Visa programs compared across key decision factors." />
           <div className="grid grid-cols-3 gap-0 text-sm border border-border">
-            {/* Header */}
             <div className="p-4 bg-card border-b border-r border-border font-serif text-foreground">Factor</div>
             <div className="p-4 bg-card border-b border-r border-border font-serif text-foreground text-center">Portugal</div>
             <div className="p-4 bg-card border-b border-border font-serif text-foreground text-center">Greece</div>
-            {/* Rows */}
             {[
               ["Minimum Investment", "€500,000", "€250,000"],
               ["Time to Citizenship", "5 years", "7 years"],
