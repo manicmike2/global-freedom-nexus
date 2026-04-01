@@ -312,7 +312,7 @@ const Index = () => {
             {destinations.slice(0, 8).map((dest, i) => (
               <motion.div key={i} variants={cardVariants}>
                 <Link
-                  to="/destinations"
+                  to={getDestinationPath(dest.name)}
                   className="group block relative overflow-hidden aspect-[3/4] hover:shadow-xl hover:shadow-primary/5 transition-shadow duration-700"
                 >
                   <motion.img
