@@ -52,12 +52,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:text-primary ${
+                className={`text-xs tracking-[0.12em] uppercase transition-colors duration-300 hover:text-primary whitespace-nowrap ${
                   location.pathname === item.path
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -68,22 +68,22 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="flex items-center gap-4">
             <Link
               to="/contact"
-              className="inline-block px-6 py-2.5 text-xs tracking-[0.15em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="inline-block px-5 py-2.5 text-xs tracking-[0.12em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 whitespace-nowrap"
             >
               Book Consultation
             </Link>
-          </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="xl:hidden text-foreground"
-          >
-            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="xl:hidden text-foreground"
+            >
+              {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
