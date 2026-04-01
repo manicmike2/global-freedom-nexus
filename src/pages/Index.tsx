@@ -7,8 +7,9 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import GlobeScene from "@/components/GlobeScene";
-import LuxuryShowcase from "@/components/LuxuryShowcase";
 import ParticleField from "@/components/ParticleField";
+import ScrollProgress from "@/components/ScrollProgress";
+import SectionReveal from "@/components/SectionReveal";
 import heroBg from "@/assets/hero-bg.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
@@ -57,7 +58,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -67,18 +68,18 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
-const slideInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const } },
-};
-
-const slideInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
+  },
 };
 
 const RevealText = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
@@ -89,7 +90,7 @@ const RevealText = ({ children, className = "" }: { children: React.ReactNode; c
       <motion.div
         initial={{ y: "100%" }}
         animate={isInView ? { y: 0 } : { y: "100%" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
       </motion.div>
@@ -103,9 +104,10 @@ const Index = () => {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const heroImageY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
-  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
-  const heroScale = useTransform(heroScroll, [0, 1], [1, 1.1]);
+  const heroImageY = useTransform(heroScroll, [0, 1], ["0%", "25%"]);
+  const heroOpacity = useTransform(heroScroll, [0, 0.6], [1, 0]);
+  const heroScale = useTransform(heroScroll, [0, 1], [1, 1.08]);
+  const heroTextY = useTransform(heroScroll, [0, 0.6], [0, -60]);
 
   const showcaseRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: showcaseScroll } = useScroll({
@@ -116,9 +118,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <ScrollProgress />
       <Header />
 
-      {/* Hero with parallax + 3D Globe */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div className="absolute inset-0" style={{ y: heroImageY, scale: heroScale }}>
           <img src={heroBg} alt="Luxury coastal estate" className="w-full h-full object-cover" width={1920} height={1080} />
@@ -126,10 +129,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/30" />
         </motion.div>
 
-        {/* 3D Globe overlay */}
         <GlobeScene />
 
-        <motion.div className="relative z-10 container mx-auto px-6 lg:px-12 text-center" style={{ opacity: heroOpacity }}>
+        <motion.div
+          className="relative z-10 container mx-auto px-6 lg:px-12 text-center"
+          style={{ opacity: heroOpacity, y: heroTextY }}
+        >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -148,7 +153,7 @@ const Index = () => {
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[1.1]"
               >
                 Citizenship. Residency.
@@ -158,7 +163,7 @@ const Index = () => {
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] whitespace-pre-line"
               >
                 <span className="italic text-primary">Optionality.{"\n"}</span>
@@ -210,7 +215,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Trust Strip with stagger animation */}
+      {/* ═══════════════ TRUST STRIP ═══════════════ */}
       <section className="border-y border-border bg-card/50 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 py-6">
           <motion.div
@@ -240,8 +245,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What We Do — enhanced card hover */}
-      <section className="py-24 lg:py-32 relative">
+      {/* ═══════════════ WHAT WE DO ═══════════════ */}
+      <section className="py-28 lg:py-36 relative">
         <ParticleField />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <SectionHeading
@@ -257,17 +262,15 @@ const Index = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
           >
             {services.map((service, i) => (
-              <motion.div key={i} variants={itemVariants}>
+              <motion.div key={i} variants={cardVariants}>
                 <Link
                   to={service.link}
-                  className="group block p-8 lg:p-10 bg-card/80 backdrop-blur-sm border border-border hover:border-primary/40 transition-all duration-700 h-full relative overflow-hidden"
+                  className="group block p-8 lg:p-10 bg-card/80 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-700 h-full relative overflow-hidden hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
                 >
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
                   <div className="relative z-10">
-                    <motion.div whileHover={{ rotate: 10, scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
-                      <service.icon className="w-8 h-8 text-primary mb-6" strokeWidth={1} />
-                    </motion.div>
+                    <service.icon className="w-8 h-8 text-primary mb-6 transition-transform duration-500 group-hover:scale-110" strokeWidth={1} />
                     <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-3 group-hover:text-primary transition-colors duration-500">
                       {service.title}
                     </h3>
@@ -287,9 +290,10 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* Featured Destinations with enhanced cards */}
-      <section className="py-24 lg:py-32 bg-card/30 relative">
+      {/* ═══════════════ DESTINATIONS ═══════════════ */}
+      <section className="py-28 lg:py-36 bg-muted/30 relative">
+        {/* Subtle section transition gradient */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Featured Destinations"
@@ -304,72 +308,51 @@ const Index = () => {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           >
             {destinations.slice(0, 8).map((dest, i) => (
-              <motion.div key={i} variants={itemVariants}>
+              <motion.div key={i} variants={cardVariants}>
                 <Link
                   to="/destinations"
-                  className="group block relative overflow-hidden aspect-[3/4]"
+                  className="group block relative overflow-hidden aspect-[3/4] hover:shadow-xl hover:shadow-primary/5 transition-shadow duration-700"
                 >
                   <motion.img
                     src={dest.image}
                     alt={dest.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                     loading="lazy"
                     width={800}
                     height={1000}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent group-hover:via-background/30 transition-all duration-500" />
-                  {/* Hover overlay glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-primary/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent group-hover:via-foreground/30 transition-all duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <motion.span
-                      className="text-[10px] tracking-[0.2em] uppercase text-primary block mb-1"
-                      initial={{ x: -10, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 + i * 0.05 }}
-                    >
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-primary-foreground/60 block mb-1">
                       {dest.region}
-                    </motion.span>
-                    <h3 className="font-serif text-xl text-foreground mb-1 group-hover:text-primary transition-colors duration-300">{dest.name}</h3>
-                    <p className="text-xs text-muted-foreground mb-2">{dest.investment}</p>
-                    <p className="text-xs text-primary/80 group-hover:text-primary transition-colors duration-300">{dest.advantage}</p>
+                    </span>
+                    <h3 className="font-serif text-xl text-primary-foreground mb-1 group-hover:translate-x-1 transition-transform duration-500">{dest.name}</h3>
+                    <p className="text-xs text-primary-foreground/70 mb-2">{dest.investment}</p>
+                    <p className="text-xs text-primary-foreground/50 group-hover:text-primary-foreground/70 transition-colors duration-300">{dest.advantage}</p>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="text-center mt-12"
-          >
+          <SectionReveal delay={0.3} className="text-center mt-14">
             <CTAButton to="/destinations" variant="outline">
               View All Destinations
             </CTAButton>
-          </motion.div>
+          </SectionReveal>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-
-      {/* Why GFC with parallax image */}
-      <section ref={showcaseRef} className="py-24 lg:py-32 relative overflow-hidden">
+      {/* ═══════════════ WHY GFC ═══════════════ */}
+      <section ref={showcaseRef} className="py-28 lg:py-36 relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInLeft}
-            >
+            <SectionReveal direction="left">
               <div className="relative aspect-[4/3] overflow-hidden group">
                 <motion.img
                   src={boardroom}
                   alt="Executive boardroom"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                   style={{ y: showcaseParallax }}
                   loading="lazy"
                   width={1280}
@@ -380,13 +363,8 @@ const Index = () => {
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-primary/30" />
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-primary/30" />
               </div>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInRight}
-            >
+            </SectionReveal>
+            <SectionReveal direction="right" delay={0.15}>
               <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">
                 Why Global Freedom Capital
               </span>
@@ -423,29 +401,22 @@ const Index = () => {
                   "Boots-on-the-ground international support",
                 ].map((item, i) => (
                   <motion.li key={i} variants={itemVariants} className="flex items-center gap-3 text-sm text-foreground/80 group cursor-default">
-                    <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400 }}>
-                      <ChevronRight size={14} className="text-primary flex-shrink-0" />
-                    </motion.div>
+                    <ChevronRight size={14} className="text-primary flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                     {item}
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.div
-                className="mt-8"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-              >
+              <SectionReveal delay={0.4} className="mt-8">
                 <CTAButton to="/about" variant="outline">About Our Firm</CTAButton>
-              </motion.div>
-            </motion.div>
+              </SectionReveal>
+            </SectionReveal>
           </div>
         </div>
       </section>
 
-      {/* How It Works — enhanced with connecting lines + counter animation */}
-      <section className="py-24 lg:py-32 bg-card/30 border-y border-border relative overflow-hidden">
+      {/* ═══════════════ HOW IT WORKS ═══════════════ */}
+      <section className="py-28 lg:py-36 bg-muted/30 border-y border-border relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
         <ParticleField />
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <SectionHeading
@@ -463,18 +434,14 @@ const Index = () => {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                variants={itemVariants}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="relative p-8 border border-border hover:border-primary/30 transition-colors duration-500 bg-card/50 backdrop-blur-sm group"
+                variants={cardVariants}
+                className="relative p-8 border border-border hover:border-primary/30 transition-all duration-700 bg-card/50 backdrop-blur-sm group hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
               >
                 {/* Top accent line */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/60 transition-all duration-700" />
-                <motion.span
-                  className="text-5xl font-serif text-primary/15 block mb-4 group-hover:text-primary/30 transition-colors duration-500"
-                  whileHover={{ scale: 1.1 }}
-                >
+                <span className="text-5xl font-serif text-primary/15 block mb-4 group-hover:text-primary/30 transition-colors duration-500">
                   {step.num}
-                </motion.span>
+                </span>
                 <h3 className="font-serif text-lg text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 {/* Connecting line on desktop */}
@@ -485,25 +452,15 @@ const Index = () => {
             ))}
           </motion.div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* For Attorneys */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      {/* ═══════════════ FOR ATTORNEYS ═══════════════ */}
+      <section className="py-28 lg:py-36 relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                whileHover={{ rotate: 15, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="inline-block"
-              >
-                <Scale className="w-10 h-10 text-primary mx-auto mb-6" strokeWidth={1} />
-              </motion.div>
+            <SectionReveal>
+              <Scale className="w-10 h-10 text-primary mx-auto mb-6" strokeWidth={1} />
               <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">
                 For Immigration Attorneys & Partners
               </span>
@@ -518,23 +475,18 @@ const Index = () => {
                 communication, and access to government-approved programs worldwide—so you
                 can serve your clients with confidence.
               </p>
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <CTAButton to="/for-attorneys" variant="primary">Partner With Us</CTAButton>
                 <CTAButton to="/contact" variant="outline">Schedule a Partner Call</CTAButton>
-              </motion.div>
-            </motion.div>
+              </div>
+            </SectionReveal>
           </div>
         </div>
       </section>
 
-      {/* Insights */}
-      <section className="py-24 lg:py-32 bg-card/30 border-y border-border">
+      {/* ═══════════════ INSIGHTS ═══════════════ */}
+      <section className="py-28 lg:py-36 bg-muted/30 border-y border-border relative">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Insights"
@@ -553,10 +505,10 @@ const Index = () => {
               { title: "Golden Visa vs. Citizenship by Investment: Which Path Is Right for You?", category: "Advisory", date: "February 2026" },
               { title: "The Rise of the Strategic Family Office: Global Mobility as a Wealth Tool", category: "Wealth Strategy", date: "January 2026" },
             ].map((article, i) => (
-              <motion.div key={i} variants={itemVariants}>
+              <motion.div key={i} variants={cardVariants}>
                 <Link
                   to="/insights"
-                  className="group block p-8 bg-card/80 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-700 h-full relative overflow-hidden"
+                  className="group block p-8 bg-card/80 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-700 h-full relative overflow-hidden hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-primary/5 to-transparent" />
                   <div className="relative z-10">
@@ -571,29 +523,18 @@ const Index = () => {
               </motion.div>
             ))}
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="text-center mt-12"
-          >
+          <SectionReveal delay={0.3} className="text-center mt-14">
             <CTAButton to="/insights" variant="ghost">View All Insights</CTAButton>
-          </motion.div>
+          </SectionReveal>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* Final CTA with dramatic reveal */}
-      <section className="py-24 lg:py-40 relative overflow-hidden">
+      {/* ═══════════════ FINAL CTA ═══════════════ */}
+      <section className="py-28 lg:py-44 relative overflow-hidden">
         <ParticleField />
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto"
-          >
+          <SectionReveal>
             <motion.span
               className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block"
               initial={{ opacity: 0 }}
@@ -603,12 +544,14 @@ const Index = () => {
             >
               Begin Today
             </motion.span>
-            <RevealText>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground leading-tight mb-6">
-                Your Next Move Deserves a{" "}
-                <span className="italic text-primary">Global Strategy</span>
-              </h2>
-            </RevealText>
+            <div className="max-w-3xl mx-auto">
+              <RevealText>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground leading-tight mb-6">
+                  Your Next Move Deserves a{" "}
+                  <span className="italic text-primary">Global Strategy</span>
+                </h2>
+              </RevealText>
+            </div>
             <motion.p
               className="text-muted-foreground text-base leading-relaxed mb-10 max-w-xl mx-auto"
               initial={{ opacity: 0 }}
@@ -619,17 +562,12 @@ const Index = () => {
               Whether you're an individual, family, attorney, or advisor—your journey to
               global freedom begins with a single, confidential conversation.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
+            <SectionReveal delay={0.5}>
               <CTAButton to="/contact" variant="primary">
                 Begin Your Private Consultation
               </CTAButton>
-            </motion.div>
-          </motion.div>
+            </SectionReveal>
+          </SectionReveal>
         </div>
       </section>
 
