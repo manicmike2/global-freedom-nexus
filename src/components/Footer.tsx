@@ -32,6 +32,14 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               A U.S.-based advisory firm guiding high-net-worth individuals and families through citizenship by investment, Golden Visa, and strategic residency solutions.
             </p>
+            <div className="flex gap-4 mt-6">
+              <a href="https://www.instagram.com/globalfreedomcapital?igsh=azVjOTFoaWJvbWt6&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300">
+                <Instagram size={20} />
+              </a>
+              <a href="https://www.linkedin.com/company/global-freedom-capital/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </motion.div>
 
           {/* Advisory */}
