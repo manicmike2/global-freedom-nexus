@@ -87,8 +87,8 @@ const Footer = () => {
               Get in Touch
             </h4>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
-              <li>info@globalfreedomcapital.com</li>
-              <li>+1 (800) 555-0199</li>
+              <li>contact@globalfreedomcapital.com</li>
+              <li>+1 (445) 600 3206</li>
               <li>New York, United States</li>
             </ul>
             <Link
