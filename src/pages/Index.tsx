@@ -287,6 +287,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Counter Section */}
+      <section className="py-20 lg:py-28 border-y border-border relative overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+          >
+            {[
+              { value: "50+", label: "Countries Covered" },
+              { value: "500+", label: "Families Served" },
+              { value: "98%", label: "Approval Rate" },
+              { value: "15+", label: "Years of Experience" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="text-center"
+              >
+                <motion.span
+                  className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary block mb-2"
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i, type: "spring", stiffness: 200 }}
+                >
+                  {stat.value}
+                </motion.span>
+                <span className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Featured Destinations with enhanced cards */}
       <section className="py-24 lg:py-32 bg-card/30 relative">
@@ -583,7 +622,52 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA with dramatic reveal */}
+      {/* Client Testimonial / Quote Section */}
+      <section className="py-24 lg:py-36 relative overflow-hidden border-t border-border">
+        <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-transparent to-card/30" />
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="font-serif text-5xl lg:text-7xl text-primary/20 mb-8">&ldquo;</div>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed italic mb-8">
+              Global Freedom Capital gave our family the clarity and confidence to navigate an incredibly complex process. Their discretion and expertise are unmatched.
+            </blockquote>
+            <div className="w-16 h-px bg-primary/40 mx-auto mb-6" />
+            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+              Private Client — New York
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Horizontal Scroll Marquee — Jurisdictions */}
+      <section className="py-12 border-y border-border overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -1200] }}
+          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          className="flex gap-12 whitespace-nowrap"
+        >
+          {[...Array(2)].map((_, setIdx) => (
+            <div key={setIdx} className="flex gap-12">
+              {["Portugal", "Malta", "Greece", "Grenada", "Saint Kitts & Nevis", "Turkey", "UAE", "Panama", "Antigua & Barbuda", "Dominica", "Montenegro", "Spain"].map((name, i) => (
+                <span
+                  key={`${setIdx}-${i}`}
+                  className="text-sm tracking-[0.15em] uppercase text-muted-foreground/40 font-sans"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+
       <section className="py-24 lg:py-40 relative overflow-hidden">
         <ParticleField />
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
