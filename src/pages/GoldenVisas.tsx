@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useHashScroll } from "@/hooks/use-hash-scroll";
+import { toAnchorId } from "@/lib/destinations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
