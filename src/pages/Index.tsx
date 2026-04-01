@@ -393,45 +393,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 3D Luxury Showcase — Yacht */}
-      <section className="py-16 lg:py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInLeft}
-              className="h-[400px] lg:h-[500px] order-2 lg:order-1"
-            >
-              <LuxuryShowcase model="yacht" />
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInRight}
-              className="order-1 lg:order-2"
-            >
-              <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">
-                Lifestyle & Legacy
-              </span>
-              <RevealText>
-                <h2 className="font-serif text-3xl lg:text-5xl text-foreground leading-tight mb-6">
-                  A Life Designed for <span className="italic text-primary">Freedom</span>
-                </h2>
-              </RevealText>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Mediterranean residency. Caribbean citizenship. Waterfront living in jurisdictions
-                that welcome your family and your ambitions. This is strategic freedom, elegantly executed.
-              </p>
-              <CTAButton to="/golden-visas" variant="outline">
-                Explore Residency Programs
-              </CTAButton>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Why GFC with parallax image */}
       <section ref={showcaseRef} className="py-24 lg:py-32 relative overflow-hidden">
