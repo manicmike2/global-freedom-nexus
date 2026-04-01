@@ -57,31 +57,46 @@ function GoldParticles({ count = 200 }) {
 
 function Pedestal() {
   return (
-    <group position={[0, -2.6, 0]}>
-      {/* Base disc */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[1.2, 1.4, 0.15, 32]} />
-        <meshStandardMaterial color="#1a1915" metalness={0.8} roughness={0.3} />
+    <group position={[0, -2.8, 0]}>
+      {/* Wide base */}
+      <mesh position={[0, 0, 0]}>
+        <cylinderGeometry args={[1.0, 1.15, 0.12, 32]} />
+        <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.2} />
       </mesh>
-      {/* Gold rim */}
-      <mesh position={[0, 0.08, 0]}>
-        <torusGeometry args={[1.25, 0.02, 8, 48]} />
-        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
+      {/* Base rim top */}
+      <mesh position={[0, 0.07, 0]}>
+        <torusGeometry args={[1.02, 0.015, 8, 48]} />
+        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
-      {/* Column */}
-      <mesh position={[0, 0.65, 0]}>
-        <cylinderGeometry args={[0.12, 0.2, 1.2, 16]} />
-        <meshStandardMaterial color="#2a2520" metalness={0.7} roughness={0.3} />
+      {/* Base rim bottom */}
+      <mesh position={[0, -0.06, 0]}>
+        <torusGeometry args={[1.12, 0.015, 8, 48]} />
+        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
-      {/* Gold ring at top of column */}
-      <mesh position={[0, 1.25, 0]}>
-        <torusGeometry args={[0.15, 0.015, 8, 24]} />
-        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
-      </mesh>
-      {/* Mounting cradle */}
-      <mesh position={[0, 1.35, 0]} rotation={[0.15, 0, 0]}>
-        <torusGeometry args={[0.35, 0.02, 8, 32]} />
+      {/* Tapered column */}
+      <mesh position={[0, 0.7, 0]}>
+        <cylinderGeometry args={[0.08, 0.15, 1.2, 16]} />
         <meshStandardMaterial color="#c9a96e" metalness={0.85} roughness={0.2} />
+      </mesh>
+      {/* Column mid-ring detail */}
+      <mesh position={[0, 0.5, 0]}>
+        <torusGeometry args={[0.13, 0.012, 8, 24]} />
+        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
+      </mesh>
+      {/* Top mount plate */}
+      <mesh position={[0, 1.32, 0]}>
+        <cylinderGeometry args={[0.25, 0.12, 0.06, 24]} />
+        <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.15} />
+      </mesh>
+      {/* Semicircular cradle arm — left */}
+      <mesh position={[-0.3, 1.6, 0]} rotation={[0, 0, 0.3]}>
+        <torusGeometry args={[0.45, 0.018, 8, 24, Math.PI]} />
+        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
+      </mesh>
+      {/* Semicircular cradle arm — right */}
+      <mesh position={[0.3, 1.6, 0]} rotation={[0, 0, -0.3]}>
+        <torusGeometry args={[0.45, 0.018, 8, 24, Math.PI]} />
+        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
     </group>
   );
