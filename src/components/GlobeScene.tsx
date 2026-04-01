@@ -55,11 +55,12 @@ function GoldParticles({ count = 200 }) {
   );
 }
 
-function Pedestal() {
+function PedestalStand() {
+  // Upright stand positioned where the tilted axis rod ends
   return (
-    <group position={[0, -2.8, 0]}>
+    <group position={[0.18, -3.55, 0.44]}>
       {/* Wide base */}
-      <mesh position={[0, 0, 0]}>
+      <mesh>
         <cylinderGeometry args={[1.0, 1.15, 0.12, 32]} />
         <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.2} />
       </mesh>
@@ -74,29 +75,19 @@ function Pedestal() {
         <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
       {/* Tapered column */}
-      <mesh position={[0, 0.7, 0]}>
-        <cylinderGeometry args={[0.08, 0.15, 1.2, 16]} />
+      <mesh position={[0, 0.65, 0]}>
+        <cylinderGeometry args={[0.08, 0.15, 1.1, 16]} />
         <meshStandardMaterial color="#c9a96e" metalness={0.85} roughness={0.2} />
       </mesh>
-      {/* Column mid-ring detail */}
-      <mesh position={[0, 0.5, 0]}>
+      {/* Column mid-ring */}
+      <mesh position={[0, 0.45, 0]}>
         <torusGeometry args={[0.13, 0.012, 8, 24]} />
         <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
-      {/* Top mount plate */}
-      <mesh position={[0, 1.32, 0]}>
-        <cylinderGeometry args={[0.25, 0.12, 0.06, 24]} />
+      {/* Top plate */}
+      <mesh position={[0, 1.22, 0]}>
+        <cylinderGeometry args={[0.22, 0.1, 0.06, 24]} />
         <meshStandardMaterial color="#b8942e" metalness={0.9} roughness={0.15} />
-      </mesh>
-      {/* Semicircular cradle arm — left */}
-      <mesh position={[-0.3, 1.6, 0]} rotation={[0, 0, 0.3]}>
-        <torusGeometry args={[0.45, 0.018, 8, 24, Math.PI]} />
-        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
-      </mesh>
-      {/* Semicircular cradle arm — right */}
-      <mesh position={[0.3, 1.6, 0]} rotation={[0, 0, -0.3]}>
-        <torusGeometry args={[0.45, 0.018, 8, 24, Math.PI]} />
-        <meshStandardMaterial color="#d4af37" metalness={0.95} roughness={0.1} />
       </mesh>
     </group>
   );
@@ -123,7 +114,7 @@ function WireframeGlobe() {
         />
       </mesh>
       {/* Axis rod through the globe */}
-      <mesh rotation={[0, 0, 0]}>
+      <mesh>
         <cylinderGeometry args={[0.015, 0.015, 4.4, 8]} />
         <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
       </mesh>
@@ -190,7 +181,6 @@ const GlobeScene = () => {
         <ambientLight intensity={0.3} />
         <directionalLight position={[3, 5, 4]} intensity={0.4} color="#ffd89b" />
         <PedestalStand />
-        <Pedestal />
         <WireframeGlobe />
         <GoldParticles count={150} />
         <LuxuryRing radius={3.2} speed={0.03} />
