@@ -287,45 +287,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 3D Luxury Showcase — Private Jet */}
-      <section className="py-16 lg:py-24 bg-card/20 border-y border-border relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInLeft}
-            >
-              <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">
-                Global Mobility
-              </span>
-              <RevealText>
-                <h2 className="font-serif text-3xl lg:text-5xl text-foreground leading-tight mb-6">
-                  Travel Without <span className="italic text-primary">Boundaries</span>
-                </h2>
-              </RevealText>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                With a strategically acquired second citizenship, the world opens up.
-                Visa-free access to 140+ countries. Private aviation clearances simplified.
-                Your global lifestyle, unencumbered.
-              </p>
-              <CTAButton to="/citizenship-by-investment" variant="outline">
-                Explore Citizenship Programs
-              </CTAButton>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideInRight}
-              className="h-[400px] lg:h-[500px]"
-            >
-              <LuxuryShowcase />
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Destinations with enhanced cards */}
       <section className="py-24 lg:py-32 bg-card/30 relative">
