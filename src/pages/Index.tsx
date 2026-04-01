@@ -166,7 +166,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
               >
-                <span className="italic text-primary">Optionality.</span>
+                <span className="italic text-primary rounded-none">Optionality.</span>
               </motion.h1>
             </div>
 
