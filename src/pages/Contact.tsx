@@ -67,8 +67,8 @@ const Contact = () => {
 
               <div className="space-y-6">
                 {[
-                  { icon: Mail, label: "Email", value: "info@globalfreedomcapital.com" },
-                  { icon: Phone, label: "Phone", value: "+1 (800) 555-0199" },
+                  { icon: Mail, label: "Email", value: "contact@globalfreedomcapital.com" },
+                  { icon: Phone, label: "Phone", value: "+1 (445) 600 3206" },
                   { icon: MapPin, label: "Location", value: "New York, United States" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
@@ -82,7 +82,7 @@ const Contact = () => {
               </div>
 
               <a
-                href="https://wa.me/18005550199"
+                href="https://wa.me/14456003206"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-8 px-6 py-3 text-xs tracking-[0.15em] uppercase border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
