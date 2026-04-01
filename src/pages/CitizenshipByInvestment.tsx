@@ -63,6 +63,7 @@ const faqItems = [
 ];
 
 const CitizenshipByInvestment = () => {
+  useHashScroll();
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
