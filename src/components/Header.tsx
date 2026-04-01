@@ -66,24 +66,21 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
             <Link
               to="/contact"
               className="inline-block px-5 py-2.5 text-xs tracking-[0.12em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 whitespace-nowrap"
             >
               Book Consultation
             </Link>
+          </nav>
 
-            {/* Mobile toggle */}
-            <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="xl:hidden text-foreground"
-            >
-              {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            className="xl:hidden text-foreground"
+          >
+            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
