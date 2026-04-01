@@ -107,7 +107,7 @@ function WireframeGlobe() {
 
   useFrame((_, delta) => {
     if (mesh.current) {
-      mesh.current.rotation.y += delta * 0.08;
+      mesh.current.rotation.y += delta * 0.04;
     }
   });
 
