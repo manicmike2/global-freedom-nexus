@@ -23,8 +23,8 @@ function GoldParticles({ count = 200 }) {
 
   useFrame((_, delta) => {
     if (mesh.current) {
-      mesh.current.rotation.y += delta * 0.05;
-      mesh.current.rotation.x += delta * 0.02;
+      mesh.current.rotation.y += delta * 0.03;
+      mesh.current.rotation.x += delta * 0.01;
     }
   });
 
@@ -56,9 +56,10 @@ function GoldParticles({ count = 200 }) {
 }
 
 function PedestalStand() {
-  // Upright stand positioned where the tilted axis rod ends
+  // Axis rod bottom in world space is approximately (-0.63, -2.23, -0.84)
+  // Pedestal top plate is at y+1.22, so base y = -3.45
   return (
-    <group position={[0.18, -3.55, 0.44]}>
+    <group position={[-0.63, -3.45, -0.84]}>
       {/* Wide base */}
       <mesh>
         <cylinderGeometry args={[1.0, 1.15, 0.12, 32]} />
@@ -98,7 +99,7 @@ function WireframeGlobe() {
 
   useFrame((_, delta) => {
     if (mesh.current) {
-      mesh.current.rotation.y += delta * 0.04;
+      mesh.current.rotation.y += delta * 0.03;
     }
   });
 
@@ -183,8 +184,8 @@ const GlobeScene = () => {
         <PedestalStand />
         <WireframeGlobe />
         <GoldParticles count={150} />
-        <LuxuryRing radius={3.2} speed={0.03} />
-        <LuxuryRing radius={3.6} speed={-0.02} />
+        <LuxuryRing radius={3.2} speed={0.02} />
+        <LuxuryRing radius={3.6} speed={-0.015} />
         <FloatingDiamond />
         <FloatingGem position={[-3, -1.5, 0.5]} />
         <FloatingGem position={[2, -2, 1]} />
