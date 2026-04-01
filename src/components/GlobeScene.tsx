@@ -55,6 +55,38 @@ function GoldParticles({ count = 200 }) {
   );
 }
 
+function Pedestal() {
+  return (
+    <group position={[0, -2.6, 0]}>
+      {/* Base disc */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[1.2, 1.4, 0.15, 32]} />
+        <meshStandardMaterial color="#1a1915" metalness={0.8} roughness={0.3} />
+      </mesh>
+      {/* Gold rim */}
+      <mesh position={[0, 0.08, 0]}>
+        <torusGeometry args={[1.25, 0.02, 8, 48]} />
+        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
+      </mesh>
+      {/* Column */}
+      <mesh position={[0, 0.65, 0]}>
+        <cylinderGeometry args={[0.12, 0.2, 1.2, 16]} />
+        <meshStandardMaterial color="#2a2520" metalness={0.7} roughness={0.3} />
+      </mesh>
+      {/* Gold ring at top of column */}
+      <mesh position={[0, 1.25, 0]}>
+        <torusGeometry args={[0.15, 0.015, 8, 24]} />
+        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
+      </mesh>
+      {/* Mounting cradle */}
+      <mesh position={[0, 1.35, 0]} rotation={[0.15, 0, 0]}>
+        <torusGeometry args={[0.35, 0.02, 8, 32]} />
+        <meshStandardMaterial color="#c9a96e" metalness={0.85} roughness={0.2} />
+      </mesh>
+    </group>
+  );
+}
+
 function WireframeGlobe() {
   const mesh = useRef<THREE.Mesh>(null);
 
@@ -65,15 +97,22 @@ function WireframeGlobe() {
   });
 
   return (
-    <mesh ref={mesh}>
-      <sphereGeometry args={[2, 32, 32]} />
-      <meshBasicMaterial
-        color="#c9a96e"
-        wireframe
-        transparent
-        opacity={0.12}
-      />
-    </mesh>
+    <group position={[0, -0.3, 0]} rotation={[0.4, 0.2, -0.23]}>
+      <mesh ref={mesh}>
+        <sphereGeometry args={[2, 32, 32]} />
+        <meshBasicMaterial
+          color="#c9a96e"
+          wireframe
+          transparent
+          opacity={0.12}
+        />
+      </mesh>
+      {/* Axis rod through the globe */}
+      <mesh rotation={[0, 0, 0]}>
+        <cylinderGeometry args={[0.015, 0.015, 4.4, 8]} />
+        <meshStandardMaterial color="#c9a96e" metalness={0.9} roughness={0.15} />
+      </mesh>
+    </group>
   );
 }
 
