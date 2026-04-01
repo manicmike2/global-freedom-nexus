@@ -149,7 +149,7 @@ const Index = () => {
               The Private Advisory for Global Freedom
             </motion.span>
 
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-2">
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -159,14 +159,14 @@ const Index = () => {
                 Citizenship. Residency.
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-8">
+            <div className="overflow-hidden mb-10">
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] whitespace-pre-line"
+                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
               >
-                <span className="italic text-primary">Optionality.{"\n"}</span>
+                <span className="italic text-primary">Optionality.</span>
               </motion.h1>
             </div>
 
