@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getDestinationPath } from "@/lib/destinations";
 import { ArrowRight, Shield, Globe, Users, Building, Briefcase, Scale, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
