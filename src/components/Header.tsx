@@ -97,10 +97,10 @@ const Header = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm tracking-[0.15em] uppercase transition-colors ${
+                  className={`text-sm font-semibold tracking-[0.15em] uppercase transition-colors ${
                     location.pathname === item.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                      ? "text-primary font-bold"
+                      : "text-foreground"
                   }`}
                 >
                   {item.label}
