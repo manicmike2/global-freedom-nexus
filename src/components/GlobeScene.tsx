@@ -89,26 +89,21 @@ function EquatorTextRing() {
     canvas.width = 4096;
     canvas.height = 256;
     const ctx = canvas.getContext("2d")!;
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Dark navy blue matching the foreground palette
     ctx.fillStyle = "#0b1225";
-    ctx.font = "700 92px 'Inter', 'Helvetica Neue', Arial, sans-serif";
+    ctx.font = "700 92px Inter, Arial, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-
     ctx.fillText(
       "GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL  •  GLOBAL FREEDOM CAPITAL",
       canvas.width / 2,
       canvas.height / 2
     );
-
     const tex = new THREE.CanvasTexture(canvas);
     tex.wrapS = THREE.RepeatWrapping;
-    tex.wrapT = THREE.ClampToEdgeWrapping;
-    tex.anisotropy = 16;
-    tex.needsUpdate = true;
+    // Flip UVs so text reads outward toward the camera
+    tex.repeat.x = -1;
+    tex.offset.x = 1;
     return tex;
   }, []);
 
@@ -118,14 +113,11 @@ function EquatorTextRing() {
     }
   });
 
+  // No rotation — cylinder's default Y-axis aligns with the globe's equator
   return (
-    <mesh ref={meshRef} rotation={[Math.PI / 2, 0, 0]}>
+    <mesh ref={meshRef}>
       <cylinderGeometry args={[2.18, 2.18, 0.09, 256, 1, true]} />
-      <meshBasicMaterial
-        map={texture}
-        transparent
-        side={THREE.DoubleSide}
-      />
+      <meshBasicMaterial map={texture} transparent side={THREE.FrontSide} />
     </mesh>
   );
 }
