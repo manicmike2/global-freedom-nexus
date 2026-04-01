@@ -9,7 +9,6 @@ const navItems = [
   { label: "Citizenship by Investment", path: "/citizenship-by-investment" },
   { label: "Golden Visas", path: "/golden-visas" },
   { label: "Destinations", path: "/destinations" },
-  { label: "For Attorneys", path: "/for-attorneys" },
   { label: "Insights", path: "/insights" },
   { label: "Contact", path: "/contact" },
 ];
