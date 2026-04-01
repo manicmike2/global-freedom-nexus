@@ -22,13 +22,37 @@ const Contact = () => {
     name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for your inquiry",
-      description: "A member of our advisory team will be in touch within 24 hours.",
+    setIsSubmitting(true);
+    
+    const { error } = await supabase.from("contact_us_submissions").insert({
+      full_name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      i_am: formData.type,
+      primary_interest: formData.interest || null,
+      help_message: formData.message,
     });
-    setFormData({ name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "" });
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } else {
+      console.log("Submission saved successfully");
+      toast({
+        title: "Thank you for your inquiry",
+        description: "A member of our advisory team will be in touch within 24 hours.",
+      });
+      setFormData({ name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "" });
+    }
+    setIsSubmitting(false);
   };
 
   return (
