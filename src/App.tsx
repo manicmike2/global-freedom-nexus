@@ -14,6 +14,7 @@ import Destinations from "./pages/Destinations.tsx";
 import ForAttorneys from "./pages/ForAttorneys.tsx";
 import Insights from "./pages/Insights.tsx";
 import Contact from "./pages/Contact.tsx";
+import Article from "./pages/Article.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
