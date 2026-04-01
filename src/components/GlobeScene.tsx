@@ -182,7 +182,7 @@ const GlobeScene = () => {
   return (
     <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
       <Canvas
-        camera={{ position: [0, 0.5, 7], fov: 45 }}
+        camera={{ position: [0, 0.5, 9], fov: 42 }}
         dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true }}
         style={{ background: "transparent" }}
