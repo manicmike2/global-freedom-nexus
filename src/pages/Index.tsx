@@ -287,6 +287,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Counter Section */}
+      <section className="py-20 lg:py-28 border-y border-border relative overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+          >
+            {[
+              { value: "50+", label: "Countries Covered" },
+              { value: "500+", label: "Families Served" },
+              { value: "98%", label: "Approval Rate" },
+              { value: "15+", label: "Years of Experience" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="text-center"
+              >
+                <motion.span
+                  className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary block mb-2"
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i, type: "spring", stiffness: 200 }}
+                >
+                  {stat.value}
+                </motion.span>
+                <span className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Featured Destinations with enhanced cards */}
       <section className="py-24 lg:py-32 bg-card/30 relative">
