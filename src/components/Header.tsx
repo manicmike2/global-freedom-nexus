@@ -110,12 +110,6 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                className="inline-block w-fit px-6 py-3 text-xs tracking-[0.15em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 mt-4"
-              >
-                Book Consultation
-              </Link>
             </nav>
           </motion.div>
         )}
