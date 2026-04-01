@@ -25,14 +25,14 @@ import destStlucia from "@/assets/dest-stlucia.jpg";
 import destDominica from "@/assets/dest-dominica.jpg";
 
 const destinations = [
+  { name: "Grenada", region: "Caribbean", investment: "From $235,000", ideal: "U.S.-based families", advantage: "E-2 treaty access to U.S.", image: destGrenada },
+  { name: "Saint Kitts & Nevis", region: "Caribbean", investment: "From $250,000", ideal: "Global entrepreneurs", advantage: "Oldest CBI program", image: destStkitts },
+  { name: "Antigua & Barbuda", region: "Caribbean", investment: "From $230,000", ideal: "Families", advantage: "Family-friendly CBI", image: destAntigua },
+  { name: "Dominica", region: "Caribbean", investment: "From $200,000", ideal: "Cost-conscious investors", advantage: "Most affordable CBI", image: destDominica },
+  { name: "Saint Lucia", region: "Caribbean", investment: "From $240,000", ideal: "Flexible investors", advantage: "Multiple investment routes", image: destStlucia },
   { name: "Portugal", region: "Europe", investment: "From €500,000", ideal: "Families & entrepreneurs", advantage: "EU residency & citizenship pathway", image: destPortugal },
   { name: "Greece", region: "Europe", investment: "From €250,000", ideal: "Investors & retirees", advantage: "Golden Visa with EU access", image: destGreece },
-  { name: "Grenada", region: "Caribbean", investment: "From $150,000", ideal: "U.S.-based families", advantage: "E-2 treaty access to U.S.", image: destGrenada },
-  { name: "Saint Kitts & Nevis", region: "Caribbean", investment: "From $250,000", ideal: "Global entrepreneurs", advantage: "Oldest CBI program", image: destStkitts },
-  { name: "Turkey", region: "Global", investment: "From $400,000", ideal: "Business investors", advantage: "Citizenship in 3-6 months", image: destTurkey },
   { name: "UAE", region: "Global", investment: "From $550,000", ideal: "Executives & families", advantage: "Tax-free residency", image: destUae },
-  { name: "Panama", region: "Global", investment: "From $300,000", ideal: "Retirees & investors", advantage: "Friendly Nations Visa", image: destPanama },
-  { name: "Bulgaria", region: "Europe", investment: "From €256,000", ideal: "EU passport seekers", advantage: "Fast-track EU citizenship", image: destPortugal },
 ];
 
 const services = [

@@ -141,7 +141,6 @@ const GlobeScene = () => {
       >
         <ambientLight intensity={0.4} />
         <WireframeGlobe />
-        <EquatorTextRing />
         <GoldParticles count={180} />
         <LuxuryRing radius={3.2} speed={0.03} />
         <LuxuryRing radius={3.6} speed={-0.02} />

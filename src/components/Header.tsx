@@ -41,14 +41,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20 lg:h-24">
           <Link to="/" className="flex shrink-0 items-center gap-3 mr-8 xl:mr-12">
             <img src={logo} alt="Global Freedom Capital" className="h-12 lg:h-14 w-auto" />
-            <div className="flex flex-col">
-              <span className="font-serif text-lg lg:text-xl tracking-wide text-foreground whitespace-nowrap">
-                Global Freedom Capital
-              </span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground whitespace-nowrap">
-                Take the world. It's yours.
-              </span>
-            </div>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground whitespace-nowrap">
+              Take the world. It's yours.
+            </span>
           </Link>
 
           {/* Desktop Nav */}
