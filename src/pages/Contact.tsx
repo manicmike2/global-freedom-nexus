@@ -141,6 +141,20 @@ const Contact = () => {
             {/* Form */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
               <form onSubmit={handleSubmit} className="space-y-6 p-8 lg:p-10 bg-card border border-border">
+                {submitStatus === "success" && (
+                  <Alert className="border-green-500/50 bg-green-500/10">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <AlertTitle className="text-green-500">Inquiry Submitted</AlertTitle>
+                    <AlertDescription className="text-green-400">{submitMessage}</AlertDescription>
+                  </Alert>
+                )}
+                {submitStatus === "error" && (
+                  <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Submission Failed</AlertTitle>
+                    <AlertDescription>{submitMessage}</AlertDescription>
+                  </Alert>
+                )}
                 <h2 className="font-serif text-2xl text-foreground mb-2">Request a Consultation</h2>
                 <p className="text-xs text-muted-foreground mb-6">All inquiries are confidential.</p>
 
