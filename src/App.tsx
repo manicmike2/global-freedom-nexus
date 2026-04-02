@@ -16,6 +16,7 @@ import Insights from "./pages/Insights.tsx";
 import Contact from "./pages/Contact.tsx";
 import Article from "./pages/Article.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
