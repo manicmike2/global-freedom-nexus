@@ -58,6 +58,25 @@ const Contact = () => {
         title: "Thank you for your inquiry",
         description: "A member of our advisory team will be in touch within 24 hours.",
       });
+
+      // Send notification email to the team
+      const submissionId = crypto.randomUUID();
+      supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-notification",
+          recipientEmail: "contact@globalfreedomcapital.com",
+          idempotencyKey: `contact-notify-${submissionId}`,
+          templateData: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || undefined,
+            type: formData.type,
+            interest: formData.interest || undefined,
+            message: formData.message,
+          },
+        },
+      }).catch((err) => console.error("Email notification error:", err));
+
       setFormData({ name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "" });
     }
     setIsSubmitting(false);

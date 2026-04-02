@@ -39,6 +39,7 @@ const App = () => (
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<Article />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
