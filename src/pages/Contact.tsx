@@ -59,21 +59,15 @@ const Contact = () => {
         description: "A member of our advisory team will be in touch within 24 hours.",
       });
 
-      // Send notification email to the team
-      const submissionId = crypto.randomUUID();
-      supabase.functions.invoke("send-transactional-email", {
+      // Send notification email via Resend
+      supabase.functions.invoke("send-contact-email", {
         body: {
-          templateName: "contact-notification",
-          recipientEmail: "contact@globalfreedomcapital.com",
-          idempotencyKey: `contact-notify-${submissionId}`,
-          templateData: {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || undefined,
-            type: formData.type,
-            interest: formData.interest || undefined,
-            message: formData.message,
-          },
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          type: formData.type,
+          interest: formData.interest || undefined,
+          message: formData.message,
         },
       }).catch((err) => console.error("Email notification error:", err));
 
