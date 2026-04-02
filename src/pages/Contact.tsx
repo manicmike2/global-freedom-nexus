@@ -22,8 +22,9 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
