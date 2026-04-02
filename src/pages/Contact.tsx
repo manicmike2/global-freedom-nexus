@@ -29,6 +29,8 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
     
     const { error } = await supabase.from("contact_us_submissions").insert({
       full_name: formData.name,
@@ -41,6 +43,8 @@ const Contact = () => {
 
     if (error) {
       console.error("Supabase insert error:", error);
+      setSubmitStatus("error");
+      setSubmitMessage("Something went wrong. Please try again or contact us directly.");
       toast({
         title: "Something went wrong",
         description: "Please try again or contact us directly.",
@@ -48,6 +52,8 @@ const Contact = () => {
       });
     } else {
       console.log("Submission saved successfully");
+      setSubmitStatus("success");
+      setSubmitMessage("Thank you for your inquiry. A member of our advisory team will be in touch within 24 hours.");
       toast({
         title: "Thank you for your inquiry",
         description: "A member of our advisory team will be in touch within 24 hours.",
