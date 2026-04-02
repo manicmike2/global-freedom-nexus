@@ -88,14 +88,8 @@ const About = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              <div className="aspect-[3/4] bg-muted/50 border border-border flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 rounded-full bg-primary/10 mx-auto mb-6 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-primary/40" strokeWidth={1} />
-                  </div>
-                  <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Professional Photo</p>
-                  <p className="text-xs text-muted-foreground/60 mt-1">Coming Soon</p>
-                </div>
+              <div className="aspect-[3/4] overflow-hidden">
+                <img src={tatianaMuntean} alt="Tatiana Muntean – Founder & Managing Director of Global Freedom Capital" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
