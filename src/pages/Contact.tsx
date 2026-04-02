@@ -4,9 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 import InternalLink from "@/components/InternalLink";
-import { MessageCircle, Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client.ts";
+import { supabase } from "@/integrations/supabase/client";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const expectations = [
   "A confidential, obligation-free conversation with a senior advisor",
