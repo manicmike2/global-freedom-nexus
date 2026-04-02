@@ -4,9 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 import InternalLink from "@/components/InternalLink";
-import { MessageCircle, Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client.ts";
+import { supabase } from "@/integrations/supabase/client";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const expectations = [
   "A confidential, obligation-free conversation with a senior advisor",
@@ -21,12 +22,15 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", type: "individual", interest: "", budget: "", message: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
     
     const { error } = await supabase.from("contact_us_submissions").insert({
       full_name: formData.name,
@@ -39,6 +43,8 @@ const Contact = () => {
 
     if (error) {
       console.error("Supabase insert error:", error);
+      setSubmitStatus("error");
+      setSubmitMessage("Something went wrong. Please try again or contact us directly.");
       toast({
         title: "Something went wrong",
         description: "Please try again or contact us directly.",
@@ -46,6 +52,8 @@ const Contact = () => {
       });
     } else {
       console.log("Submission saved successfully");
+      setSubmitStatus("success");
+      setSubmitMessage("Thank you for your inquiry. A member of our advisory team will be in touch within 24 hours.");
       toast({
         title: "Thank you for your inquiry",
         description: "A member of our advisory team will be in touch within 24 hours.",
@@ -133,6 +141,20 @@ const Contact = () => {
             {/* Form */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
               <form onSubmit={handleSubmit} className="space-y-6 p-8 lg:p-10 bg-card border border-border">
+                {submitStatus === "success" && (
+                  <Alert className="border-green-500/50 bg-green-500/10">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <AlertTitle className="text-green-500">Inquiry Submitted</AlertTitle>
+                    <AlertDescription className="text-green-400">{submitMessage}</AlertDescription>
+                  </Alert>
+                )}
+                {submitStatus === "error" && (
+                  <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Submission Failed</AlertTitle>
+                    <AlertDescription>{submitMessage}</AlertDescription>
+                  </Alert>
+                )}
                 <h2 className="font-serif text-2xl text-foreground mb-2">Request a Consultation</h2>
                 <p className="text-xs text-muted-foreground mb-6">All inquiries are confidential.</p>
 
