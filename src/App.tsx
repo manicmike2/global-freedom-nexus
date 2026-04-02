@@ -16,6 +16,7 @@ import Insights from "./pages/Insights.tsx";
 import Contact from "./pages/Contact.tsx";
 import Article from "./pages/Article.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<Article />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
