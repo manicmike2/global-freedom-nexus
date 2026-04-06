@@ -46,16 +46,27 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="About Global Freedom Capital – Expert Investment Migration Advisory"
-        description="U.S.-based, founder-led advisory firm specializing in citizenship by investment and Golden Visa programs. White-glove service for HNWIs, families, and their trusted advisors."
-        canonical="https://globalfreedomcapital.com/about"
+        title="Global Mobility Advisory & Citizenship Experts | Tatiana Muntean | Global Freedom Capital"
+        description="Meet Tatiana Muntean — IMC member, UN and OSCE veteran, and trusted global mobility advisor to high-net-worth families worldwide. Learn about our advisory approach."
+        canonical="https://www.globalfreedomcapital.com/about"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Global Freedom Capital",
-          description: "U.S.-based expert advisory firm specializing in citizenship by investment and Golden Visa programs.",
-          url: "https://globalfreedomcapital.com",
-          address: { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Global Freedom Capital",
+              description: "U.S.-based expert advisory firm specializing in citizenship by investment and Golden Visa programs.",
+              url: "https://www.globalfreedomcapital.com",
+              address: { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.globalfreedomcapital.com/" },
+                { "@type": "ListItem", position: 2, name: "About", item: "https://www.globalfreedomcapital.com/about" },
+              ],
+            },
+          ],
         }}
       />
       <Header />
@@ -66,7 +77,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl">
             <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">About Us</span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-              The Private Advisory for <span className="italic text-primary rounded-none">Global Freedom</span>
+              Global Mobility Advisory for <span className="italic text-primary rounded-none">High-Net-Worth Families</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Global Freedom Capital is a U.S.-based expert advisory firm specializing in{" "}

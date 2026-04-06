@@ -17,6 +17,7 @@ import Contact from "./pages/Contact.tsx";
 import Article from "./pages/Article.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
+import AntiguaBarbuda from "./pages/AntiguaBarbuda.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/golden-visas" element={<GoldenVisas />} />
           <Route path="/real-estate" element={<RealEstate />} />
           <Route path="/destinations" element={<Destinations />} />
+          <Route path="/antigua-barbuda" element={<AntiguaBarbuda />} />
           <Route path="/for-attorneys" element={<ForAttorneys />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<Article />} />

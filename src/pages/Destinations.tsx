@@ -51,9 +51,17 @@ const Destinations = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Investment Migration Destinations 2026 – CBI & Golden Visa Programs"
-        description="Explore citizenship by investment and Golden Visa destinations across the Caribbean, Europe & beyond. Compare programs in Grenada, Portugal, Greece, Malta, UAE & more."
-        canonical="https://globalfreedomcapital.com/destinations"
+        title="Citizenship by Investment Destinations | Caribbean & European Programs | Global Freedom Capital"
+        description="Explore leading Citizenship by Investment and Golden Visa programs across the Caribbean and Europe. Compare benefits, timelines, and investment levels. Free consultation."
+        canonical="https://www.globalfreedomcapital.com/destinations"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.globalfreedomcapital.com/" },
+            { "@type": "ListItem", position: 2, name: "Destinations", item: "https://www.globalfreedomcapital.com/destinations" },
+          ],
+        }}
       />
       <Header />
 
@@ -62,7 +70,7 @@ const Destinations = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-xs tracking-[0.3em] uppercase text-primary mb-4 block">Destinations</span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-              Explore <span className="italic text-primary rounded-none">Your World</span>
+              Citizenship by Investment & <span className="italic text-primary rounded-none">Golden Visa Destinations</span>
             </h1>
             <p className="text-muted-foreground text-base max-w-2xl leading-relaxed mb-4">
               From the Caribbean to Europe and beyond, discover curated investment migration 
