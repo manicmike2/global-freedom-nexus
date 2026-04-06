@@ -11,6 +11,7 @@ import GlobeScene from "@/components/GlobeScene";
 import ParticleField from "@/components/ParticleField";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionReveal from "@/components/SectionReveal";
+import PageSEO from "@/components/PageSEO";
 import heroBg from "@/assets/hero-yacht.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
@@ -122,6 +123,54 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <PageSEO
+        title="Citizenship by Investment Services | Global Freedom Capital"
+        description="Global Freedom Capital offers expert Citizenship by Investment and Golden Visa advisory for HNW individuals. Private, trusted, results-driven. Book a free consultation."
+        canonical="https://www.globalfreedomcapital.com/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Global Freedom Capital",
+              url: "https://www.globalfreedomcapital.com",
+              description: "U.S.-based Citizenship by Investment and Golden Visa advisory firm",
+              sameAs: [
+                "https://www.linkedin.com/company/globalfreedomcapital",
+                "https://www.instagram.com/globalfreedomcapital"
+              ]
+            },
+            {
+              "@type": "Person",
+              name: "Tatiana Muntean",
+              jobTitle: "CEO",
+              hasCredential: "IMC Member, former OSCE and UN",
+              worksFor: {
+                "@type": "Organization",
+                name: "Global Freedom Capital"
+              }
+            },
+            {
+              "@type": "Service",
+              name: "Citizenship by Investment Advisory",
+              provider: {
+                "@type": "Organization",
+                name: "Global Freedom Capital"
+              },
+              description: "Expert advisory for citizenship by investment and Golden Visa programs for high-net-worth individuals and families."
+            },
+            {
+              "@type": "Service",
+              name: "Golden Visa Advisory",
+              provider: {
+                "@type": "Organization",
+                name: "Global Freedom Capital"
+              },
+              description: "Strategic Golden Visa and residency-by-investment advisory across Europe, the Caribbean, and beyond."
+            }
+          ]
+        }}
+      />
       <ScrollProgress />
       <Header />
 
@@ -160,18 +209,18 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[1.1]"
               >
-                Citizenship. Residency.
+                Citizenship by Investment.
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-10">
-              <motion.h1
+              <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
+                className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] block"
               >
-                <span className="italic text-primary rounded-none">Optionality.</span>
-              </motion.h1>
+                Residency. <span className="italic text-primary rounded-none">Optionality.</span>
+              </motion.span>
             </div>
 
             <motion.p
