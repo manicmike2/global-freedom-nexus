@@ -148,7 +148,7 @@ const Destinations = () => {
           <div className="space-y-12">
             {[
               { region: "Caribbean", desc: "The Caribbean offers the world's most efficient citizenship by investment programs. With processing times of 3-6 months, no residency requirements, and investment thresholds starting at $100,000, Caribbean CBI programs are ideal for families seeking immediate global mobility. Grenada stands out for its E-2 Treaty access to the U.S.", link: "/citizenship-by-investment" },
-              { region: "Europe", desc: "European Golden Visa programs provide access to the world's most established economies and the Schengen Area. From Greece's affordable entry point at €250,000 to Malta's prestigious EU citizenship pathway, European programs suit families planning long-term relocation or generational positioning within the EU.", link: "/golden-visas" },
+              { region: "Europe", desc: "European Golden Visa programs provide access to the world's most established economies and the Schengen Area. From Greece's affordable entry point at €250,000 to Malta's prestigious EU citizenship pathway, European programs suit families planning long-term relocation or generational positioning within the EU.", link: "/golden-visa" },
               { region: "Global", desc: "Beyond the Caribbean and Europe, select jurisdictions offer compelling residency and citizenship options. Turkey's fast-track citizenship, the UAE's tax-free Golden Visa, and Panama's territorial tax system each serve distinct strategic objectives for globally-minded families.", link: "/contact" },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

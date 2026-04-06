@@ -1,41 +1,41 @@
 /**
  * Centralized destination → route mapping for deep-linking.
- * Used across homepage cards, service pages, and internal links.
  */
 
 export type DestinationRoute = {
   page: string;
-  anchor: string;
+  anchor?: string;
 };
 
 export const destinationRoutes: Record<string, DestinationRoute> = {
-  // Caribbean → CBI page
-  "Grenada":            { page: "/citizenship-by-investment", anchor: "grenada" },
-  "Saint Kitts & Nevis":{ page: "/citizenship-by-investment", anchor: "saint-kitts-nevis" },
-  "Antigua & Barbuda":  { page: "/citizenship-by-investment", anchor: "antigua-barbuda" },
-  "Dominica":           { page: "/citizenship-by-investment", anchor: "dominica" },
-  "Saint Lucia":        { page: "/citizenship-by-investment", anchor: "saint-lucia" },
+  // Caribbean → individual CBI pages
+  "Grenada":            { page: "/citizenship-by-investment/grenada" },
+  "Saint Kitts & Nevis":{ page: "/citizenship-by-investment/saint-kitts-nevis" },
+  "Antigua & Barbuda":  { page: "/citizenship-by-investment/antigua-barbuda" },
+  "Dominica":           { page: "/citizenship-by-investment/dominica" },
+  "Saint Lucia":        { page: "/citizenship-by-investment/saint-lucia" },
 
-  // Europe → Golden Visas page
-  "Portugal":           { page: "/golden-visas", anchor: "portugal" },
-  "Greece":             { page: "/golden-visas", anchor: "greece" },
-  "Latvia":             { page: "/golden-visas", anchor: "latvia" },
-  "Hungary":            { page: "/golden-visas", anchor: "hungary" },
-  "Bulgaria":           { page: "/golden-visas", anchor: "bulgaria" },
+  // Europe → individual Golden Visa pages
+  "Portugal":           { page: "/golden-visa/portugal" },
+  "Greece":             { page: "/golden-visa/greece" },
+  "Latvia":             { page: "/golden-visa/latvia" },
+  "Hungary":            { page: "/golden-visa/hungary" },
+  "Bulgaria":           { page: "/golden-visa/bulgaria" },
 
-  // Global → Golden Visas page (UAE, Panama) or CBI (Turkey)
+  // Global → hub pages with anchors (no individual pages yet)
   "Turkey":             { page: "/citizenship-by-investment", anchor: "turkey" },
-  "UAE":                { page: "/golden-visas", anchor: "uae" },
-  "Panama":             { page: "/golden-visas", anchor: "panama" },
+  "UAE":                { page: "/golden-visa", anchor: "uae" },
+  "Panama":             { page: "/golden-visa", anchor: "panama" },
 };
 
 /**
- * Get the full path with anchor hash for a destination name.
+ * Get the full path for a destination name.
  */
 export function getDestinationPath(name: string): string {
   const route = destinationRoutes[name];
   if (!route) return "/destinations";
-  return `${route.page}#${route.anchor}`;
+  if (route.anchor) return `${route.page}#${route.anchor}`;
+  return route.page;
 }
 
 /**

@@ -15,21 +15,70 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.globalfreedomcapital.com/antigua-barbuda</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Hub Pages -->
   <url>
     <loc>https://www.globalfreedomcapital.com/citizenship-by-investment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Caribbean CBI Destinations -->
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/antigua-barbuda</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.globalfreedomcapital.com/golden-visas</loc>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/saint-kitts-nevis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/grenada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/dominica</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/saint-lucia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- European Golden Visa Destinations -->
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/portugal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/greece</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/latvia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/hungary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/bulgaria</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Other Pages -->
   <url>
     <loc>https://www.globalfreedomcapital.com/real-estate</loc>
     <changefreq>monthly</changefreq>
@@ -47,6 +96,37 @@
   </url>
   <url>
     <loc>https://www.globalfreedomcapital.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Resources -->
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/blog/best-citizenship-by-investment-programs-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/blog/antigua-vs-grenada-cbi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/blog/citizenship-by-investment-us-citizens</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/blog/golden-visa-vs-citizenship-by-investment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/resources/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
