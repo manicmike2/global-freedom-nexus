@@ -50,7 +50,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: "Citizenship by Investment", path: "/citizenship-by-investment" },
-                { label: "Golden Visas & Residency", path: "/golden-visas" },
+                { label: "Golden Visas & Residency", path: "/golden-visa" },
                 { label: "Destinations", path: "/destinations" },
                 { label: "U.S. Market Entry", path: "/citizenship-by-investment" },
               ].map((item) => (

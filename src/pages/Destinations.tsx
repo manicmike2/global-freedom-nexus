@@ -80,7 +80,7 @@ const Destinations = () => {
               Each destination has been selected for its program integrity, strategic value, and lifestyle appeal. 
               Compare{" "}
               <InternalLink to="/citizenship-by-investment">citizenship by investment</InternalLink> and{" "}
-              <InternalLink to="/golden-visas">Golden Visa</InternalLink> options side by side.
+              <InternalLink to="/golden-visa">Golden Visa</InternalLink> options side by side.
             </p>
           </motion.div>
         </div>

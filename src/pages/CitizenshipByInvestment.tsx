@@ -103,7 +103,7 @@ const CitizenshipByInvestment = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <CTAButton to="/contact" variant="primary">Explore Your Options</CTAButton>
-                <CTAButton to="/golden-visas" variant="outline">Compare with Golden Visas</CTAButton>
+                <CTAButton to="/golden-visa" variant="outline">Compare with Golden Visas</CTAButton>
               </div>
             </motion.div>
             <motion.div
@@ -190,7 +190,7 @@ const CitizenshipByInvestment = () => {
               <h3 className="font-serif text-xl text-foreground">Not sure if CBI is right for you?</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 If your primary goal is residency rather than full citizenship, a{" "}
-                <InternalLink to="/golden-visas">Golden Visa program</InternalLink>{" "}
+                <InternalLink to="/golden-visa">Golden Visa program</InternalLink>{" "}
                 may be a better fit. Golden Visas offer residency permits with potential pathways 
                 to citizenship over time, typically at lower investment thresholds.
               </p>

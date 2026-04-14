@@ -51,7 +51,7 @@ const projects = [
       "No minimum stay requirement for visa renewal",
       "Growing real estate market with appreciation potential",
     ],
-    programLink: "/golden-visas#greece",
+    programLink: "/golden-visa#greece",
   },
   {
     country: "Portugal",
@@ -67,7 +67,7 @@ const projects = [
       "Favorable tax regime for new residents",
       "One of Europe's strongest real estate markets",
     ],
-    programLink: "/golden-visas#portugal",
+    programLink: "/golden-visa#portugal",
   },
   {
     country: "UAE",
@@ -83,7 +83,7 @@ const projects = [
       "World-class infrastructure and lifestyle",
       "Strong developer incentives and payment plans",
     ],
-    programLink: "/golden-visas#uae",
+    programLink: "/golden-visa#uae",
   },
   {
     country: "Panama",
@@ -99,7 +99,7 @@ const projects = [
       "Growing expat community and infrastructure",
       "Strategic location between North and South America",
     ],
-    programLink: "/golden-visas#panama",
+    programLink: "/golden-visa#panama",
   },
 ];
 
@@ -144,7 +144,7 @@ const RealEstate = () => {
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-8">
               Whether you're pursuing <InternalLink to="/citizenship-by-investment">citizenship by investment</InternalLink> in 
-              the Caribbean or a <InternalLink to="/golden-visas">Golden Visa</InternalLink> in Europe, 
+              the Caribbean or a <InternalLink to="/golden-visa">Golden Visa</InternalLink> in Europe, 
               we connect you with vetted developments that meet program requirements and your investment criteria.
             </p>
             <div className="flex flex-wrap gap-4">

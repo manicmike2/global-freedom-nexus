@@ -82,7 +82,7 @@ const About = () => {
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Global Freedom Capital is a U.S.-based expert advisory firm specializing in{" "}
               <InternalLink to="/citizenship-by-investment">citizenship by investment</InternalLink>,{" "}
-              <InternalLink to="/golden-visas">Golden Visa programs</InternalLink>, and strategic 
+              <InternalLink to="/golden-visa">Golden Visa programs</InternalLink>, and strategic 
               residency solutions for the world's most discerning families.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed">

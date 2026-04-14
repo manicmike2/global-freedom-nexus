@@ -189,7 +189,7 @@ const ForAttorneys = () => {
                 <li className="flex items-center gap-2"><ChevronRight size={12} className="text-primary" /> UAE & Panama</li>
               </ul>
               <div className="mt-4">
-                <InternalLink to="/golden-visas">Learn more</InternalLink>
+                <InternalLink to="/golden-visa">Learn more</InternalLink>
               </div>
             </div>
           </div>
