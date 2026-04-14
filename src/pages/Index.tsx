@@ -38,7 +38,7 @@ const destinations = [
 
 const services = [
   { icon: Globe, title: "Citizenship by Investment", desc: "Acquire second citizenship through government-approved investment programs across the Caribbean, Europe, and beyond.", link: "/citizenship-by-investment" },
-  { icon: Shield, title: "Golden Visa & Residency", desc: "Secure strategic residency in premier jurisdictions with pathways to permanent residence and eventual citizenship.", link: "/golden-visas" },
+  { icon: Shield, title: "Golden Visa & Residency", desc: "Secure strategic residency in premier jurisdictions with pathways to permanent residence and eventual citizenship.", link: "/golden-visa" },
   { icon: Building, title: "U.S. Market Entry for CBI Firms", desc: "We represent government-approved programs and developers seeking strategic distribution in the American market.", link: "/citizenship-by-investment" },
   { icon: Briefcase, title: "Wealth & Legacy Structuring", desc: "Complement your investment migration with cross-border wealth strategy, family governance, and multi-jurisdictional planning.", link: "/contact" },
 ];

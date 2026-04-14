@@ -103,7 +103,7 @@ const CitizenshipByInvestment = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <CTAButton to="/contact" variant="primary">Explore Your Options</CTAButton>
-                <CTAButton to="/golden-visas" variant="outline">Compare with Golden Visas</CTAButton>
+                <CTAButton to="/golden-visa" variant="outline">Compare with Golden Visas</CTAButton>
               </div>
             </motion.div>
             <motion.div
@@ -190,7 +190,7 @@ const CitizenshipByInvestment = () => {
               <h3 className="font-serif text-xl text-foreground">Not sure if CBI is right for you?</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 If your primary goal is residency rather than full citizenship, a{" "}
-                <InternalLink to="/golden-visas">Golden Visa program</InternalLink>{" "}
+                <InternalLink to="/golden-visa">Golden Visa program</InternalLink>{" "}
                 may be a better fit. Golden Visas offer residency permits with potential pathways 
                 to citizenship over time, typically at lower investment thresholds.
               </p>
@@ -341,7 +341,7 @@ const CitizenshipByInvestment = () => {
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-primary mt-0.5 flex-shrink-0" /> Real estate investment options</li>
               </ul>
               <div className="mt-6">
-                <InternalLink to="/golden-visas">Learn about Golden Visas</InternalLink>
+                <InternalLink to="/golden-visa">Learn about Golden Visas</InternalLink>
               </div>
             </div>
           </div>

@@ -20,12 +20,17 @@ import destGrenada from "@/assets/dest-grenada.jpg";
 import destStkitts from "@/assets/dest-stkitts.jpg";
 import destAntigua from "@/assets/dest-antigua.jpg";
 import destDominica from "@/assets/dest-dominica.jpg";
+import destStlucia from "@/assets/dest-stlucia.jpg";
+import destCaribbean from "@/assets/dest-caribbean.jpg";
 
 const allDestinations = [
   { name: "Grenada", region: "Caribbean", investment: "From $150,000", type: "Citizenship", advantage: "E-2 Treaty access to the U.S.", image: destGrenada, timeline: "4-6 months", visaFree: "145+", description: "The only Caribbean CBI program with E-2 Treaty investor visa access to the United States, making it uniquely valuable for investors seeking both a second passport and a pathway to live and work in America." },
   { name: "Saint Kitts & Nevis", region: "Caribbean", investment: "From $250,000", type: "Citizenship", advantage: "Oldest CBI program worldwide", image: destStkitts, timeline: "3-6 months", visaFree: "157+", description: "The world's first and most established citizenship by investment program, operating since 1984. Trusted by families worldwide for its proven track record and robust due diligence standards." },
   { name: "Antigua & Barbuda", region: "Caribbean", investment: "From $230,000", type: "Citizenship", advantage: "Family-friendly pricing structure", image: destAntigua, timeline: "3-6 months", visaFree: "151+", description: "A family-oriented CBI program with competitive rates for larger families and a minimal 5-day physical presence requirement over 5 years." },
   { name: "Dominica", region: "Caribbean", investment: "From $100,000", type: "Citizenship", advantage: "Most cost-effective CBI globally", image: destDominica, timeline: "3-4 months", visaFree: "145+", description: "Consistently ranked as the world's best citizenship by investment program by the CBI Index. Offers the lowest investment threshold among all CBI programs globally." },
+  { name: "Saint Lucia", region: "Caribbean", investment: "From $240,000", type: "Citizenship", advantage: "Flexible investment routes", image: destStlucia, timeline: "~3 months", visaFree: "140+", description: "One of the most efficient and flexible CBI programs globally, offering donation, real estate, and enterprise investment options with no residency requirement." },
+  { name: "São Tomé & Príncipe", region: "Global", investment: "From $90,000", type: "Citizenship", advantage: "Most affordable CBI globally", image: destCaribbean, timeline: "2-3 months", visaFree: "ECOWAS+", description: "A newly launched and highly strategic citizenship program. One of the most affordable CBI programs globally with fast-track processing and ECOWAS regional mobility." },
+  { name: "Sierra Leone", region: "Global", investment: "From $140,000", type: "Citizenship", advantage: "'Go For Gold' cost optimization", image: destCaribbean, timeline: "2-4 months", visaFree: "Emerging", description: "The 'Go For Gold' program offers speed, affordability, and strategic access to Africa. Two families can apply together to optimize overall cost." },
   { name: "Portugal", region: "Europe", investment: "From €500,000", type: "Residency", advantage: "EU residency with citizenship pathway", image: destPortugal, timeline: "6-12 months", visaFree: "188+ (with citizenship)", description: "One of Europe's most popular Golden Visa programs, offering a clear pathway to EU citizenship within 5 years. Portugal's high quality of life and favorable tax regime make it a top destination." },
   { name: "Greece", region: "Europe", investment: "From €250,000", type: "Residency", advantage: "Affordable EU Golden Visa", image: destGreece, timeline: "3-6 months", visaFree: "186+ (with citizenship)", description: "Europe's most affordable Golden Visa program, offering access to the Schengen Area and a pathway to Greek (EU) citizenship after 7 years of residency." },
   { name: "Malta", region: "Europe", investment: "From €690,000", type: "Citizenship", advantage: "Full EU citizenship by naturalization", image: destMalta, timeline: "12-36 months", visaFree: "185+", description: "The gold standard for EU citizenship by investment. Malta's Exceptional Investor Naturalization program provides full EU citizenship and one of the world's most powerful passports." },
@@ -80,7 +85,7 @@ const Destinations = () => {
               Each destination has been selected for its program integrity, strategic value, and lifestyle appeal. 
               Compare{" "}
               <InternalLink to="/citizenship-by-investment">citizenship by investment</InternalLink> and{" "}
-              <InternalLink to="/golden-visas">Golden Visa</InternalLink> options side by side.
+              <InternalLink to="/golden-visa">Golden Visa</InternalLink> options side by side.
             </p>
           </motion.div>
         </div>

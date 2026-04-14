@@ -24,6 +24,8 @@ import SaintKittsNevis from "./pages/destinations/SaintKittsNevis.tsx";
 import Grenada from "./pages/destinations/Grenada.tsx";
 import Dominica from "./pages/destinations/Dominica.tsx";
 import SaintLucia from "./pages/destinations/SaintLucia.tsx";
+import SaoTomePrincipe from "./pages/destinations/SaoTomePrincipe.tsx";
+import SierraLeone from "./pages/destinations/SierraLeone.tsx";
 // Golden Visa destination pages
 import Portugal from "./pages/destinations/Portugal.tsx";
 import Greece from "./pages/destinations/Greece.tsx";
@@ -69,8 +71,12 @@ const App = () => (
           <Route path="/citizenship-by-investment/grenada" element={<Grenada />} />
           <Route path="/citizenship-by-investment/dominica" element={<Dominica />} />
           <Route path="/citizenship-by-investment/saint-lucia" element={<SaintLucia />} />
-          {/* Old Antigua URL redirect */}
+          <Route path="/citizenship-by-investment/sao-tome-and-principe" element={<SaoTomePrincipe />} />
+          <Route path="/citizenship-by-investment/sierra-leone" element={<SierraLeone />} />
+          {/* Old/alternate URL redirects */}
           <Route path="/antigua-barbuda" element={<Navigate to="/citizenship-by-investment/antigua-barbuda" replace />} />
+          <Route path="/citizenship-by-investment/antigua-and-barbuda" element={<Navigate to="/citizenship-by-investment/antigua-barbuda" replace />} />
+          <Route path="/citizenship-by-investment/st-kitts-and-nevis" element={<Navigate to="/citizenship-by-investment/saint-kitts-nevis" replace />} />
           {/* Golden Visa destination pages */}
           <Route path="/golden-visa/portugal" element={<Portugal />} />
           <Route path="/golden-visa/greece" element={<Greece />} />

@@ -145,7 +145,7 @@ const Contact = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <InternalLink to="/citizenship-by-investment">Citizenship by Investment</InternalLink>
-                  <InternalLink to="/golden-visas">Golden Visas</InternalLink>
+                  <InternalLink to="/golden-visa">Golden Visas</InternalLink>
                   <InternalLink to="/destinations">All Destinations</InternalLink>
                 </div>
               </div>

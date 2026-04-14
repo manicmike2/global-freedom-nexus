@@ -52,6 +52,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/sao-tome-and-principe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/sierra-leone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- European Golden Visa Destinations -->
   <url>
     <loc>https://www.globalfreedomcapital.com/golden-visa/portugal</loc>
