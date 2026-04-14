@@ -7,7 +7,7 @@ const data = {
   type: "cbi" as const,
   tagline: '"Go For Gold" Citizenship Program',
   label: "African Citizenship",
-  heroDescription: "A fast-growing program designed for investors seeking speed, affordability, and strategic access to Africa. The "Go For Gold" structure allows cost optimization — especially for families and partners applying together. 💡 Two families or partners can apply together to optimize overall cost per family. Global Freedom Capital provides on-the-ground support and strategic advisory for the Sierra Leone "Go For Gold" Program, ensuring a seamless, compliant, and efficient application process for international clients.",
+  heroDescription: "A fast-growing program designed for investors seeking speed, affordability, and strategic access to Africa. The 'Go For Gold' structure allows cost optimization — especially for families and partners applying together. 💡 Two families or partners can apply together to optimize overall cost per family. Global Freedom Capital provides on-the-ground support and strategic advisory for the Sierra Leone 'Go For Gold' Program, ensuring a seamless, compliant, and efficient application process for international clients.",
   heroSubDescription: "Explore all CBI programs:",
   image: destCaribbean,
   imageAlt: "Sierra Leone Go For Gold citizenship program destination",
