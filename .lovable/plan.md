@@ -1,66 +1,32 @@
 
 
-## Link Fixes, URL Canonicalization, Blog Fixes & 3 New Program Pages
+## Replace All Blog Placeholder Text with Real SEO-Optimized Content
 
-### Part 1 — Fix All Broken `/golden-visas` Links
+All 4 blog articles contain `[UPDATE: ...]` placeholder paragraphs instead of actual content. Each will be rewritten with real, SEO-optimized body copy that matches the luxury advisory tone of the site.
 
-The old `/golden-visas` URL is used in 10 files. While there is a redirect route (`/golden-visas` → `/golden-visa`), all internal links should point directly to `/golden-visa` for SEO and performance.
+### Files to update
 
-**Files to update** (replace `/golden-visas` with `/golden-visa`):
-- `src/pages/Index.tsx` — line 41
-- `src/pages/Destinations.tsx` — line 83
-- `src/pages/About.tsx` — line 85
-- `src/pages/Contact.tsx` — line 148
-- `src/pages/RealEstate.tsx` — lines 54, 70, 86, 102, 147
-- `src/pages/ForAttorneys.tsx` — line 192
-- `src/pages/CitizenshipByInvestment.tsx` — lines 106, 193
-- `src/components/Footer.tsx` — line 53
+**1. `src/pages/resources/BestCBI2026.tsx`** — 8 placeholder sections
+Replace all `[UPDATE...]` paragraphs with 150-200 word blocks covering: CBI intro for 2026, strategic value, and detailed writeups for Antigua, St Kitts, Grenada, Dominica, Saint Lucia, plus a decision-making guide. Target keywords: "best citizenship by investment 2026", "CBI programs", "second passport".
 
-### Part 2 — URL Standardization
+**2. `src/pages/resources/GoldenVisaVsCBI.tsx`** — 3 placeholder sections
+Replace placeholders in Introduction, What Is a Golden Visa, What Is CBI, and Which Is Right for You. The comparison table is already complete and stays as-is. Target keywords: "golden visa vs citizenship by investment", "residency by investment", "investment migration".
 
-Current URLs already follow the `/citizenship-by-investment/[slug]` pattern correctly. The user's prompt references some slug variants (e.g. `antigua-and-barbuda`, `st-kitts-and-nevis`) that differ from the existing slugs. I will keep the existing slugs (`antigua-barbuda`, `saint-kitts-nevis`) since they are already indexed and add redirects from the alternate slugs mentioned.
+**3. `src/pages/resources/CBIForUSCitizens.tsx`** — 5 placeholder sections
+Replace all placeholders covering: why Americans seek CBI, dual citizenship legality, U.S. tax implications (FBAR/FATCA), best programs for Americans (Grenada E-2, St Kitts, Dominica), and the application process. Target keywords: "citizenship by investment US citizens", "dual citizenship USA", "second passport for Americans".
 
-**New redirect routes in `App.tsx`:**
-- `/citizenship-by-investment/antigua-and-barbuda` → `/citizenship-by-investment/antigua-barbuda`
-- `/citizenship-by-investment/st-kitts-and-nevis` → `/citizenship-by-investment/saint-kitts-nevis`
+**4. `src/pages/resources/AntiguaVsGrenada.tsx`** — 6 placeholder sections
+Replace placeholders for: intro comparison, investment requirements, processing time, visa-free travel, family inclusion, residency requirements, and conclusion. The comparison table stays as-is. Target keywords: "Antigua vs Grenada CBI", "Caribbean citizenship comparison".
 
-### Part 3 — Blog Links Audit
+### Approach
 
-Blog links are already correct — the `BlogIndex` cards use `/resources/blog/${slug}` and all 4 article routes exist. No fixes needed.
+- Write in the firm's authoritative, advisory tone (luxury HNW audience)
+- Naturally incorporate target keywords without stuffing
+- Include specific data points (investment amounts, timelines, visa-free counts)
+- Keep all existing JSX structure, InternalLink components, and tables intact
+- No design or layout changes
 
-### Part 4 — Three New Program Pages
+### Scope
 
-Create 3 new destination pages using the existing `DestinationPageTemplate` component:
-
-**Page 1: `/citizenship-by-investment/saint-lucia`**
-Already exists but needs content update with the user's provided copy (stats, investment options, benefits). Will replace the placeholder content.
-
-**Page 2: `/citizenship-by-investment/sao-tome-and-principe`**
-- New file: `src/pages/destinations/SaoTomePrincipe.tsx`
-- Uses `DestinationPageTemplate` with the provided content
-- Includes a "Licensed Agent" callout in the hero description
-- Uses `dest-caribbean.jpg` as placeholder image
-
-**Page 3: `/citizenship-by-investment/sierra-leone`**
-- New file: `src/pages/destinations/SierraLeone.tsx`
-- Uses `DestinationPageTemplate` with "Go For Gold" program content
-- Includes advisory note callout in hero description
-- Uses `dest-caribbean.jpg` as placeholder image
-
-**Supporting changes:**
-- `src/App.tsx` — add 2 new routes + 2 alternate-slug redirects
-- `src/lib/destinations.ts` — add São Tomé and Sierra Leone entries
-- `src/pages/CBIHub.tsx` — add both new programs to the program grid
-- `src/pages/Destinations.tsx` — add both to `allDestinations` array
-- `public/sitemap.xml` — add 2 new URLs
-- Update Saint Lucia page content with user's detailed copy
-
-### Technical Details
-
-- All `/golden-visas` references (10 files) → `/golden-visa`
-- 2 new page components using existing `DestinationPageTemplate`
-- 1 existing page (Saint Lucia) updated with real content
-- 2 new routes + 2 redirect routes in `App.tsx`
-- Sitemap updated with new URLs
-- No design, layout, or backend changes
+4 files modified. No new files. No structural changes.
 
