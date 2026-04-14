@@ -341,7 +341,7 @@ const CitizenshipByInvestment = () => {
                 <li className="flex items-start gap-2"><CheckCircle size={14} className="text-primary mt-0.5 flex-shrink-0" /> Real estate investment options</li>
               </ul>
               <div className="mt-6">
-                <InternalLink to="/golden-visas">Learn about Golden Visas</InternalLink>
+                <InternalLink to="/golden-visa">Learn about Golden Visas</InternalLink>
               </div>
             </div>
           </div>

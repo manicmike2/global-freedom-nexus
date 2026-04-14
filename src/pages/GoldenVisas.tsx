@@ -135,7 +135,7 @@ const GoldenVisas = () => {
       <PageSEO
         title="Golden Visa Programs 2026 – Residency by Investment Guide"
         description="Compare Golden Visa programs in Portugal, Greece, Latvia, Hungary, Bulgaria, UAE & Panama. Expert advisory on residency by investment for HNWIs seeking EU residency, tax optimization & global mobility."
-        canonical="https://globalfreedomcapital.com/golden-visas"
+        canonical="https://globalfreedomcapital.com/golden-visa"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
