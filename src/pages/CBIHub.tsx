@@ -12,13 +12,16 @@ import destStkitts from "@/assets/dest-stkitts.jpg";
 import destAntigua from "@/assets/dest-antigua.jpg";
 import destDominica from "@/assets/dest-dominica.jpg";
 import destStlucia from "@/assets/dest-stlucia.jpg";
+import destCaribbean from "@/assets/dest-caribbean.jpg";
 
 const programs = [
   { country: "Grenada", path: "/citizenship-by-investment/grenada", image: destGrenada, investment: "From $235,000", timeline: "4–6 months", visaFree: "145+", highlight: "Only Caribbean CBI with E-2 Treaty access to the U.S." },
   { country: "Saint Kitts & Nevis", path: "/citizenship-by-investment/saint-kitts-nevis", image: destStkitts, investment: "From $250,000", timeline: "3–6 months", visaFree: "157+", highlight: "World's oldest CBI program, operating since 1984." },
   { country: "Antigua & Barbuda", path: "/citizenship-by-investment/antigua-barbuda", image: destAntigua, investment: "From $230,000", timeline: "3–6 months", visaFree: "151+", highlight: "Family-friendly pricing with minimal 5-day residency requirement." },
   { country: "Dominica", path: "/citizenship-by-investment/dominica", image: destDominica, investment: "From $200,000", timeline: "3–4 months", visaFree: "145+", highlight: "Most cost-effective CBI globally. Top-ranked by CBI Index." },
-  { country: "Saint Lucia", path: "/citizenship-by-investment/saint-lucia", image: destStlucia, investment: "From $240,000", timeline: "3–5 months", visaFree: "146+", highlight: "Flexible investment routes including bonds and enterprise projects." },
+  { country: "Saint Lucia", path: "/citizenship-by-investment/saint-lucia", image: destStlucia, investment: "From $240,000", timeline: "~3 months", visaFree: "140+", highlight: "Flexible investment routes including donation, real estate, and enterprise." },
+  { country: "São Tomé & Príncipe", path: "/citizenship-by-investment/sao-tome-and-principe", image: destCaribbean, investment: "From $90,000", timeline: "2–3 months", visaFree: "ECOWAS+", highlight: "One of the most affordable CBI programs globally. Licensed agent access." },
+  { country: "Sierra Leone", path: "/citizenship-by-investment/sierra-leone", image: destCaribbean, investment: "From $140,000", timeline: "2–4 months", visaFree: "Emerging", highlight: "'Go For Gold' program with cost optimization for families." },
 ];
 
 const faqItems = [
