@@ -14,6 +14,8 @@ export const destinationRoutes: Record<string, DestinationRoute> = {
   "Antigua & Barbuda":  { page: "/citizenship-by-investment/antigua-barbuda" },
   "Dominica":           { page: "/citizenship-by-investment/dominica" },
   "Saint Lucia":        { page: "/citizenship-by-investment/saint-lucia" },
+  "São Tomé & Príncipe":{ page: "/citizenship-by-investment/sao-tome-and-principe" },
+  "Sierra Leone":       { page: "/citizenship-by-investment/sierra-leone" },
 
   // Europe → individual Golden Visa pages
   "Portugal":           { page: "/golden-visa/portugal" },
