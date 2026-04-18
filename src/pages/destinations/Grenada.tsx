@@ -36,7 +36,7 @@ const data = {
     "Legitimate source of funds documentation required",
     "Good health — basic medical examination required",
     "No residency requirement before or after citizenship",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Grenada CBI program?", answer: "The Grenada Citizenship by Investment Program allows qualified individuals and their families to obtain full Grenadian citizenship through a government-approved economic contribution. Grenada is uniquely positioned as the only Caribbean CBI with E-2 Treaty access to the United States." },

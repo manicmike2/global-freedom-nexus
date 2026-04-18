@@ -23,7 +23,7 @@ const data = {
   investmentOptions: [
     { title: "Sustainable Island State Contribution (SISC)", amount: "From $250,000", desc: "A non-refundable contribution to the Sustainable Island State Contribution fund. The most direct route to citizenship." },
     { title: "Real Estate Investment", amount: "From $325,000", desc: "Purchase government-approved real estate with a minimum holding period. Properties can generate rental income during the holding period." },
-    { title: "Private Home Sale Option", amount: "From $400,000", desc: "[UPDATE: add program details here] An alternative real estate route with different holding requirements." },
+    { title: "Private Home Sale Option", amount: "From $400,000", desc: "Purchase a privately-owned approved residence (a single-family home rather than a development share), held for a minimum of 7 years. Suited to investors seeking direct ownership of a Caribbean residence." },
   ],
   timeline: [
     { step: "01", title: "Initial Consultation", desc: "Confidential assessment of your eligibility, family structure, and objectives." },
@@ -37,7 +37,7 @@ const data = {
     "Legitimate source of funds documentation required",
     "Good health — basic medical examination required",
     "No residency requirement before or after citizenship",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Saint Kitts & Nevis CBI program?", answer: "The Saint Kitts & Nevis Citizenship by Investment Program is the world's oldest CBI program, established in 1984. It allows qualified individuals and their families to obtain full citizenship through an approved economic contribution — either a donation to the SISC fund or a qualifying real estate investment." },
