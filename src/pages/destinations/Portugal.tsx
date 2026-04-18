@@ -21,9 +21,10 @@ const data = {
     { icon: Clock, title: "6–12 Month Processing", desc: "Initial Golden Visa approval typically within 6 to 12 months. Citizenship eligibility after 5 years." },
   ],
   investmentOptions: [
-    { title: "Investment Fund Subscription", amount: "From €500,000", desc: "Subscription of units in qualifying Portuguese investment funds. The primary route following real estate pathway changes. [UPDATE: add program details here]" },
-    { title: "Capital Transfer", amount: "From €500,000", desc: "Capital transfer for investment in research activities or approved ventures. [UPDATE: add program details here]" },
-    { title: "Company Formation", amount: "From €500,000", desc: "Creation of a commercial company in Portugal with job creation requirements. [UPDATE: add program details here]" },
+    { title: "Investment Fund Subscription", amount: "From €500,000", desc: "Subscription of units in qualifying Portuguese venture capital or private equity funds regulated by the CMVM. Funds must have at least 60% of investments in Portuguese companies. The primary route following the 2023 real estate reforms." },
+    { title: "Research & Development", amount: "From €500,000", desc: "Capital transfer to support research activities conducted by accredited Portuguese public or private research institutions." },
+    { title: "Company Formation & Job Creation", amount: "From €500,000", desc: "Incorporate or capitalise a Portuguese commercial company with the creation of at least 5 permanent jobs, or invest €500,000 in an existing Portuguese company creating or maintaining 5 jobs for 3 years." },
+    { title: "Cultural Heritage Donation", amount: "From €250,000", desc: "Donation supporting artistic production or the recovery of national cultural heritage through approved public or private entities — the lowest entry point currently available." },
   ],
   timeline: [
     { step: "01", title: "Initial Consultation", desc: "Confidential assessment of your eligibility, family structure, and long-term EU objectives." },
@@ -38,11 +39,11 @@ const data = {
     "Clean criminal record",
     "Qualifying investment completed before application",
     "Minimum 7-day stay in Portugal per year (14 days in subsequent 2-year periods)",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Portugal Golden Visa?", answer: "The Portugal Golden Visa is a residency-by-investment program that grants non-EU nationals a residence permit in Portugal through a qualifying investment. It provides access to the Schengen Area and a pathway to Portuguese (EU) citizenship after 5 years." },
-    { question: "How much does the Portugal Golden Visa cost?", answer: "The minimum investment is €500,000 for qualifying investment funds or capital transfers. Note that the real estate route was discontinued in 2023. Government fees and legal costs apply. [UPDATE: add current details]" },
+    { question: "How much does the Portugal Golden Visa cost?", answer: "The standard minimum is €500,000 via qualifying investment funds, R&D contributions, or company formation with job creation. A €250,000 entry point is available through cultural heritage donations. The real estate route was discontinued in October 2023. Government and legal fees apply." },
     { question: "Can I get EU citizenship through Portugal's Golden Visa?", answer: "Yes. After 5 years of legal residency under the Golden Visa program, you can apply for Portuguese citizenship, which grants full EU citizenship and one of the world's most powerful passports." },
     { question: "Do I need to live in Portugal?", answer: "The Golden Visa has minimal stay requirements — just 7 days in the first year and 14 days in each subsequent 2-year period. You do not need to relocate full-time." },
   ],

@@ -37,7 +37,7 @@ const data = {
     "Legitimate source of funds documentation required",
     "Good health — basic medical examination required",
     "5 days of physical presence required within the first 5 years",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Antigua & Barbuda Citizenship by Investment program?", answer: "The Antigua & Barbuda Citizenship by Investment Program (CIP) is a government-authorized program established in 2013 that allows qualified individuals and their families to obtain full citizenship through an approved economic contribution. Applicants can choose from a donation to the National Development Fund, a qualifying real estate purchase, or an approved business investment." },

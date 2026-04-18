@@ -21,8 +21,8 @@ const data = {
     { icon: Clock, title: "3–6 Month Processing", desc: "One of the fastest Golden Visa processing times in Europe." },
   ],
   investmentOptions: [
-    { title: "Real Estate Investment", amount: "From €250,000", desc: "Purchase real estate in eligible areas of Greece. Some premium locations (Athens center, islands) require €500,000 minimum. [UPDATE: add program details here]" },
-    { title: "Capital Investment", amount: "From €400,000", desc: "Investment in Greek government bonds, shares, or bank deposits. [UPDATE: add program details here]" },
+    { title: "Real Estate Investment", amount: "From €250,000", desc: "Purchase real estate in eligible areas of Greece. Athens, Thessaloniki, Mykonos, Santorini, and other high-demand zones now require €800,000, while most other regions require €400,000. The €250,000 threshold remains for commercial-to-residential conversions and listed heritage properties." },
+    { title: "Capital Investment", amount: "From €400,000", desc: "Investment in Greek government bonds, corporate bonds, shares of Greek-listed companies, or term deposits in a Greek credit institution held for the duration of the permit." },
   ],
   timeline: [
     { step: "01", title: "Initial Consultation", desc: "Confidential assessment of your eligibility and EU residency objectives." },
@@ -37,7 +37,7 @@ const data = {
     "Clean criminal record",
     "Valid health insurance covering Greece",
     "Qualifying real estate or capital investment completed",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Greece Golden Visa?", answer: "The Greece Golden Visa is a residency-by-investment program granting non-EU nationals a 5-year renewable residence permit through qualifying real estate or capital investment. It provides Schengen Area access and a pathway to EU citizenship after 7 years." },

@@ -22,7 +22,7 @@ const data = {
   ],
   investmentOptions: [
     { title: "Economic Diversification Fund (Donation)", amount: "From $200,000", desc: "A non-refundable contribution to the Economic Diversification Fund. The most cost-effective CBI route globally." },
-    { title: "Real Estate Investment", amount: "From $200,000", desc: "Purchase government-approved real estate with a minimum holding period of 3 years. [UPDATE: add program details here]" },
+    { title: "Real Estate Investment", amount: "From $200,000", desc: "Purchase a share in a government-approved real estate development with a minimum holding period of 3 years (5 years if resold to another CBI applicant). Approved projects include luxury resorts and hospitality assets that may generate rental yield." },
   ],
   timeline: [
     { step: "01", title: "Initial Consultation", desc: "Confidential assessment of your eligibility, family structure, and objectives." },
@@ -36,7 +36,7 @@ const data = {
     "Legitimate source of funds documentation required",
     "Good health — basic medical examination required",
     "No residency requirement before or after citizenship",
-    "[UPDATE: add additional eligibility requirements here]",
+    "Documented legal source of investment funds",
   ],
   faqItems: [
     { question: "What is the Dominica CBI program?", answer: "The Dominica Citizenship by Investment Program allows qualified individuals to obtain full Dominican citizenship through a government-approved economic contribution. It is widely regarded as the most cost-effective and best-managed CBI program in the world." },

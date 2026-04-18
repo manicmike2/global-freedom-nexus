@@ -12,9 +12,9 @@ import destGreece from "@/assets/dest-greece.jpg";
 const programs = [
   { country: "Portugal", path: "/golden-visa/portugal", image: destPortugal, investment: "From €500,000", timeline: "6–12 months", visaFree: "188+ (with citizenship)", highlight: "EU citizenship pathway in 5 years. One of Europe's most popular programs." },
   { country: "Greece", path: "/golden-visa/greece", image: destGreece, investment: "From €250,000", timeline: "3–6 months", visaFree: "186+ (with citizenship)", highlight: "Europe's most affordable Golden Visa. EU citizenship after 7 years." },
-  { country: "Latvia", path: "/golden-visa/latvia", image: destPortugal, investment: "[UPDATE]", timeline: "[UPDATE]", visaFree: "Schengen access", highlight: "Strategic gateway to the Baltic region and Northern Europe." },
-  { country: "Hungary", path: "/golden-visa/hungary", image: destPortugal, investment: "[UPDATE]", timeline: "[UPDATE]", visaFree: "Schengen access", highlight: "Guest Investor Program — Central European entry point." },
-  { country: "Bulgaria", path: "/golden-visa/bulgaria", image: destPortugal, investment: "[UPDATE]", timeline: "[UPDATE]", visaFree: "EU & Schengen access", highlight: "Competitive thresholds with emerging EU market potential." },
+  { country: "Latvia", path: "/golden-visa/latvia", image: destPortugal, investment: "From €60,000", timeline: "2–3 months", visaFree: "Schengen access", highlight: "Strategic gateway to the Baltic region and Northern Europe." },
+  { country: "Hungary", path: "/golden-visa/hungary", image: destPortugal, investment: "From €250,000", timeline: "3–4 months", visaFree: "Schengen access", highlight: "Guest Investor Program — Central European entry point." },
+  { country: "Bulgaria", path: "/golden-visa/bulgaria", image: destPortugal, investment: "From €512,000", timeline: "6–9 months", visaFree: "EU & Schengen access", highlight: "Competitive thresholds with emerging EU market potential." },
 ];
 
 const faqItems = [
