@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all CBI programs:",
   image: destCaribbean,
   imageAlt: "Sierra Leone Go For Gold citizenship program destination",
-  seoTitle: "Sierra Leone Citizenship – Go For Gold Program | Global Freedom Capital",
+  seoTitle: "Sierra Leone Citizenship by Investment | GFC",
   seoDescription: "Sierra Leone Go For Gold citizenship program from $140,000. Fast processing, family-friendly structuring. Expert advisory from Global Freedom Capital.",
   canonicalPath: "/citizenship-by-investment/sierra-leone",
   highlights: [

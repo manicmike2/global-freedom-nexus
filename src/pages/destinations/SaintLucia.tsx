@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destStlucia,
   imageAlt: "Saint Lucia citizenship by investment destination",
-  seoTitle: "Saint Lucia Citizenship by Investment | Second Passport | Global Freedom Capital",
+  seoTitle: "Saint Lucia CBI | Flexible Second Passport | GFC",
   seoDescription: "Saint Lucia citizenship by investment with flexible options from $240,000. 140+ visa-free countries. No residency requirement. Expert advisory from Global Freedom Capital.",
   canonicalPath: "/citizenship-by-investment/saint-lucia",
   highlights: [

@@ -116,7 +116,7 @@ const RealEstate = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Real Estate Investment Opportunities – CBI & Golden Visa Properties"
+        title="CBI & Golden Visa Real Estate | GFC"
         description="Explore government-approved real estate investments qualifying for citizenship and Golden Visa programs in Grenada, Greece, Portugal, UAE & Panama."
         canonical="https://www.globalfreedomcapital.com/real-estate"
         jsonLd={{

@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destDominica,
   imageAlt: "Dominica citizenship by investment destination",
-  seoTitle: "Dominica Citizenship by Investment | Second Passport | Global Freedom Capital",
+  seoTitle: "Dominica CBI from $200K | Second Passport | GFC",
   seoDescription: "Dominica citizenship by investment from $200,000 — the world's most affordable CBI. 145+ visa-free countries. Expert advisory. Free consultation available.",
   canonicalPath: "/citizenship-by-investment/dominica",
   highlights: [

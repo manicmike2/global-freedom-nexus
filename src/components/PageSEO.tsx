@@ -21,9 +21,10 @@ const PageSEO = ({
   noindex = false,
   image = DEFAULT_OG_IMAGE,
 }: PageSEOProps) => {
-  const fullTitle = title.includes("Global Freedom Capital")
-    ? title
-    : `${title} | Global Freedom Capital`;
+  const fullTitle =
+    title.includes("Global Freedom Capital") || title.endsWith("| GFC")
+      ? title
+      : `${title} | Global Freedom Capital`;
 
   return (
     <Helmet>

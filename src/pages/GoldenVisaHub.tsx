@@ -27,7 +27,7 @@ const faqItems = [
 const GoldenVisaHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="Golden Visa Programs | European Residency by Investment | Global Freedom Capital"
+      title="Golden Visa & EU Residency Programs | GFC"
       description="Compare European Golden Visa programs — Portugal, Greece, Latvia, Hungary, Bulgaria. EU residency and citizenship pathways. Expert advisory. Free consultation."
       canonical="https://www.globalfreedomcapital.com/golden-visa"
       jsonLd={{

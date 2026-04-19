@@ -46,7 +46,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Global Mobility Advisory & Citizenship Experts | Tatiana Muntean | Global Freedom Capital"
+        title="About Tatiana Muntean | CBI Advisor | GFC"
         description="Meet Tatiana Muntean — IMC member, UN and OSCE veteran, and trusted global mobility advisor to high-net-worth families worldwide. Learn about our advisory approach."
         canonical="https://www.globalfreedomcapital.com/about"
         jsonLd={{

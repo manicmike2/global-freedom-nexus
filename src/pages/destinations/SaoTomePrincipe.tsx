@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all CBI programs:",
   image: destCaribbean,
   imageAlt: "São Tomé and Príncipe citizenship by investment destination",
-  seoTitle: "São Tomé & Príncipe Citizenship by Investment | Global Freedom Capital",
+  seoTitle: "São Tomé CBI from $90K | Second Passport | GFC",
   seoDescription: "São Tomé & Príncipe CBI from $90,000. One of the most affordable citizenship programs globally. Licensed agent advisory from Global Freedom Capital.",
   canonicalPath: "/citizenship-by-investment/sao-tome-and-principe",
   highlights: [

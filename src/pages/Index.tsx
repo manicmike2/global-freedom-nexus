@@ -124,7 +124,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <PageSEO
-        title="Citizenship by Investment Services | Global Freedom Capital"
+        title="Citizenship by Investment Advisory | GFC"
         description="Global Freedom Capital offers expert Citizenship by Investment and Golden Visa advisory for HNW individuals. Private, trusted, results-driven. Book a free consultation."
         canonical="https://www.globalfreedomcapital.com/"
         jsonLd={{

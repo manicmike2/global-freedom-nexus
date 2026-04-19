@@ -13,7 +13,7 @@ const Insights = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Investment Migration Insights – CBI & Golden Visa Analysis"
+        title="Investment Migration Insights | GFC"
         description="Strategic insights on citizenship by investment, Golden Visas, global mobility & cross-border wealth planning. Expert analysis for HNWIs, families & advisors."
         canonical="https://www.globalfreedomcapital.com/insights"
       />

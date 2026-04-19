@@ -12,7 +12,7 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <PageSEO
-        title="Page Not Found"
+        title="Page Not Found | GFC"
         description="The page you are looking for does not exist."
         noindex
       />

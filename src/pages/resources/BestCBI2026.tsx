@@ -4,7 +4,7 @@ import InternalLink from "@/components/InternalLink";
 const BestCBI2026 = () => (
   <BlogArticleLayout
     title="Best Citizenship by Investment Programs in 2026"
-    seoTitle="Best Citizenship by Investment Programs in 2026 | Global Freedom Capital"
+    seoTitle="Best Citizenship by Investment 2026 | GFC"
     seoDescription="Compare the best citizenship by investment programs in 2026 — Antigua, St Kitts, Grenada, Dominica, Saint Lucia. Expert analysis for HNW families."
     canonicalPath="/resources/blog/best-citizenship-by-investment-programs-2026"
     date="2026-04-01"

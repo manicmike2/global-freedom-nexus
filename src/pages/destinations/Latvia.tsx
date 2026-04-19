@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Latvia Golden Visa residency by investment destination",
-  seoTitle: "Latvia Golden Visa | Residency by Investment | Global Freedom Capital",
+  seoTitle: "Latvia Golden Visa | EU Residency | GFC",
   seoDescription: "Latvia Golden Visa — EU residency through real estate or business investment. Schengen access. Expert advisory from Global Freedom Capital. Free consultation.",
   canonicalPath: "/golden-visa/latvia",
   highlights: [
