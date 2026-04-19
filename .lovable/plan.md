@@ -1,32 +1,51 @@
 
 
-## Replace All Blog Placeholder Text with Real SEO-Optimized Content
+## Fix Google Search Console Indexing Issues
 
-All 4 blog articles contain `[UPDATE: ...]` placeholder paragraphs instead of actual content. Each will be rewritten with real, SEO-optimized body copy that matches the luxury advisory tone of the site.
+### Root cause
+Google reports 404 / "not indexed" issues primarily because **canonical URLs are inconsistent across the site**. The sitemap and ~5 pages use `https://www.globalfreedomcapital.com/...`, while **8 pages declare canonicals with the bare (non-www) domain** `https://globalfreedomcapital.com/...`. When the canonical points to a domain variant Google isn't actively serving (or that 301-redirects elsewhere), Google flags the page as "Alternate page with proper canonical tag" or "Duplicate, Google chose different canonical" — the page disappears from the index.
 
-### Files to update
+There are also two **orphan duplicate pages** (`CitizenshipByInvestment.tsx`, `GoldenVisas.tsx`) that aren't even routed in `App.tsx` but declare canonical URLs that conflict with the live hub pages — confusing if they were ever indexed.
 
-**1. `src/pages/resources/BestCBI2026.tsx`** — 8 placeholder sections
-Replace all `[UPDATE...]` paragraphs with 150-200 word blocks covering: CBI intro for 2026, strategic value, and detailed writeups for Antigua, St Kitts, Grenada, Dominica, Saint Lucia, plus a decision-making guide. Target keywords: "best citizenship by investment 2026", "CBI programs", "second passport".
+### Changes
 
-**2. `src/pages/resources/GoldenVisaVsCBI.tsx`** — 3 placeholder sections
-Replace placeholders in Introduction, What Is a Golden Visa, What Is CBI, and Which Is Right for You. The comparison table is already complete and stays as-is. Target keywords: "golden visa vs citizenship by investment", "residency by investment", "investment migration".
+**1. Standardize all canonicals to `https://www.globalfreedomcapital.com` (matches the sitemap)**
+Update the `canonical` prop in 8 files:
+- `src/pages/Contact.tsx`
+- `src/pages/Insights.tsx`
+- `src/pages/RealEstate.tsx`
+- `src/pages/ForAttorneys.tsx`
+- `src/pages/Article.tsx`
+- `src/pages/Unsubscribe.tsx` → also add `noindex` (utility page)
+- `src/pages/CitizenshipByInvestment.tsx` (orphan — see #3)
+- `src/pages/GoldenVisas.tsx` (orphan — see #3)
 
-**3. `src/pages/resources/CBIForUSCitizens.tsx`** — 5 placeholder sections
-Replace all placeholders covering: why Americans seek CBI, dual citizenship legality, U.S. tax implications (FBAR/FATCA), best programs for Americans (Grenada E-2, St Kitts, Dominica), and the application process. Target keywords: "citizenship by investment US citizens", "dual citizenship USA", "second passport for Americans".
+**2. Strengthen `PageSEO.tsx`**
+- Add explicit `<meta name="robots" content="index, follow" />` by default, with an optional `noindex` prop for utility pages (Unsubscribe).
+- Add `og:url` (uses canonical) and `og:image` defaults so social previews and Google rich results work.
 
-**4. `src/pages/resources/AntiguaVsGrenada.tsx`** — 6 placeholder sections
-Replace placeholders for: intro comparison, investment requirements, processing time, visa-free travel, family inclusion, residency requirements, and conclusion. The comparison table stays as-is. Target keywords: "Antigua vs Grenada CBI", "Caribbean citizenship comparison".
+**3. Delete the two orphan duplicate page files**
+`CitizenshipByInvestment.tsx` and `GoldenVisas.tsx` are not registered in `App.tsx` (the live versions are `CBIHub.tsx` and `GoldenVisaHub.tsx`). Removing them eliminates duplicate canonical declarations and stale code.
 
-### Approach
+**4. Apply `noindex` to utility pages**
+- `Unsubscribe` — should never be indexed.
+- `NotFound` — add a `noindex` so any stray 404 page Google crawls is properly marked.
 
-- Write in the firm's authoritative, advisory tone (luxury HNW audience)
-- Naturally incorporate target keywords without stuffing
-- Include specific data points (investment amounts, timelines, visa-free counts)
-- Keep all existing JSX structure, InternalLink components, and tables intact
+**5. Sitemap audit**
+Sitemap currently lists `/golden-visa/portugal`, etc. Confirm each URL in `public/sitemap.xml` matches a real route in `App.tsx`. (Spot check passed; will verify all entries during implementation and remove any that 404.)
+
+**6. Remove the irrelevant `vercel.json`**
+Lovable hosting ignores `vercel.json` and has built-in SPA fallback, so the file is dead weight. Removing avoids confusion. (Optional — leaving it is also harmless. Will remove unless you object.)
+
+### Out of scope
 - No design or layout changes
+- No backend / Supabase changes
+- No new pages
 
-### Scope
-
-4 files modified. No new files. No structural changes.
+### Files modified
+- `src/components/PageSEO.tsx` (add robots + og:url + og:image)
+- 6 page files (canonical fix to www)
+- `src/pages/Unsubscribe.tsx` + `src/pages/NotFound.tsx` (noindex)
+- Delete: `src/pages/CitizenshipByInvestment.tsx`, `src/pages/GoldenVisas.tsx`, `vercel.json`
+- `public/sitemap.xml` (verify only)
 
