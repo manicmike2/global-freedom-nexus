@@ -4,7 +4,7 @@ import InternalLink from "@/components/InternalLink";
 const GoldenVisaVsCBI = () => (
   <BlogArticleLayout
     title="Golden Visa vs. Citizenship by Investment: Key Differences Explained"
-    seoTitle="Golden Visa vs. Citizenship by Investment: Key Differences | Global Freedom Capital"
+    seoTitle="Golden Visa vs CBI: Key Differences | GFC"
     seoDescription="Understand the key differences between Golden Visa residency and citizenship by investment — costs, timelines, rights, and which program is right for you."
     canonicalPath="/resources/blog/golden-visa-vs-citizenship-by-investment"
     date="2026-03-10"

@@ -74,7 +74,7 @@ const Article = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title={`${article.title} – Global Freedom Capital`}
+        title={`${article.title} | GFC`}
         description={article.excerpt}
         canonical={`https://www.globalfreedomcapital.com/insights/${article.slug}`}
       />

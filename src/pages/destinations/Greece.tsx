@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destGreece,
   imageAlt: "Greece Golden Visa residency by investment destination",
-  seoTitle: "Greece Golden Visa | Residency by Investment | Global Freedom Capital",
+  seoTitle: "Greece Golden Visa from €250K | EU Residency | GFC",
   seoDescription: "Greece Golden Visa from €250,000 — Europe's most affordable. EU residency with citizenship pathway. Expert advisory from Global Freedom Capital. Free consultation.",
   canonicalPath: "/golden-visa/greece",
   highlights: [

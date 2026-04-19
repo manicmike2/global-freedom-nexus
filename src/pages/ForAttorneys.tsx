@@ -43,7 +43,7 @@ const ForAttorneys = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="For Immigration Attorneys – Outbound Investment Migration Partnership"
+        title="CBI Partnership for Immigration Attorneys | GFC"
         description="Partner with Global Freedom Capital for your clients' outbound investment migration needs. White-label CBI and Golden Visa advisory for U.S. immigration law firms."
         canonical="https://www.globalfreedomcapital.com/for-attorneys"
       />

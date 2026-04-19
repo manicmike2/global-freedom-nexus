@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destStkitts,
   imageAlt: "Saint Kitts & Nevis citizenship by investment destination",
-  seoTitle: "Saint Kitts & Nevis Citizenship by Investment | Second Passport | Global Freedom Capital",
+  seoTitle: "St Kitts CBI | Second Passport Program | GFC",
   seoDescription: "Saint Kitts & Nevis citizenship by investment — the world's oldest CBI program. 157+ visa-free countries. Global Freedom Capital guides HNW families. Free consultation.",
   canonicalPath: "/citizenship-by-investment/saint-kitts-nevis",
   highlights: [

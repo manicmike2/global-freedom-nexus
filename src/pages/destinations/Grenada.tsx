@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destGrenada,
   imageAlt: "Grenada citizenship by investment destination",
-  seoTitle: "Grenada Citizenship by Investment | Second Passport | Global Freedom Capital",
+  seoTitle: "Grenada CBI | E-2 Treaty Second Passport | GFC",
   seoDescription: "Grenada citizenship by investment with E-2 Treaty access to the U.S. 145+ visa-free countries. Expert advisory from Global Freedom Capital. Free consultation.",
   canonicalPath: "/citizenship-by-investment/grenada",
   highlights: [

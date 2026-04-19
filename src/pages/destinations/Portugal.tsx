@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Portugal Golden Visa residency by investment destination",
-  seoTitle: "Portugal Golden Visa | Residency by Investment | Global Freedom Capital",
+  seoTitle: "Portugal Golden Visa | EU Residency | GFC",
   seoDescription: "Portugal Golden Visa — EU residency with path to citizenship in 5 years. From €500,000. Expert advisory from Global Freedom Capital. Free consultation.",
   canonicalPath: "/golden-visa/portugal",
   highlights: [

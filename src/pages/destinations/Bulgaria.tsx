@@ -11,7 +11,7 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Bulgaria Golden Visa residency by investment destination",
-  seoTitle: "Bulgaria Golden Visa | Residency by Investment | Global Freedom Capital",
+  seoTitle: "Bulgaria Golden Visa | EU Residency | GFC",
   seoDescription: "Bulgaria Golden Visa — EU residency through investment. Competitive thresholds with Schengen access. Expert advisory from Global Freedom Capital. Free consultation.",
   canonicalPath: "/golden-visa/bulgaria",
   highlights: [

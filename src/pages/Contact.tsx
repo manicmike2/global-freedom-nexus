@@ -79,7 +79,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Contact Global Freedom Capital – Book a Private Consultation"
+        title="Book a Private CBI Consultation | GFC"
         description="Schedule a confidential consultation with our investment migration advisors. Expert guidance on citizenship by investment, Golden Visas & residency programs for HNWIs."
         canonical="https://www.globalfreedomcapital.com/contact"
       />

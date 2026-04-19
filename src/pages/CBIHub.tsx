@@ -35,7 +35,7 @@ const faqItems = [
 const CBIHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="Citizenship by Investment Programs | Caribbean Second Passport | Global Freedom Capital"
+      title="Citizenship by Investment Programs | GFC"
       description="Compare Caribbean Citizenship by Investment programs — Grenada, St Kitts, Antigua, Dominica, Saint Lucia. Expert advisory for HNW families. Free consultation."
       canonical="https://www.globalfreedomcapital.com/citizenship-by-investment"
       jsonLd={{

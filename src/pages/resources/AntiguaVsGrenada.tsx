@@ -4,7 +4,7 @@ import InternalLink from "@/components/InternalLink";
 const AntiguaVsGrenada = () => (
   <BlogArticleLayout
     title="Antigua & Barbuda vs. Grenada: Which Citizenship by Investment Program Is Right for You?"
-    seoTitle="Antigua & Barbuda vs. Grenada CBI: Which Is Right for You? | Global Freedom Capital"
+    seoTitle="Antigua vs Grenada CBI Comparison | GFC"
     seoDescription="Compare Antigua & Barbuda and Grenada CBI programs — investment costs, processing times, visa-free travel, and family inclusion. Expert analysis."
     canonicalPath="/resources/blog/antigua-vs-grenada-cbi"
     date="2026-03-25"
