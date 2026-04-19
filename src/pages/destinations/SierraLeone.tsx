@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all CBI programs:",
   image: destCaribbean,
   imageAlt: "Sierra Leone Go For Gold citizenship program destination",
-  seoTitle: "Sierra Leone Citizenship by Investment | GFC",
-  seoDescription: "Sierra Leone Go For Gold citizenship from $140,000. Fast 2–4 month processing, family-friendly structuring. Expert advisory from GFC. Book a consultation.",
+  seoTitle: "Sierra Leone Citizenship | Fast-Track Passport | GFC",
+  seoDescription: "Sierra Leone Go For Gold citizenship from $140,000. Fast-track second passport, 2–4 month processing, family inclusion. Speak with GFC advisors.",
   canonicalPath: "/citizenship-by-investment/sierra-leone",
   highlights: [
     { icon: Clock, title: "2–4 Month Processing", desc: "Streamlined application process with fast and flexible processing timelines." },

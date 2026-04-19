@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destStkitts,
   imageAlt: "Saint Kitts & Nevis citizenship by investment destination",
-  seoTitle: "St Kitts CBI | Second Passport Program | GFC",
-  seoDescription: "St Kitts & Nevis citizenship by investment — the world's longest-running CBI program. Second passport, 150+ visa-free countries. Free consultation with GFC.",
+  seoTitle: "St Kitts & Nevis Citizenship by Investment | GFC",
+  seoDescription: "St Kitts & Nevis — the original citizenship by investment program. Second passport, 150+ visa-free countries, fast processing. Consultation with GFC.",
   canonicalPath: "/citizenship-by-investment/saint-kitts-nevis",
   highlights: [
     { icon: Globe, title: "157+ Countries", desc: "Visa-free or visa-on-arrival access to over 157 countries including the UK, EU Schengen Area, and Singapore." },

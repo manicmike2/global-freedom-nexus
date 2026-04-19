@@ -79,8 +79,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Book a Private CBI Consultation | GFC"
-        description="Book a confidential CBI or Golden Visa consultation with Global Freedom Capital. Expert advisory for HNW families seeking second citizenship."
+        title="Private Investment Migration Consultation | GFC"
+        description="Book a confidential investment migration consultation. Citizenship & residency by investment advisory for HNW families. Speak with GFC advisors."
         canonical="https://www.globalfreedomcapital.com/contact"
       />
       <Header />

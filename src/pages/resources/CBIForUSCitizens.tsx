@@ -4,8 +4,8 @@ import InternalLink from "@/components/InternalLink";
 const CBIForUSCitizens = () => (
   <BlogArticleLayout
     title="Citizenship by Investment for U.S. Citizens: What You Need to Know in 2026"
-    seoTitle="CBI for US Citizens | Second Passport | GFC"
-    seoDescription="Citizenship by investment for U.S. citizens: 2026 guide on tax, dual citizenship, and second passport options. Expert advisory from GFC."
+    seoTitle="Citizenship by Investment for US Citizens 2026 | GFC"
+    seoDescription="Citizenship by investment for US citizens: 2026 guide on tax obligations, dual citizenship, and second passport options. Expert advisory from GFC."
     canonicalPath="/resources/blog/citizenship-by-investment-us-citizens"
     date="2026-03-18"
   >
