@@ -46,8 +46,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="About Tatiana Muntean | CBI Advisor | GFC"
-        description="Meet Tatiana Muntean, founder of Global Freedom Capital. Trusted CBI advisor for HNW families and immigration attorneys. Book a private consultation."
+        title="Tatiana Muntean | Investment Migration Advisor | GFC"
+        description="Tatiana Muntean, founder of Global Freedom Capital — investment migration advisor for HNW families, family offices, and US immigration attorneys."
         canonical="https://www.globalfreedomcapital.com/about"
         jsonLd={{
           "@context": "https://schema.org",

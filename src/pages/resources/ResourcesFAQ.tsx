@@ -20,8 +20,8 @@ const faqItems = [
 const ResourcesFAQ = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="CBI & Golden Visa FAQ | GFC"
-      description="Answers to common questions on citizenship by investment, Golden Visas, costs, timelines, and eligibility. Expert guidance from Global Freedom Capital."
+      title="Investment Migration FAQ | CBI & Golden Visa | GFC"
+      description="Answers to common questions on citizenship and residency by investment: costs, timelines, eligibility, tax. Expert guidance from GFC."
       canonical="https://www.globalfreedomcapital.com/resources/faq"
     />
     <Header />

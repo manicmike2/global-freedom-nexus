@@ -12,7 +12,7 @@ const data = {
   image: destGreece,
   imageAlt: "Greece Golden Visa residency by investment destination",
   seoTitle: "Greece Golden Visa from €250K | EU Residency | GFC",
-  seoDescription: "Greece Golden Visa from €250,000 — Europe's most affordable EU residency program. Schengen access. Expert advisory from GFC. Book a free consultation.",
+  seoDescription: "Greece Golden Visa from €250,000 — Europe's most affordable EU residency by investment. Schengen access. Expert advisory from GFC. Free consultation.",
   canonicalPath: "/golden-visa/greece",
   highlights: [
     { icon: Globe, title: "186+ Countries (with citizenship)", desc: "Greek citizenship grants visa-free access to 186+ countries and full EU rights across all member states." },

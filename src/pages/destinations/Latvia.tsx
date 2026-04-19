@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Latvia Golden Visa residency by investment destination",
-  seoTitle: "Latvia Golden Visa | EU Residency | GFC",
-  seoDescription: "Latvia Golden Visa from €60,000 — EU residency through business or real estate investment. Schengen access. Expert advisory from GFC. Free consultation.",
+  seoTitle: "Latvia Golden Visa from €60K | Schengen Access | GFC",
+  seoDescription: "Latvia Golden Visa from €60,000 — EU residency through business or real estate. Schengen access, fast 2–3 month processing. Expert advisory from GFC.",
   canonicalPath: "/golden-visa/latvia",
   highlights: [
     { icon: Globe, title: "Schengen Access", desc: "Free movement across all 27 Schengen Area countries with a Latvian residence permit." },
