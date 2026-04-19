@@ -81,7 +81,7 @@ const Contact = () => {
       <PageSEO
         title="Contact Global Freedom Capital – Book a Private Consultation"
         description="Schedule a confidential consultation with our investment migration advisors. Expert guidance on citizenship by investment, Golden Visas & residency programs for HNWIs."
-        canonical="https://globalfreedomcapital.com/contact"
+        canonical="https://www.globalfreedomcapital.com/contact"
       />
       <Header />
 

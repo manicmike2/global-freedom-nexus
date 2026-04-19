@@ -118,7 +118,7 @@ const RealEstate = () => {
       <PageSEO
         title="Real Estate Investment Opportunities – CBI & Golden Visa Properties"
         description="Explore government-approved real estate investments qualifying for citizenship and Golden Visa programs in Grenada, Greece, Portugal, UAE & Panama."
-        canonical="https://globalfreedomcapital.com/real-estate"
+        canonical="https://www.globalfreedomcapital.com/real-estate"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
