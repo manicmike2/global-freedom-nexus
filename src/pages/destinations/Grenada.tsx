@@ -12,7 +12,7 @@ const data = {
   image: destGrenada,
   imageAlt: "Grenada citizenship by investment destination",
   seoTitle: "Grenada CBI | E-2 Treaty Second Passport | GFC",
-  seoDescription: "Grenada citizenship by investment with E-2 Treaty access to the U.S. 145+ visa-free countries. Expert advisory from Global Freedom Capital. Free consultation.",
+  seoDescription: "Grenada citizenship by investment with E-2 U.S. treaty access. Second passport, 145+ visa-free countries. Expert advisory from GFC. Book a free consultation.",
   canonicalPath: "/citizenship-by-investment/grenada",
   highlights: [
     { icon: Globe, title: "145+ Countries", desc: "Visa-free or visa-on-arrival access to over 145 countries including the UK, EU Schengen Area, China, and Russia." },

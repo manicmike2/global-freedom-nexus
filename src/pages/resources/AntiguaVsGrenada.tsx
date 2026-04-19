@@ -5,7 +5,7 @@ const AntiguaVsGrenada = () => (
   <BlogArticleLayout
     title="Antigua & Barbuda vs. Grenada: Which Citizenship by Investment Program Is Right for You?"
     seoTitle="Antigua vs Grenada CBI Comparison | GFC"
-    seoDescription="Compare Antigua & Barbuda and Grenada CBI programs — investment costs, processing times, visa-free travel, and family inclusion. Expert analysis."
+    seoDescription="Antigua & Barbuda vs Grenada CBI compared: investment costs, processing times, visa-free access. Expert analysis from Global Freedom Capital."
     canonicalPath="/resources/blog/antigua-vs-grenada-cbi"
     date="2026-03-25"
   >

@@ -125,7 +125,7 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <PageSEO
         title="Citizenship by Investment Advisory | GFC"
-        description="Global Freedom Capital offers expert Citizenship by Investment and Golden Visa advisory for HNW individuals. Private, trusted, results-driven. Book a free consultation."
+        description="Citizenship by investment & Golden Visa advisory for HNW families. Second passports, EU residency, expert guidance. Book a free consultation with GFC."
         canonical="https://www.globalfreedomcapital.com/"
         jsonLd={{
           "@context": "https://schema.org",

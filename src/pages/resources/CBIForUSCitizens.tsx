@@ -5,7 +5,7 @@ const CBIForUSCitizens = () => (
   <BlogArticleLayout
     title="Citizenship by Investment for U.S. Citizens: What You Need to Know in 2026"
     seoTitle="CBI for US Citizens | Second Passport | GFC"
-    seoDescription="What U.S. citizens need to know about citizenship by investment in 2026 — dual citizenship rules, tax implications, and the best CBI programs for Americans."
+    seoDescription="Citizenship by investment for U.S. citizens: 2026 guide on tax, dual citizenship, and second passport options. Expert advisory from GFC."
     canonicalPath="/resources/blog/citizenship-by-investment-us-citizens"
     date="2026-03-18"
   >

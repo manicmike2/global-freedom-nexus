@@ -57,7 +57,7 @@ const Destinations = () => {
     <div className="min-h-screen bg-background">
       <PageSEO
         title="Investment Migration Destinations | GFC"
-        description="Explore leading Citizenship by Investment and Golden Visa programs across the Caribbean and Europe. Compare benefits, timelines, and investment levels. Free consultation."
+        description="Explore all CBI and Golden Visa destinations advised by Global Freedom Capital. Second passports and EU residency for HNW families. Free consultation."
         canonical="https://www.globalfreedomcapital.com/destinations"
         jsonLd={{
           "@context": "https://schema.org",

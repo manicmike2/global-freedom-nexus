@@ -12,7 +12,7 @@ const data = {
   image: destStkitts,
   imageAlt: "Saint Kitts & Nevis citizenship by investment destination",
   seoTitle: "St Kitts CBI | Second Passport Program | GFC",
-  seoDescription: "Saint Kitts & Nevis citizenship by investment — the world's oldest CBI program. 157+ visa-free countries. Global Freedom Capital guides HNW families. Free consultation.",
+  seoDescription: "St Kitts & Nevis citizenship by investment — the world's longest-running CBI program. Second passport, 150+ visa-free countries. Free consultation with GFC.",
   canonicalPath: "/citizenship-by-investment/saint-kitts-nevis",
   highlights: [
     { icon: Globe, title: "157+ Countries", desc: "Visa-free or visa-on-arrival access to over 157 countries including the UK, EU Schengen Area, and Singapore." },

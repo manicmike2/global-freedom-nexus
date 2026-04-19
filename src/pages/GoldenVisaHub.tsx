@@ -28,7 +28,7 @@ const GoldenVisaHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
       title="Golden Visa & EU Residency Programs | GFC"
-      description="Compare European Golden Visa programs — Portugal, Greece, Latvia, Hungary, Bulgaria. EU residency and citizenship pathways. Expert advisory. Free consultation."
+      description="Compare European Golden Visa programs: Portugal, Greece, Hungary, Bulgaria, Latvia. EU residency from €250K. Expert advisory from Global Freedom Capital."
       canonical="https://www.globalfreedomcapital.com/golden-visa"
       jsonLd={{
         "@context": "https://schema.org",
