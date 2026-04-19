@@ -76,7 +76,7 @@ const Article = () => {
       <PageSEO
         title={`${article.title} – Global Freedom Capital`}
         description={article.excerpt}
-        canonical={`https://globalfreedomcapital.com/insights/${article.slug}`}
+        canonical={`https://www.globalfreedomcapital.com/insights/${article.slug}`}
       />
       <Header />
 

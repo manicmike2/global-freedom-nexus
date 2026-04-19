@@ -45,7 +45,7 @@ const ForAttorneys = () => {
       <PageSEO
         title="For Immigration Attorneys – Outbound Investment Migration Partnership"
         description="Partner with Global Freedom Capital for your clients' outbound investment migration needs. White-label CBI and Golden Visa advisory for U.S. immigration law firms."
-        canonical="https://globalfreedomcapital.com/for-attorneys"
+        canonical="https://www.globalfreedomcapital.com/for-attorneys"
       />
       <Header />
 

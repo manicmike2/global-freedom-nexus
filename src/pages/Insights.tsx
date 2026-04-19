@@ -15,7 +15,7 @@ const Insights = () => {
       <PageSEO
         title="Investment Migration Insights – CBI & Golden Visa Analysis"
         description="Strategic insights on citizenship by investment, Golden Visas, global mobility & cross-border wealth planning. Expert analysis for HNWIs, families & advisors."
-        canonical="https://globalfreedomcapital.com/insights"
+        canonical="https://www.globalfreedomcapital.com/insights"
       />
       <Header />
 

@@ -70,7 +70,7 @@ const Unsubscribe = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageSEO title="Unsubscribe – Global Freedom Capital" description="Manage your email preferences." canonical="https://globalfreedomcapital.com/unsubscribe" />
+      <PageSEO title="Unsubscribe – Global Freedom Capital" description="Manage your email preferences." canonical="https://www.globalfreedomcapital.com/unsubscribe" noindex />
       <Header />
       <section className="pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-lg text-center">
