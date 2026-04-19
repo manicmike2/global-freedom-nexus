@@ -12,7 +12,7 @@ const data = {
   image: destPortugal,
   imageAlt: "Bulgaria Golden Visa residency by investment destination",
   seoTitle: "Bulgaria Golden Visa | EU Residency | GFC",
-  seoDescription: "Bulgaria Golden Visa — EU residency through investment. Competitive thresholds with Schengen access. Expert advisory from Global Freedom Capital. Free consultation.",
+  seoDescription: "Bulgaria Golden Visa — EU residency through investment with pathway to citizenship. Schengen access. Expert advisory from Global Freedom Capital.",
   canonicalPath: "/golden-visa/bulgaria",
   highlights: [
     { icon: Globe, title: "EU & Schengen Access", desc: "Bulgaria joined the Schengen Area, granting residence permit holders visa-free travel across member states." },

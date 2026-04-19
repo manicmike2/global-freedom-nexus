@@ -12,7 +12,7 @@ const data = {
   image: destPortugal,
   imageAlt: "Hungary Golden Visa residency by investment destination",
   seoTitle: "Hungary Golden Visa | EU Residency | GFC",
-  seoDescription: "Hungary Golden Visa — EU residency through the Guest Investor Program. Schengen access. Expert advisory from Global Freedom Capital. Free consultation.",
+  seoDescription: "Hungary Guest Investor Program from €250,000 — EU residency through real estate funds. Schengen access. Expert advisory from GFC. Free consultation.",
   canonicalPath: "/golden-visa/hungary",
   highlights: [
     { icon: Globe, title: "Schengen Access", desc: "Free movement across all Schengen Area countries with a Hungarian residence permit." },

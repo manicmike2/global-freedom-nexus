@@ -12,7 +12,7 @@ const data = {
   image: destStlucia,
   imageAlt: "Saint Lucia citizenship by investment destination",
   seoTitle: "Saint Lucia CBI | Flexible Second Passport | GFC",
-  seoDescription: "Saint Lucia citizenship by investment with flexible options from $240,000. 140+ visa-free countries. No residency requirement. Expert advisory from Global Freedom Capital.",
+  seoDescription: "Saint Lucia citizenship by investment — flexible options including government bonds. 146+ visa-free countries. Expert advisory from GFC. Book a consultation.",
   canonicalPath: "/citizenship-by-investment/saint-lucia",
   highlights: [
     { icon: Globe, title: "140+ Countries", desc: "Visa-free or visa-on-arrival access to over 140 countries including the UK and EU Schengen Area." },

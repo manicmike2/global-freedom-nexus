@@ -12,7 +12,7 @@ const data = {
   image: destAntigua,
   imageAlt: "Antigua & Barbuda citizenship by investment destination",
   seoTitle: "Antigua CBI from $230K | Second Passport | GFC",
-  seoDescription: "Antigua & Barbuda citizenship by investment from $230,000. Family-friendly CBI with 151+ visa-free countries. Expert advisory. Free consultation available.",
+  seoDescription: "Antigua & Barbuda citizenship by investment from $230,000. Visa-free access to 150+ countries. Expert advisory from GFC. Book a free consultation.",
   canonicalPath: "/citizenship-by-investment/antigua-barbuda",
   highlights: [
     { icon: Globe, title: "151+ Countries", desc: "Visa-free or visa-on-arrival access to over 151 countries worldwide, including the UK and Schengen Area." },
