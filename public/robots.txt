@@ -10,7 +10,25 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: *
 Allow: /
 
 Sitemap: https://www.globalfreedomcapital.com/sitemap.xml
+
+# LLM index: https://www.globalfreedomcapital.com/llms.txt
+# LLM full reference: https://www.globalfreedomcapital.com/llms-full.txt
