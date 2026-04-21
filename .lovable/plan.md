@@ -1,88 +1,93 @@
+## Fix URL Structure & Indexing Issues
 
+### Root cause
 
-## Generate `llms.txt` for AI Discoverability
+Three real problems are blocking Google indexing:
 
-### What is llms.txt
-A markdown-formatted file at `/llms.txt` that helps LLMs (ChatGPT, Claude, Gemini, Perplexity) understand site structure, primary content, and context. Modeled on the [llmstxt.org](https://llmstxt.org) spec — a single H1 (site name), short blockquote summary, optional details paragraph, then H2 sections with curated `[title](url): description` links.
+1. `**vercel.json` rewrite is broken.** Current config rewrites every path to `/` (root) instead of `/index.html`. On Vercel this means `/about`, `/contact`, every destination page returns the homepage HTML with a stripped URL — Googlebot sees duplicate content across hundreds of URLs. This is the #1 indexing killer.
+2. **No canonical-domain redirect.** `globalfreedomcapital.com`, `www.globalfreedomcapital.com`, and `http://` variants all serve content but canonicals point only to `https://www.` — Google sees split signals.
+3. **No lowercase enforcement.** If anyone links to `/Panama` or `/About`, it serves a 404 (React Router is case-sensitive) instead of redirecting to the lowercase canonical.
+  &nbsp;
 
-### Approach
-Create two static files in `/public/` (served at root):
+Good news from the audit:
 
-1. **`public/llms.txt`** — concise index (recommended spec format)
-2. **`public/llms-full.txt`** — expanded version with richer descriptions for each page (optional but improves Claude/GPT retrieval quality)
+- All internal `<Link to="...">` are already lowercase ✓
+- All `PageSEO` canonicals already use `https://www.` ✓
+- Sitemap already uses canonical URLs ✓
+- React Router config is clean ✓
 
-Both will be plain markdown, no React, no build step. Routes resolve at `https://www.globalfreedomcapital.com/llms.txt` and `/llms-full.txt`.
+### Fix 1 — `vercel.json` (correct SPA rewrite + redirects)
 
-### File 1: `public/llms.txt` (concise)
+Replace the broken rewrite. The destination must be `/index.html` so React Router receives the original path. Add redirects for non-www → www and force-lowercase via a catch-all redirect rule.
 
-Structure:
-```
-# Global Freedom Capital
-
-> Expert advisory for citizenship by investment (CBI) and Golden Visa
-> residency programs, serving high-net-worth families, family offices,
-> and U.S. immigration attorneys.
-
-Founded by Tatiana Muntean (Investment Migration Council member), 
-Global Freedom Capital provides confidential, conflict-free guidance 
-across Caribbean CBI programs and European Golden Visa pathways. 
-The firm is an advisory — not a law firm — and does not provide 
-legal, tax, or financial advice.
-
-## Core
-- [Home](https://www.globalfreedomcapital.com/): Investment migration advisory overview
-- [About Tatiana Muntean](https://www.globalfreedomcapital.com/about): Founder and lead advisor
-- [Contact](https://www.globalfreedomcapital.com/contact): Book a private consultation
-- [For Immigration Attorneys](https://www.globalfreedomcapital.com/for-attorneys): White-label partnership framework
-
-## Citizenship by Investment (Caribbean & emerging programs)
-- [CBI Programs Hub](.../citizenship-by-investment): Compare all CBI programs
-- [Antigua & Barbuda](.../citizenship-by-investment/antigua-barbuda): From $230K
-- [Saint Kitts & Nevis](.../citizenship-by-investment/saint-kitts-nevis): World's oldest CBI
-- [Grenada](.../citizenship-by-investment/grenada): Only CBI with U.S. E-2 treaty access
-- [Dominica](.../citizenship-by-investment/dominica): From $200K
-- [Saint Lucia](.../citizenship-by-investment/saint-lucia): Flexible bond options
-- [São Tomé & Príncipe](.../citizenship-by-investment/sao-tome-and-principe): From $90K
-- [Sierra Leone](.../citizenship-by-investment/sierra-leone): Fast-track from $140K
-
-## Golden Visa & EU Residency by Investment
-- [Golden Visa Hub](.../golden-visa): Compare EU residency programs
-- [Portugal](.../golden-visa/portugal): EU citizenship pathway after 5 years
-- [Greece](.../golden-visa/greece): From €250K
-- [Hungary](.../golden-visa/hungary): Guest Investor Visa from €250K
-- [Bulgaria](.../golden-visa/bulgaria): EU residency with citizenship pathway
-- [Latvia](.../golden-visa/latvia): From €60K, Schengen access
-
-## Resources & Insights
-- [Blog](.../resources/blog): Investment migration guides
-- [FAQ](.../resources/faq): Common questions on CBI & Golden Visas
-- [Best CBI Programs 2026](.../resources/blog/best-citizenship-by-investment-programs-2026)
-- [Golden Visa vs CBI](.../resources/blog/golden-visa-vs-citizenship-by-investment)
-- [CBI for U.S. Citizens](.../resources/blog/citizenship-by-investment-us-citizens)
-- [Antigua vs Grenada Compared](.../resources/blog/antigua-vs-grenada-citizenship-comparison)
-- [Insights](.../insights): Strategic analysis
-- [Real Estate](.../real-estate): Qualifying investment properties
-- [Destinations Overview](.../destinations): All jurisdictions
-
-## Optional
-- [Sitemap](.../sitemap.xml)
-- [Robots](.../robots.txt)
+```json
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "globalfreedomcapital.com" }],
+      "destination": "https://www.globalfreedomcapital.com/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    }
+  ]
+}
 ```
 
-### File 2: `public/llms-full.txt` (expanded)
-Same structure but each link gets a 2–3 sentence description covering: investment threshold, processing time, key benefit (e.g., visa-free count, Schengen access, E-2 eligibility), and family inclusion. This gives LLMs deeper context for accurate citation when users ask "what's the cheapest CBI?" or "which Caribbean passport gives U.S. business access?".
+Key points:
 
-### Bonus: discoverability
-- Reference both files in `public/robots.txt` via `Sitemap:`-style hint comments (LLM crawlers are starting to look here).
-- No need to modify `index.html` — files served directly from `/public/` work at root URL on Vite/Vercel/Netlify.
+- `((?!.*\\.).*)` — only rewrites URLs **without a file extension**, so `/og-image.jpg`, `/sitemap.xml`, `/llms.txt`, `/assets/*.js`, `/assets/*.css`, etc. continue to load as static files. **This is what protects images, CSS, JS.**
+- `redirects` (not `rewrites`) for non-www → www = real 301, which Google honors for canonicalization.
+- http → https is automatic on Vercel/Lovable hosting; no config needed.
+- `trailingSlash: false` collapses `/about/` → `/about`.
+- Make sure that it does not break images and such as it did before when redirected to /index.html. 
 
-### Files created
-- `public/llms.txt` (~2.5 KB)
-- `public/llms-full.txt` (~7 KB)
-- `public/robots.txt` (append `# LLM index: /llms.txt` comment)
+### Fix 2 — Lowercase URL enforcement (client-side fallback)
+
+Vercel's config language can't easily detect uppercase characters with a regex redirect. Add a tiny check in `src/components/ScrollToTop.tsx` (already runs on every route change): if `location.pathname !== location.pathname.toLowerCase()`, do a `window.location.replace(lowercasePath + search + hash)`. This issues a clean redirect for any uppercase URL hit, e.g. `/Panama` → `/panama`. Combined with React Router's 404 catch (`<Route path="*" element={<NotFound />}/>`), Google won't get stuck on mixed-case 404s.
+
+### Fix 3 — Hosting note (important context)
+
+Per Lovable hosting docs, `**vercel.json` is ignored on `*.lovable.app` and Lovable custom domains** — Lovable handles SPA fallback automatically and does not process Vercel/Netlify hosting configs. The `vercel.json` fix above only takes effect if the site is actually deployed to Vercel (which the existing `vercel.json` implies is the case for the production custom domain). If the site is served from Lovable hosting, the broken rewrite is harmless (ignored), but the non-www → www and HTTPS redirects must be configured in the **domain provider / Lovable domain settings** instead. We'll fix the file as requested and call this out.
+
+### Fix 4 — Verification (no changes, just confirming what's already correct)
+
+- ✓ All `<Link to>` paths in `src/App.tsx`, `Header.tsx`, `Footer.tsx`, destination pages, and resource pages are lowercase.
+- ✓ All `canonical=` props in `PageSEO` use `https://www.globalfreedomcapital.com/...`.
+- ✓ `public/sitemap.xml` contains only canonical `https://www.` URLs.
+- ✓ `PageSEO.tsx` already injects `<link rel="canonical">` on every page.
+- ✓ `public/robots.txt` already references the canonical sitemap URL.
+
+No changes needed to internal links, canonicals, or the sitemap.
+
+### Files modified
+
+- `vercel.json` — fix SPA rewrite, add non-www redirect, add security headers, exclude static assets from rewrite
+- `src/components/ScrollToTop.tsx` — add lowercase-URL redirect (~5 lines)
 
 ### Out of scope
-- Dynamic generation from articles array (static is fine — small site)
-- Backend, JSON-LD, or component changes
-- Per-page `<meta name="llm-*">` tags (not a standard)
 
+- No changes to React Router config (already correct)
+- No changes to canonicals or sitemap (already correct)
+- No content/design changes
+
+&nbsp;
+
+### What this fixes for Google
+
+- Eliminates duplicate-content signal (every URL now serves its real HTML, not the homepage)
+- Single canonical domain enforced via 301
+- Uppercase URLs redirect instead of 404
+- Static assets (images, JS, CSS, sitemap, llms.txt) continue to load untouched
