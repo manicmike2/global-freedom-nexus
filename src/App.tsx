@@ -32,6 +32,10 @@ import Greece from "./pages/destinations/Greece.tsx";
 import Latvia from "./pages/destinations/Latvia.tsx";
 import Hungary from "./pages/destinations/Hungary.tsx";
 import Bulgaria from "./pages/destinations/Bulgaria.tsx";
+import Malta from "./pages/destinations/Malta.tsx";
+import Turkey from "./pages/destinations/Turkey.tsx";
+import Uae from "./pages/destinations/Uae.tsx";
+import Panama from "./pages/destinations/Panama.tsx";
 // Resources
 import BlogIndex from "./pages/resources/BlogIndex.tsx";
 import BestCBI2026 from "./pages/resources/BestCBI2026.tsx";
@@ -83,6 +87,10 @@ const App = () => (
           <Route path="/golden-visa/latvia" element={<Latvia />} />
           <Route path="/golden-visa/hungary" element={<Hungary />} />
           <Route path="/golden-visa/bulgaria" element={<Bulgaria />} />
+          <Route path="/golden-visa/malta" element={<Malta />} />
+          <Route path="/golden-visa/uae" element={<Uae />} />
+          <Route path="/golden-visa/panama" element={<Panama />} />
+          <Route path="/citizenship-by-investment/turkey" element={<Turkey />} />
           {/* Resources */}
           <Route path="/resources/blog" element={<BlogIndex />} />
           <Route path="/resources/blog/best-citizenship-by-investment-programs-2026" element={<BestCBI2026 />} />

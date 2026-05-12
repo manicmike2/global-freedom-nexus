@@ -8,6 +8,9 @@ import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
 import destPortugal from "@/assets/dest-portugal.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
+import destMalta from "@/assets/dest-malta.jpg";
+import destUae from "@/assets/dest-uae.jpg";
+import destPanama from "@/assets/dest-panama.jpg";
 
 const programs = [
   { country: "Portugal", path: "/golden-visa/portugal", image: destPortugal, investment: "From €500,000", timeline: "6–12 months", visaFree: "188+ (with citizenship)", highlight: "EU citizenship pathway in 5 years. One of Europe's most popular programs." },
@@ -15,6 +18,9 @@ const programs = [
   { country: "Latvia", path: "/golden-visa/latvia", image: destPortugal, investment: "From €60,000", timeline: "2–3 months", visaFree: "Schengen access", highlight: "Strategic gateway to the Baltic region and Northern Europe." },
   { country: "Hungary", path: "/golden-visa/hungary", image: destPortugal, investment: "From €250,000", timeline: "3–4 months", visaFree: "Schengen access", highlight: "Guest Investor Program — Central European entry point." },
   { country: "Bulgaria", path: "/golden-visa/bulgaria", image: destPortugal, investment: "From €512,000", timeline: "6–9 months", visaFree: "EU & Schengen access", highlight: "Competitive thresholds with emerging EU market potential." },
+  { country: "Malta", path: "/golden-visa/malta", image: destMalta, investment: "From €150,000", timeline: "4–6 months", visaFree: "Schengen access", highlight: "Malta Permanent Residence Programme (MPRP) — lifetime EU residency." },
+  { country: "UAE", path: "/golden-visa/uae", image: destUae, investment: "From ~$545,000", timeline: "2–4 months", visaFree: "Global hub", highlight: "10-year renewable Golden Visa in a tax-efficient Gulf hub." },
+  { country: "Panama", path: "/golden-visa/panama", image: destPanama, investment: "From $300,000", timeline: "30–60 days", visaFree: "Americas hub", highlight: "Qualified Investor Visa — fast permanent residency in a USD economy." },
 ];
 
 const faqItems = [

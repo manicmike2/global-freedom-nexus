@@ -1,93 +1,83 @@
-## Fix URL Structure & Indexing Issues
+## Fix Backlinks + Build Missing Destination Pages + Resolve Indexing Issues
 
-### Root cause
+### Decision recap
+- **Malta** → reposition as **Permanent Residency** (not citizenship). Build `/golden-visa/malta` and update memory: Malta now offered as residency only, citizenship route remains excluded.
+- **Turkey** → build `/citizenship-by-investment/turkey`
+- **UAE** → build `/golden-visa/uae`
+- **Panama** → build `/golden-visa/panama` (currently linked from Destinations + Globe but has no page = soft 404)
 
-Three real problems are blocking Google indexing:
+### Root cause of Google issues
+1. **Soft 404 / "Page with redirect" / "Discovered – not indexed"** → Turkey/UAE/Panama/Malta are linked from Destinations grid, GlobeScene, llms files, sitemap-adjacent content but resolve to hub pages with non-existent `#anchor` fragments. Googlebot hits a page that doesn't match the link intent → soft 404.
+2. **"Page with redirect"** → legacy paths (`/golden-visas`, `/antigua-barbuda`, `/citizenship-by-investment/antigua-and-barbuda`, `/citizenship-by-investment/st-kitts-and-nevis`) use React Router `<Navigate replace>` — client-side, served as 200 of the redirector. Googlebot sees this as soft 404, not a 301.
+3. **"Crawled — currently not indexed"** → low-value/thin pages and duplicate hub-anchor URLs.
+4. **"Not found (404)"** → mixed-case or stale external links hitting routes not in router.
+5. **No 404 status code** → SPA always returns 200; `NotFound` page is `noindex` but Search Console flags soft 404. Mitigation: ensure clear noindex + minimal links from internal pages, plus convert known stale URLs into real 301s in `vercel.json`.
 
-1. `**vercel.json` rewrite is broken.** Current config rewrites every path to `/` (root) instead of `/index.html`. On Vercel this means `/about`, `/contact`, every destination page returns the homepage HTML with a stripped URL — Googlebot sees duplicate content across hundreds of URLs. This is the #1 indexing killer.
-2. **No canonical-domain redirect.** `globalfreedomcapital.com`, `www.globalfreedomcapital.com`, and `http://` variants all serve content but canonicals point only to `https://www.` — Google sees split signals.
-3. **No lowercase enforcement.** If anyone links to `/Panama` or `/About`, it serves a 404 (React Router is case-sensitive) instead of redirecting to the lowercase canonical.
-  &nbsp;
+### Files to create
 
-Good news from the audit:
+**4 new destination pages** using existing `DestinationPageTemplate` (same pattern as `Grenada.tsx` — ~55 lines each):
+- `src/pages/destinations/Malta.tsx` (type: `golden-visa`, Malta Permanent Residency Programme — MPRP, from €150K gov contribution + property)
+- `src/pages/destinations/Turkey.tsx` (type: `cbi`, from $400K real-estate route, 3–6 months)
+- `src/pages/destinations/Uae.tsx` (type: `golden-visa`, 10-year renewable, from $550K real estate / public investment)
+- `src/pages/destinations/Panama.tsx` (type: `golden-visa`, Qualified Investor + Friendly Nations, from $300K)
 
-- All internal `<Link to="...">` are already lowercase ✓
-- All `PageSEO` canonicals already use `https://www.` ✓
-- Sitemap already uses canonical URLs ✓
-- React Router config is clean ✓
+Each page includes: SEO title/description (≤60/≤160 chars, niche keywords), canonical, BreadcrumbList + Service JSON-LD, hero, 4 highlights, 2–3 investment options, 4-step timeline, eligibility, 4 FAQs, CTA. Reuses existing `dest-malta.jpg`, `dest-turkey.jpg`, `dest-uae.jpg`, `dest-panama.jpg` assets already imported.
 
-### Fix 1 — `vercel.json` (correct SPA rewrite + redirects)
+### Files to edit
 
-Replace the broken rewrite. The destination must be `/index.html` so React Router receives the original path. Add redirects for non-www → www and force-lowercase via a catch-all redirect rule.
-
-```json
-{
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "globalfreedomcapital.com" }],
-      "destination": "https://www.globalfreedomcapital.com/:path*",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
-      ]
-    }
-  ]
-}
+**`src/App.tsx`** — Register the 4 new routes:
+```
+/golden-visa/malta            → Malta
+/citizenship-by-investment/turkey → Turkey
+/golden-visa/uae              → Uae
+/golden-visa/panama           → Panama
 ```
 
-Key points:
+**`src/lib/destinations.ts`** — Replace hub-anchor entries with real page paths:
+```
+"Malta":  { page: "/golden-visa/malta" }
+"Turkey": { page: "/citizenship-by-investment/turkey" }
+"UAE":    { page: "/golden-visa/uae" }
+"Panama": { page: "/golden-visa/panama" }
+```
 
-- `((?!.*\\.).*)` — only rewrites URLs **without a file extension**, so `/og-image.jpg`, `/sitemap.xml`, `/llms.txt`, `/assets/*.js`, `/assets/*.css`, etc. continue to load as static files. **This is what protects images, CSS, JS.**
-- `redirects` (not `rewrites`) for non-www → www = real 301, which Google honors for canonicalization.
-- http → https is automatic on Vercel/Lovable hosting; no config needed.
-- `trailingSlash: false` collapses `/about/` → `/about`.
-- Make sure that it does not break images and such as it did before when redirected to /index.html. 
+**`src/pages/Destinations.tsx`** — Move Malta from `type: "Citizenship"` to `type: "Residency"`, region stays "Europe", update copy from "EU citizenship by investment" → "Malta Permanent Residency Programme (MPRP)".
 
-### Fix 2 — Lowercase URL enforcement (client-side fallback)
+**`src/pages/CBIHub.tsx`** — Add Turkey card (Caribbean+Global section).
 
-Vercel's config language can't easily detect uppercase characters with a regex redirect. Add a tiny check in `src/components/ScrollToTop.tsx` (already runs on every route change): if `location.pathname !== location.pathname.toLowerCase()`, do a `window.location.replace(lowercasePath + search + hash)`. This issues a clean redirect for any uppercase URL hit, e.g. `/Panama` → `/panama`. Combined with React Router's 404 catch (`<Route path="*" element={<NotFound />}/>`), Google won't get stuck on mixed-case 404s.
+**`src/pages/GoldenVisaHub.tsx`** — Add Malta, UAE, Panama cards.
 
-### Fix 3 — Hosting note (important context)
+**`src/pages/ForAttorneys.tsx`** — Move Malta from CBI list to Golden Visa list.
 
-Per Lovable hosting docs, `**vercel.json` is ignored on `*.lovable.app` and Lovable custom domains** — Lovable handles SPA fallback automatically and does not process Vercel/Netlify hosting configs. The `vercel.json` fix above only takes effect if the site is actually deployed to Vercel (which the existing `vercel.json` implies is the case for the production custom domain). If the site is served from Lovable hosting, the broken rewrite is harmless (ignored), but the non-www → www and HTTPS redirects must be configured in the **domain provider / Lovable domain settings** instead. We'll fix the file as requested and call this out.
+**`public/sitemap.xml`** — Add 4 new `<url>` entries; keep canonical hub URLs only (no anchored URLs).
 
-### Fix 4 — Verification (no changes, just confirming what's already correct)
+**`public/llms.txt` + `public/llms-full.txt`** — Update Malta description (residency, not citizenship-excluded), add Turkey/UAE/Panama links and details. Keep "Malta CBI excluded" note but allow "Malta MPRP residency".
 
-- ✓ All `<Link to>` paths in `src/App.tsx`, `Header.tsx`, `Footer.tsx`, destination pages, and resource pages are lowercase.
-- ✓ All `canonical=` props in `PageSEO` use `https://www.globalfreedomcapital.com/...`.
-- ✓ `public/sitemap.xml` contains only canonical `https://www.` URLs.
-- ✓ `PageSEO.tsx` already injects `<link rel="canonical">` on every page.
-- ✓ `public/robots.txt` already references the canonical sitemap URL.
+**`vercel.json`** — Convert client-side `<Navigate>` redirects into proper server 301s so Googlebot sees real redirects (fixes "Page with redirect" + soft 404):
+```json
+"redirects": [
+  { non-www → www (existing) },
+  { "source": "/golden-visas", "destination": "/golden-visa", "permanent": true },
+  { "source": "/golden-visas/:path*", "destination": "/golden-visa/:path*", "permanent": true },
+  { "source": "/antigua-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+  { "source": "/citizenship-by-investment/antigua-and-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+  { "source": "/citizenship-by-investment/st-kitts-and-nevis", "destination": "/citizenship-by-investment/saint-kitts-nevis", "permanent": true }
+]
+```
+Keep the React Router `<Navigate>` fallbacks too — defense in depth for non-Vercel hosting.
 
-No changes needed to internal links, canonicals, or the sitemap.
-
-### Files modified
-
-- `vercel.json` — fix SPA rewrite, add non-www redirect, add security headers, exclude static assets from rewrite
-- `src/components/ScrollToTop.tsx` — add lowercase-URL redirect (~5 lines)
+**Memory update** — Edit `mem://index.md` Core: change "Malta is intentionally EXCLUDED from all offerings" → "Malta offered ONLY as Permanent Residency (MPRP). Malta citizenship/CBI remains excluded." Update `mem://features/service-scope` accordingly.
 
 ### Out of scope
+- No design/layout changes
+- No changes to existing destination pages other than Malta/Turkey/UAE/Panama wiring
+- No backend or Supabase changes
+- No content rewrites of existing pages beyond the Malta repositioning
+- No changes to the Malta blog article (`malta-citizenship-naturalization`) — left as informational; will not link to it from offerings
 
-- No changes to React Router config (already correct)
-- No changes to canonicals or sitemap (already correct)
-- No content/design changes
-
-&nbsp;
-
-### What this fixes for Google
-
-- Eliminates duplicate-content signal (every URL now serves its real HTML, not the homepage)
-- Single canonical domain enforced via 301
-- Uppercase URLs redirect instead of 404
-- Static assets (images, JS, CSS, sitemap, llms.txt) continue to load untouched
+### Result
+- 4 new indexable pages with proper canonicals, JSON-LD, internal links
+- Zero broken/dead destination links across the site
+- Legacy URLs return real 301s (resolves "Page with redirect")
+- Sitemap matches actual canonical pages (resolves "Alternate page with proper canonical tag")
+- Hub-anchor soft 404s eliminated

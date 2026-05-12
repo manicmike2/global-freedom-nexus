@@ -24,10 +24,11 @@ export const destinationRoutes: Record<string, DestinationRoute> = {
   "Hungary":            { page: "/golden-visa/hungary" },
   "Bulgaria":           { page: "/golden-visa/bulgaria" },
 
-  // Global → hub pages with anchors (no individual pages yet)
-  "Turkey":             { page: "/citizenship-by-investment", anchor: "turkey" },
-  "UAE":                { page: "/golden-visa", anchor: "uae" },
-  "Panama":             { page: "/golden-visa", anchor: "panama" },
+  // Additional individual pages
+  "Malta":              { page: "/golden-visa/malta" },
+  "Turkey":             { page: "/citizenship-by-investment/turkey" },
+  "UAE":                { page: "/golden-visa/uae" },
+  "Panama":             { page: "/golden-visa/panama" },
 };
 
 /**
