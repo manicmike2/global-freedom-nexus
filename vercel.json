@@ -6,7 +6,12 @@
       "has": [{ "type": "host", "value": "globalfreedomcapital.com" }],
       "destination": "https://www.globalfreedomcapital.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/golden-visas", "destination": "/golden-visa", "permanent": true },
+    { "source": "/golden-visas/:path*", "destination": "/golden-visa/:path*", "permanent": true },
+    { "source": "/antigua-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+    { "source": "/citizenship-by-investment/antigua-and-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+    { "source": "/citizenship-by-investment/st-kitts-and-nevis", "destination": "/citizenship-by-investment/saint-kitts-nevis", "permanent": true }
   ],
   "rewrites": [
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }

@@ -88,6 +88,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/malta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/uae</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/golden-visa/panama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/citizenship-by-investment/turkey</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Other Pages -->
   <url>
     <loc>https://www.globalfreedomcapital.com/real-estate</loc>
