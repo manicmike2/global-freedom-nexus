@@ -13,6 +13,7 @@ import destAntigua from "@/assets/dest-antigua.jpg";
 import destDominica from "@/assets/dest-dominica.jpg";
 import destStlucia from "@/assets/dest-stlucia.jpg";
 import destCaribbean from "@/assets/dest-caribbean.jpg";
+import destTurkey from "@/assets/dest-turkey.jpg";
 
 const programs = [
   { country: "Grenada", path: "/citizenship-by-investment/grenada", image: destGrenada, investment: "From $235,000", timeline: "4–6 months", visaFree: "145+", highlight: "Only Caribbean CBI with E-2 Treaty access to the U.S." },
@@ -22,6 +23,7 @@ const programs = [
   { country: "Saint Lucia", path: "/citizenship-by-investment/saint-lucia", image: destStlucia, investment: "From $240,000", timeline: "~3 months", visaFree: "140+", highlight: "Flexible investment routes including donation, real estate, and enterprise." },
   { country: "São Tomé & Príncipe", path: "/citizenship-by-investment/sao-tome-and-principe", image: destCaribbean, investment: "From $90,000", timeline: "2–3 months", visaFree: "ECOWAS+", highlight: "One of the most affordable CBI programs globally. Licensed agent access." },
   { country: "Sierra Leone", path: "/citizenship-by-investment/sierra-leone", image: destCaribbean, investment: "From $140,000", timeline: "2–4 months", visaFree: "Emerging", highlight: "'Go For Gold' program with cost optimization for families." },
+  { country: "Turkey", path: "/citizenship-by-investment/turkey", image: destTurkey, investment: "From $400,000", timeline: "3–6 months", visaFree: "110+", highlight: "Fast-track citizenship with U.S. E-2 treaty access." },
 ];
 
 const faqItems = [
