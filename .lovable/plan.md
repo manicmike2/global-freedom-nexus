@@ -1,83 +1,73 @@
-## Fix Backlinks + Build Missing Destination Pages + Resolve Indexing Issues
+## Do not apply the proposed vercel.json — it would break the site
 
-### Decision recap
-- **Malta** → reposition as **Permanent Residency** (not citizenship). Build `/golden-visa/malta` and update memory: Malta now offered as residency only, citizenship route remains excluded.
-- **Turkey** → build `/citizenship-by-investment/turkey`
-- **UAE** → build `/golden-visa/uae`
-- **Panama** → build `/golden-visa/panama` (currently linked from Destinations + Globe but has no page = soft 404)
+The config you pasted has multiple serious issues. I recommend rejecting it and applying a corrected version instead.
 
-### Root cause of Google issues
-1. **Soft 404 / "Page with redirect" / "Discovered – not indexed"** → Turkey/UAE/Panama/Malta are linked from Destinations grid, GlobeScene, llms files, sitemap-adjacent content but resolve to hub pages with non-existent `#anchor` fragments. Googlebot hits a page that doesn't match the link intent → soft 404.
-2. **"Page with redirect"** → legacy paths (`/golden-visas`, `/antigua-barbuda`, `/citizenship-by-investment/antigua-and-barbuda`, `/citizenship-by-investment/st-kitts-and-nevis`) use React Router `<Navigate replace>` — client-side, served as 200 of the redirector. Googlebot sees this as soft 404, not a 301.
-3. **"Crawled — currently not indexed"** → low-value/thin pages and duplicate hub-anchor URLs.
-4. **"Not found (404)"** → mixed-case or stale external links hitting routes not in router.
-5. **No 404 status code** → SPA always returns 200; `NotFound` page is `noindex` but Search Console flags soft 404. Mitigation: ensure clear noindex + minimal links from internal pages, plus convert known stale URLs into real 301s in `vercel.json`.
+### Critical problems in the proposed file
 
-### Files to create
+1. `**"framework": "next"**` — this project is **Vite + React**, not Next.js. Setting `framework: next` tells Vercel to expect a Next.js build (`.next/`, server functions, etc.) and will break the deploy. Same for `/_next/*` routes — that path doesn't exist here.
+2. **Garbage value `"โอกา率达到": true**` on the `/golden-visas/:path*` redirect. That's not a valid Vercel key; the redirect will be rejected and `/golden-visas/anything` will stop redirecting.
+3. **Typo `antigua-barbula**` in the destination of `/citizenship-by-investment/antigua-and-barbuda` → would 404 every user hitting that legacy URL.
+4. `**/citizenship-by-investment/st-kitts-and-nevis` → `/saint-kitts-and-nevis**` — wrong destination. The real page is `/citizenship-by-investment/saint-kitts-nevis` (no "and", see `src/App.tsx`).
+5. **Missing the non-www → www 301** that currently enforces the canonical domain. Removing it reintroduces duplicate-content (apex + www both serve 200).
+6. **Missing the SPA fallback rewrite** `"/((?!.*\\.).*)" → "/index.html"`. Without it, every deep link (`/about`, `/contact`, all destination pages, all `/insights/*`) returns 404 on direct load / refresh — exactly the indexing problem we just fixed.
+7. `**"version": 3` + top-level `"routes"**` — legacy Vercel v1 schema, incompatible with the modern `rewrites`/`redirects`/`headers` keys also present. Vercel will reject or ignore parts of the file.
+8. **No-op rewrites** like `/api/(.*) → /api/$1`, `/assets/(.*) → /assets/$1` do nothing useful. There is no `/api` directory in this project.
+9. `**poweredByHeader`, `favicon**` are not valid Vercel config keys (those are Next.js-only options).
+10. `**X-Frame-Options: DENY**` would block embedding the site in iframes (e.g. preview share, Tally form previews). Lower-risk to omit or use `SAMEORIGIN`. `**X-XSS-Protection**` is deprecated by all modern browsers — harmless but noise.
+11. **Missing `"trailingSlash": false**` — currently enforced; removing it can create duplicate URLs (`/about` vs `/about/`).
 
-**4 new destination pages** using existing `DestinationPageTemplate` (same pattern as `Grenada.tsx` — ~55 lines each):
-- `src/pages/destinations/Malta.tsx` (type: `golden-visa`, Malta Permanent Residency Programme — MPRP, from €150K gov contribution + property)
-- `src/pages/destinations/Turkey.tsx` (type: `cbi`, from $400K real-estate route, 3–6 months)
-- `src/pages/destinations/Uae.tsx` (type: `golden-visa`, 10-year renewable, from $550K real estate / public investment)
-- `src/pages/destinations/Panama.tsx` (type: `golden-visa`, Qualified Investor + Friendly Nations, from $300K)
+### Recommended action
 
-Each page includes: SEO title/description (≤60/≤160 chars, niche keywords), canonical, BreadcrumbList + Service JSON-LD, hero, 4 highlights, 2–3 investment options, 4-step timeline, eligibility, 4 FAQs, CTA. Reuses existing `dest-malta.jpg`, `dest-turkey.jpg`, `dest-uae.jpg`, `dest-panama.jpg` assets already imported.
+Keep the current `vercel.json` (already correct) and only **add `X-Frame-Options: SAMEORIGIN**` if you want the extra header. Final file:
 
-### Files to edit
-
-**`src/App.tsx`** — Register the 4 new routes:
-```
-/golden-visa/malta            → Malta
-/citizenship-by-investment/turkey → Turkey
-/golden-visa/uae              → Uae
-/golden-visa/panama           → Panama
-```
-
-**`src/lib/destinations.ts`** — Replace hub-anchor entries with real page paths:
-```
-"Malta":  { page: "/golden-visa/malta" }
-"Turkey": { page: "/citizenship-by-investment/turkey" }
-"UAE":    { page: "/golden-visa/uae" }
-"Panama": { page: "/golden-visa/panama" }
-```
-
-**`src/pages/Destinations.tsx`** — Move Malta from `type: "Citizenship"` to `type: "Residency"`, region stays "Europe", update copy from "EU citizenship by investment" → "Malta Permanent Residency Programme (MPRP)".
-
-**`src/pages/CBIHub.tsx`** — Add Turkey card (Caribbean+Global section).
-
-**`src/pages/GoldenVisaHub.tsx`** — Add Malta, UAE, Panama cards.
-
-**`src/pages/ForAttorneys.tsx`** — Move Malta from CBI list to Golden Visa list.
-
-**`public/sitemap.xml`** — Add 4 new `<url>` entries; keep canonical hub URLs only (no anchored URLs).
-
-**`public/llms.txt` + `public/llms-full.txt`** — Update Malta description (residency, not citizenship-excluded), add Turkey/UAE/Panama links and details. Keep "Malta CBI excluded" note but allow "Malta MPRP residency".
-
-**`vercel.json`** — Convert client-side `<Navigate>` redirects into proper server 301s so Googlebot sees real redirects (fixes "Page with redirect" + soft 404):
 ```json
-"redirects": [
-  { non-www → www (existing) },
-  { "source": "/golden-visas", "destination": "/golden-visa", "permanent": true },
-  { "source": "/golden-visas/:path*", "destination": "/golden-visa/:path*", "permanent": true },
-  { "source": "/antigua-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
-  { "source": "/citizenship-by-investment/antigua-and-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
-  { "source": "/citizenship-by-investment/st-kitts-and-nevis", "destination": "/citizenship-by-investment/saint-kitts-nevis", "permanent": true }
-]
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "globalfreedomcapital.com" }],
+      "destination": "https://www.globalfreedomcapital.com/:path*",
+      "permanent": true
+    },
+    { "source": "/golden-visas", "destination": "/golden-visa", "permanent": true },
+    { "source": "/golden-visas/:path*", "destination": "/golden-visa/:path*", "permanent": true },
+    { "source": "/antigua-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+    { "source": "/citizenship-by-investment/antigua-and-barbuda", "destination": "/citizenship-by-investment/antigua-barbuda", "permanent": true },
+    { "source": "/citizenship-by-investment/st-kitts-and-nevis", "destination": "/citizenship-by-investment/saint-kitts-nevis", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    }
+  ]
+}
 ```
-Keep the React Router `<Navigate>` fallbacks too — defense in depth for non-Vercel hosting.
 
-**Memory update** — Edit `mem://index.md` Core: change "Malta is intentionally EXCLUDED from all offerings" → "Malta offered ONLY as Permanent Residency (MPRP). Malta citizenship/CBI remains excluded." Update `mem://features/service-scope` accordingly.
+### Changes vs current file
+
+- Add `X-Frame-Options: SAMEORIGIN` (clickjacking protection without breaking same-origin embeds)
+- Add `Referrer-Policy: strict-origin-when-cross-origin` (privacy-friendly default)
+- Everything else stays — non-www→www 301, all 5 legacy redirects, SPA fallback, nosniff + HSTS
 
 ### Out of scope
-- No design/layout changes
-- No changes to existing destination pages other than Malta/Turkey/UAE/Panama wiring
-- No backend or Supabase changes
-- No content rewrites of existing pages beyond the Malta repositioning
-- No changes to the Malta blog article (`malta-citizenship-naturalization`) — left as informational; will not link to it from offerings
 
-### Result
-- 4 new indexable pages with proper canonicals, JSON-LD, internal links
-- Zero broken/dead destination links across the site
-- Legacy URLs return real 301s (resolves "Page with redirect")
-- Sitemap matches actual canonical pages (resolves "Alternate page with proper canonical tag")
-- Hub-anchor soft 404s eliminated
+- No router, sitemap, or content changes
+- No Next.js migration (project is Vite — that's not changing)
+
+### Approve to apply
+
+On approval I'll overwrite `vercel.json` with the block above.  
+  
+Okay, reject, but I still need you to fix these redirect issues for better SEO optimization in the current working vercel.json
+
+&nbsp;
