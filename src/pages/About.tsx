@@ -7,6 +7,7 @@ import PageSEO from "@/components/PageSEO";
 import StrategicInsight from "@/components/StrategicInsight";
 import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
+import YouTubeSlideshow from "@/components/YouTubeSlideshow";
 import boardroom from "@/assets/boardroom.jpg";
 import tatianaMuntean from "@/assets/tatiana-muntean.jpg";
 import { ChevronRight, Shield, Users, Globe, Award, CheckCircle } from "lucide-react";
@@ -258,6 +259,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* YouTube Slideshow */}
+      <YouTubeSlideshow />
 
       {/* FAQ */}
       <FAQ items={faqItems} heading="About Global Freedom Capital" />
