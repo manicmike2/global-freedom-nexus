@@ -55,7 +55,7 @@ const data = {
     heading: "Our Licenses",
     description: "Global Freedom Capital is an official partner for the Sierra Leone 'Go For Gold' Citizenship Program.",
     items: [
-      { title: "Official Partner Certificate — Global Freedom Capital", file: "/licenses/sierra-leone-official-partner-certificate.pdf" },
+      { title: "Official Partner Certificate — Global Freedom Capital", file: "/licenses/sierra-leone-official-partner-certificate.pdf", image: "/licenses/images/sierra-leone-license-1.jpg" },
     ],
     verification: {
       label: "goforgold.center/official-partners",
