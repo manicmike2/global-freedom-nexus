@@ -53,7 +53,7 @@ const data = {
     heading: "Our Licenses",
     description: "Global Freedom Capital is a licensed marketing agent for the São Tomé & Príncipe Citizenship by Investment Program.",
     items: [
-      { title: "Marketing Agent License — Global Freedom Capital Corp.", file: "/licenses/sao-tome-marketing-agent-license.pdf" },
+      { title: "Marketing Agent License — Global Freedom Capital Corp.", file: "/licenses/sao-tome-cbi-agent-license.pdf" },
     ],
     verification: {
       label: "cip.gov.st/marketing-agents",
