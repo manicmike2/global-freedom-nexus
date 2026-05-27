@@ -50,6 +50,18 @@ const data = {
   ctaDescription: "Our team provides on-the-ground support and strategic advisory for the Sierra Leone Go For Gold Program. Book a confidential consultation.",
   hubPath: "/citizenship-by-investment",
   hubLabel: "All CBI programs",
+  licenses: {
+    label: "Credentials",
+    heading: "Our Licenses",
+    description: "Global Freedom Capital is an official partner for the Sierra Leone 'Go For Gold' Citizenship Program.",
+    items: [
+      { title: "Official Partner Certificate — Global Freedom Capital", file: "/licenses/sierra-leone-official-partner-certificate.pdf" },
+    ],
+    verification: {
+      label: "goforgold.center/official-partners",
+      url: "https://goforgold.center/official-partners/",
+    },
+  },
 };
 
 const SierraLeone = () => <DestinationPageTemplate data={data} />;

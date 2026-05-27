@@ -30,6 +30,13 @@ export interface DestinationPageData {
   ctaDescription: string;
   hubPath: string;
   hubLabel: string;
+  licenses?: {
+    heading?: string;
+    label?: string;
+    description?: string;
+    items: { title: string; file: string }[];
+    verification?: { label: string; url: string };
+  };
 }
 
 const DestinationPageTemplate = ({ data }: { data: DestinationPageData }) => {
@@ -158,6 +165,61 @@ const DestinationPageTemplate = ({ data }: { data: DestinationPageData }) => {
           </div>
         </div>
       </section>
+
+      {/* Licenses */}
+      {data.licenses && (
+        <section className="py-24 lg:py-32 bg-card/30 border-y border-border">
+          <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+            <SectionHeading
+              label={data.licenses.label ?? "Credentials"}
+              title={data.licenses.heading ?? "Our Licenses"}
+              subtitle={data.licenses.description}
+            />
+            <div className="space-y-8">
+              {data.licenses.items.map((doc, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="border border-border bg-background p-4 sm:p-6 mx-auto max-w-xl"
+                >
+                  <h3 className="font-serif text-base text-foreground mb-4 text-center">{doc.title}</h3>
+                  <div className="aspect-[3/4] w-full overflow-hidden border border-border bg-card">
+                    <object data={`${doc.file}#view=FitH&toolbar=0&navpanes=0`} type="application/pdf" className="w-full h-full">
+                      <iframe src={doc.file} title={doc.title} className="w-full h-full" loading="lazy" />
+                    </object>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <a
+                      href={doc.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs tracking-[0.2em] uppercase text-primary hover:underline"
+                    >
+                      Open Document
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+              {data.licenses.verification && (
+                <p className="text-center text-sm text-muted-foreground">
+                  Verify our listing on the official registry:{" "}
+                  <a
+                    href={data.licenses.verification.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline break-words"
+                  >
+                    {data.licenses.verification.label}
+                  </a>
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <FAQ items={data.faqItems} heading={data.faqHeading} />
