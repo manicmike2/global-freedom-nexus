@@ -30,6 +30,13 @@ export interface DestinationPageData {
   ctaDescription: string;
   hubPath: string;
   hubLabel: string;
+  licenses?: {
+    heading?: string;
+    label?: string;
+    description?: string;
+    items: { title: string; file: string }[];
+    verification?: { label: string; url: string };
+  };
 }
 
 const DestinationPageTemplate = ({ data }: { data: DestinationPageData }) => {
