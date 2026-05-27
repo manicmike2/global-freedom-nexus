@@ -185,28 +185,18 @@ const DestinationPageTemplate = ({ data }: { data: DestinationPageData }) => {
                   transition={{ delay: i * 0.1 }}
                   className="border border-border bg-background p-4 sm:p-6 mx-auto max-w-xl"
                 >
-                  <h3 className="font-serif text-base text-foreground mb-4 text-center">{doc.title}</h3>
-                  <div className="w-full overflow-hidden border border-border bg-card">
-                    {doc.image ? (
-                      <img src={doc.image} alt={doc.title} className="w-full h-auto block" loading="lazy" />
-                    ) : (
-                      <div className="aspect-[3/4]">
-                        <object data={`${doc.file}#view=FitH&toolbar=0&navpanes=0`} type="application/pdf" className="w-full h-full">
-                          <iframe src={doc.file} title={doc.title} className="w-full h-full" loading="lazy" />
-                        </object>
-                      </div>
-                    )}
-                  </div>
-                  <div className="mt-4 text-center">
-                    <a
-                      href={doc.file}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs tracking-[0.2em] uppercase text-primary hover:underline"
-                    >
-                      Open Document
-                    </a>
-                  </div>
+                <h3 className="font-serif text-base text-foreground mb-4 text-center">{doc.title}</h3>
+                <div className="w-full overflow-hidden border border-border bg-card">
+                  {doc.image ? (
+                    <img src={doc.image} alt={doc.title} className="w-full h-auto block" loading="lazy" />
+                  ) : (
+                    <div className="aspect-[3/4]">
+                      <object data={`${doc.file}#view=FitH&toolbar=0&navpanes=0`} type="application/pdf" className="w-full h-full">
+                        <iframe src={doc.file} title={doc.title} className="w-full h-full" loading="lazy" />
+                      </object>
+                    </div>
+                  )}
+                </div>
                 </motion.div>
               ))}
               {data.licenses.verification && (
