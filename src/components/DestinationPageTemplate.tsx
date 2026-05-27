@@ -34,7 +34,7 @@ export interface DestinationPageData {
     heading?: string;
     label?: string;
     description?: string;
-    items: { title: string; file: string }[];
+    items: { title: string; file: string; image?: string }[];
     verification?: { label: string; url: string };
   };
 }
