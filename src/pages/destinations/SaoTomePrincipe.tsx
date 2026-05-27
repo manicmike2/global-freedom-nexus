@@ -48,6 +48,18 @@ const data = {
   ctaDescription: "As a licensed agent, we provide direct access and concierge-level guidance for the São Tomé & Príncipe CBI program. Book a confidential consultation.",
   hubPath: "/citizenship-by-investment",
   hubLabel: "All CBI programs",
+  licenses: {
+    label: "Credentials",
+    heading: "Our Licenses",
+    description: "Global Freedom Capital is a licensed marketing agent for the São Tomé & Príncipe Citizenship by Investment Program.",
+    items: [
+      { title: "Marketing Agent License — Global Freedom Capital Corp.", file: "/licenses/sao-tome-marketing-agent-license.pdf" },
+    ],
+    verification: {
+      label: "cip.gov.st/marketing-agents",
+      url: "https://cip.gov.st/marketing-agents#list-of-marketing-agents",
+    },
+  },
 };
 
 const SaoTomePrincipe = () => <DestinationPageTemplate data={data} />;
