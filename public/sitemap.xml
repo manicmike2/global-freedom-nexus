@@ -129,6 +129,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.globalfreedomcapital.com/unsubscribe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <!-- Resources -->
   <url>
     <loc>https://www.globalfreedomcapital.com/resources/blog</loc>
