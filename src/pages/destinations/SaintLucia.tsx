@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destStlucia,
   imageAlt: "Saint Lucia citizenship by investment destination",
-  seoTitle: "Saint Lucia Citizenship by Investment | Bonds | GFC",
-  seoDescription: "Saint Lucia citizenship by investment with flexible options including government bonds. 146+ visa-free countries. Expert advisory from GFC.",
+  seoTitle: "Saint Lucia Citizenship by Investment | Bond & Donation Routes | GFC",
+  seoDescription: "Saint Lucia citizenship by investment with flexible options including government bonds and donations. 146+ visa-free countries. Expert advisory from GFC.",
   canonicalPath: "/citizenship-by-investment/saint-lucia",
   highlights: [
     { icon: Globe, title: "140+ Countries", desc: "Visa-free or visa-on-arrival access to over 140 countries including the UK and EU Schengen Area." },

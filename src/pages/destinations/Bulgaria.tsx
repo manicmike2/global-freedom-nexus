@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Bulgaria Golden Visa residency by investment destination",
-  seoTitle: "Bulgaria Golden Visa | EU Residency Pathway | GFC",
-  seoDescription: "Bulgaria Golden Visa — EU residency by investment with citizenship pathway. Schengen access for HNW families. Expert advisory from GFC.",
+  seoTitle: "Bulgaria Golden Visa | EU Residency with Citizenship Pathway | GFC",
+  seoDescription: "Bulgaria Golden Visa — EU residency by investment with a fast-track citizenship pathway and Schengen access for HNW families. Expert advisory from GFC.",
   canonicalPath: "/golden-visa/bulgaria",
   highlights: [
     { icon: Globe, title: "EU & Schengen Access", desc: "Bulgaria joined the Schengen Area, granting residence permit holders visa-free travel across member states." },

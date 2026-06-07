@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all CBI programs:",
   image: destCaribbean,
   imageAlt: "São Tomé and Príncipe citizenship by investment destination",
-  seoTitle: "São Tomé Citizenship by Investment from $90K | GFC",
-  seoDescription: "São Tomé & Príncipe citizenship by investment from $90,000. Discreet fast-track second passport program. Expert advisory from GFC. Free consultation.",
+  seoTitle: "São Tomé & Príncipe Citizenship by Investment from $90K | GFC",
+  seoDescription: "São Tomé & Príncipe citizenship by investment from $90,000 — a discreet, fast-track second passport program for HNW families. Expert advisory from GFC.",
   canonicalPath: "/citizenship-by-investment/sao-tome-and-principe",
   highlights: [
     { icon: Clock, title: "2–3 Month Processing", desc: "Fast-track processing for qualified applicants seeking rapid citizenship acquisition." },

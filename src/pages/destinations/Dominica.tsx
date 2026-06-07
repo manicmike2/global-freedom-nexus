@@ -12,7 +12,7 @@ const data = {
   image: destDominica,
   imageAlt: "Dominica citizenship by investment destination",
   seoTitle: "Dominica Citizenship by Investment from $200K | GFC",
-  seoDescription: "Dominica citizenship by investment from $200,000 — among the most affordable second citizenship programs. 145+ visa-free countries. Speak with GFC.",
+  seoDescription: "Dominica citizenship by investment from $200,000 — one of the most affordable second citizenship programs with 145+ visa-free destinations. Speak with GFC.",
   canonicalPath: "/citizenship-by-investment/dominica",
   highlights: [
     { icon: Globe, title: "145+ Countries", desc: "Visa-free or visa-on-arrival access to over 145 countries worldwide, including the UK and Schengen Area." },

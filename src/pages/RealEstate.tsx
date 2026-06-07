@@ -116,8 +116,8 @@ const RealEstate = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Investment Migration Real Estate | CBI & RBI | GFC"
-        description="Qualifying real estate for citizenship and residency by investment programs. Caribbean and EU opportunities from $200K. Speak with GFC advisors."
+        title="Qualifying Real Estate for Citizenship & Residency | GFC"
+        description="Curated, government-approved real estate qualifying for Caribbean citizenship and EU Golden Visa programs from $200,000. Speak with Global Freedom Capital."
         canonical="https://www.globalfreedomcapital.com/real-estate"
         jsonLd={{
           "@context": "https://schema.org",

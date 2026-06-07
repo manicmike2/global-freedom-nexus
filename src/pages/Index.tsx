@@ -124,8 +124,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <PageSEO
-        title="Investment Migration Advisory | Second Citizenship | GFC"
-        description="Investment migration advisory for HNW families. Second citizenship & EU residency by investment. Expert guidance from GFC. Book a private consultation."
+        title="Investment Migration Advisory for HNW Families | GFC"
+        description="Global Freedom Capital advises HNW families on second citizenship by investment and Golden Visa residency. Private consultations with founder Tatiana Muntean."
         canonical="https://www.globalfreedomcapital.com/"
         jsonLd={{
           "@context": "https://schema.org",

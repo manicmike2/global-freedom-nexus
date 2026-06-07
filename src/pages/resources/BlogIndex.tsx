@@ -39,7 +39,7 @@ const articles = [
 const BlogIndex = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="Investment Migration Insights & Guides | GFC"
+      title="Investment Migration Blog: CBI & Golden Visa Guides | GFC"
       description="Expert guides on investment migration, second citizenship, and Golden Visas for HNW families. Strategic insights from Global Freedom Capital."
       canonical="https://www.globalfreedomcapital.com/resources/blog"
     />

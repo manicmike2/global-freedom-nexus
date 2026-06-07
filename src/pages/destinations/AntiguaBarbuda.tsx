@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Established in 2013, the program is fully government-authorized and internationally recognized. Explore all Caribbean CBI programs:",
   image: destAntigua,
   imageAlt: "Antigua & Barbuda citizenship by investment destination",
-  seoTitle: "Antigua Citizenship by Investment from $230K | GFC",
-  seoDescription: "Antigua & Barbuda citizenship by investment from $230,000. Second passport, 150+ visa-free countries, family inclusion. Free consultation with GFC.",
+  seoTitle: "Antigua & Barbuda Citizenship by Investment from $230K | GFC",
+  seoDescription: "Antigua & Barbuda citizenship by investment from $230,000 — second passport with 150+ visa-free destinations and family inclusion. Free consultation with GFC.",
   canonicalPath: "/citizenship-by-investment/antigua-barbuda",
   highlights: [
     { icon: Globe, title: "151+ Countries", desc: "Visa-free or visa-on-arrival access to over 151 countries worldwide, including the UK and Schengen Area." },

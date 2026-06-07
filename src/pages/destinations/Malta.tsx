@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore other European residency options:",
   image: destMalta,
   imageAlt: "Malta Permanent Residence Programme — Mediterranean EU residency",
-  seoTitle: "Malta Permanent Residency (MPRP) | EU Residence | GFC",
-  seoDescription: "Malta Permanent Residence Programme (MPRP): lifetime EU residency, Schengen access, English-speaking Mediterranean base. Expert advisory from GFC.",
+  seoTitle: "Malta Permanent Residency Programme (MPRP) | EU Residence | GFC",
+  seoDescription: "Malta Permanent Residence Programme (MPRP) — lifetime EU residency with Schengen access from an English-speaking Mediterranean base. Expert advisory from GFC.",
   canonicalPath: "/golden-visa/malta",
   highlights: [
     { icon: Globe, title: "Schengen Access", desc: "Visa-free travel across the 27-country Schengen Area for residence-card holders and qualifying dependents." },

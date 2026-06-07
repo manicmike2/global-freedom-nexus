@@ -38,7 +38,7 @@ const CBIHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
       title="Citizenship by Investment Programs 2026 | GFC"
-      description="Compare leading citizenship by investment programs for HNW families: Antigua, St Kitts, Grenada, Dominica, Saint Lucia, São Tomé, Sierra Leone."
+      description="Compare the leading citizenship by investment programs for HNW families — Antigua, Saint Kitts, Grenada, Dominica, Saint Lucia, São Tomé, and Sierra Leone."
       canonical="https://www.globalfreedomcapital.com/citizenship-by-investment"
       jsonLd={{
         "@context": "https://schema.org",
