@@ -33,8 +33,8 @@ const faqItems = [
 const GoldenVisaHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="EU Residency by Investment | Golden Visa | GFC"
-      description="Compare EU residency by investment programs: Portugal, Greece, Hungary, Bulgaria, Latvia. Schengen access from €60K. Expert advisory from GFC."
+      title="Golden Visa & EU Residency by Investment Programs | GFC"
+      description="Compare Europe's leading Golden Visa residency programs — Portugal, Greece, Hungary, Bulgaria, Latvia, and Malta — for HNW families. Expert advisory from GFC."
       canonical="https://www.globalfreedomcapital.com/golden-visa"
       jsonLd={{
         "@context": "https://schema.org",

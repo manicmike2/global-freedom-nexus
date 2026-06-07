@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Compare other residency by investment programs:",
   image: destPanama,
   imageAlt: "Panama Qualified Investor Visa — Panama City skyline",
-  seoTitle: "Panama Qualified Investor Visa | Residency by Investment | GFC",
-  seoDescription: "Panama Qualified Investor Visa from $300,000 real estate. Permanent residency in a USD economy with territorial taxation. GFC expert advisory.",
+  seoTitle: "Panama Qualified Investor Visa from $300K | Residency | GFC",
+  seoDescription: "Panama Qualified Investor Visa from $300,000 in real estate — permanent residency in a USD-denominated economy with territorial taxation. GFC expert advisory.",
   canonicalPath: "/golden-visa/panama",
   highlights: [
     { icon: Globe, title: "Strategic Hub", desc: "Premier connectivity hub for the Americas with the Panama Canal, Tocumen International Airport, and one of Latin America's strongest banking sectors." },

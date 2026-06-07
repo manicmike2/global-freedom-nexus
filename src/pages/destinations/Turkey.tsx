@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Compare other citizenship by investment programs:",
   image: destTurkey,
   imageAlt: "Turkey citizenship by investment — Istanbul real estate and skyline",
-  seoTitle: "Turkey Citizenship by Investment | E-2 Visa Access | GFC",
-  seoDescription: "Turkey citizenship by investment from $400,000 real estate. Fast-track second passport, E-2 US treaty access, 110+ visa-free destinations. GFC advisory.",
+  seoTitle: "Turkey Citizenship by Investment | E-2 Treaty Access | GFC",
+  seoDescription: "Turkey citizenship by investment from $400,000 in real estate — fast-track second passport with E-2 U.S. treaty access and 110+ visa-free destinations.",
   canonicalPath: "/citizenship-by-investment/turkey",
   highlights: [
     { icon: Globe, title: "110+ Countries", desc: "Visa-free or visa-on-arrival access to 110+ destinations including Japan, Singapore, South Korea, and Hong Kong." },

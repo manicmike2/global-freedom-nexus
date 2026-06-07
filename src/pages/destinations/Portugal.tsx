@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Portugal Golden Visa residency by investment destination",
-  seoTitle: "Portugal Golden Visa | EU Citizenship Pathway | GFC",
-  seoDescription: "Portugal Golden Visa from €500K — EU residency with citizenship pathway after 5 years. Schengen access. Expert investment migration advisory from GFC.",
+  seoTitle: "Portugal Golden Visa | EU Citizenship Pathway from €250K | GFC",
+  seoDescription: "Portugal Golden Visa from €250,000 — EU residency with citizenship pathway after five years and Schengen access. Expert investment migration advisory from GFC.",
   canonicalPath: "/golden-visa/portugal",
   highlights: [
     { icon: Globe, title: "188+ Countries (with citizenship)", desc: "Portuguese citizenship grants one of the world's most powerful passports with visa-free access to 188+ countries." },

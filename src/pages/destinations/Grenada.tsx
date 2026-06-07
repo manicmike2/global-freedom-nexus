@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all Caribbean CBI programs:",
   image: destGrenada,
   imageAlt: "Grenada citizenship by investment destination",
-  seoTitle: "Grenada Citizenship | E-2 Visa Treaty Passport | GFC",
-  seoDescription: "Grenada citizenship by investment with E-2 US treaty visa access. Second passport, 145+ visa-free countries, family-friendly. Free consultation with GFC.",
+  seoTitle: "Grenada Citizenship by Investment | E-2 Treaty Passport | GFC",
+  seoDescription: "Grenada citizenship by investment with E-2 U.S. treaty visa access — second passport, 145+ visa-free countries, family inclusion. Free consultation with GFC.",
   canonicalPath: "/citizenship-by-investment/grenada",
   highlights: [
     { icon: Globe, title: "145+ Countries", desc: "Visa-free or visa-on-arrival access to over 145 countries including the UK, EU Schengen Area, China, and Russia." },

@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Explore all European Golden Visa programs:",
   image: destPortugal,
   imageAlt: "Hungary Golden Visa residency by investment destination",
-  seoTitle: "Hungary Guest Investor Visa | EU Residency | GFC",
-  seoDescription: "Hungary Guest Investor Visa from €250,000 — EU residency through real estate funds. Schengen access. Expert advisory from GFC. Free consultation.",
+  seoTitle: "Hungary Guest Investor Visa from €250K | EU Residency | GFC",
+  seoDescription: "Hungary Guest Investor Visa from €250,000 — ten-year EU residency through regulated real estate funds with Schengen access. Free consultation with GFC.",
   canonicalPath: "/golden-visa/hungary",
   highlights: [
     { icon: Globe, title: "Schengen Access", desc: "Free movement across all Schengen Area countries with a Hungarian residence permit." },

@@ -5,7 +5,7 @@ const BestCBI2026 = () => (
   <BlogArticleLayout
     title="Best Citizenship by Investment Programs in 2026"
     seoTitle="Best Citizenship by Investment Programs 2026 | GFC"
-    seoDescription="Compare the best citizenship by investment programs in 2026: Antigua, St Kitts, Grenada, Dominica, Saint Lucia. Expert analysis for HNW families."
+    seoDescription="Compare the best citizenship by investment programs of 2026 — Antigua, Saint Kitts, Grenada, Dominica, and Saint Lucia — analyzed by GFC for HNW families."
     canonicalPath="/resources/blog/best-citizenship-by-investment-programs-2026"
     date="2026-04-01"
   >

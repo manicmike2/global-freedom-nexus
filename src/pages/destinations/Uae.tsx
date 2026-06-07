@@ -11,8 +11,8 @@ const data = {
   heroSubDescription: "Compare other residency by investment programs:",
   image: destUae,
   imageAlt: "UAE Golden Visa — Dubai skyline residency by investment",
-  seoTitle: "UAE Golden Visa | 10-Year Dubai Residency | GFC",
-  seoDescription: "UAE Golden Visa from AED 2M (~$545K) real estate or qualifying capital. 10-year renewable residency, 0% personal income tax. GFC expert advisory.",
+  seoTitle: "UAE Golden Visa | 10-Year Dubai Residency by Investment | GFC",
+  seoDescription: "UAE Golden Visa from AED 2M (~$545K) in real estate or qualifying capital — 10-year renewable residency with 0% personal income tax. Expert advisory from GFC.",
   canonicalPath: "/golden-visa/uae",
   highlights: [
     { icon: Globe, title: "Global Hub", desc: "Strategic Gulf base with world-class connectivity to Europe, Asia, and Africa, anchored by Dubai and Abu Dhabi international airports." },
