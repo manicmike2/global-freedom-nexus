@@ -15,10 +15,9 @@ const tree = (
 );
 
 // If prerendered markup exists, hydrate it; otherwise do a normal render.
-// Only hydrate when real prerendered markup exists (an element child).
-// In dev the template still has the <!--app-html--> comment, which would
-// otherwise trip hasChildNodes() and break hydration.
-if (container.firstElementChild) {
+// Hydrate only the prerendered production build. In dev there's no SSR HTML,
+// and overlays may inject nodes into #root that would cause hydration mismatches.
+if (import.meta.env.PROD && container.firstElementChild) {
   hydrateRoot(container, tree);
 } else {
   createRoot(container).render(tree);
