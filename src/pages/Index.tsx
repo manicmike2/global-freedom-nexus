@@ -9,6 +9,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import GlobeScene from "@/components/GlobeScene";
 import ParticleField from "@/components/ParticleField";
+import ClientOnly from "@/components/ClientOnly";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionReveal from "@/components/SectionReveal";
 import PageSEO from "@/components/PageSEO";
@@ -182,7 +183,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         </motion.div>
 
-        <GlobeScene />
+        <ClientOnly><GlobeScene /></ClientOnly>
 
         <motion.div
           className="relative z-10 container mx-auto px-6 lg:px-12 text-center"
@@ -300,7 +301,7 @@ const Index = () => {
 
       {/* ═══════════════ WHAT WE DO ═══════════════ */}
       <section className="py-28 lg:py-36 relative">
-        <ParticleField />
+        <ClientOnly><ParticleField /></ClientOnly>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <SectionHeading
             label="Advisory Services"
@@ -470,7 +471,7 @@ const Index = () => {
       {/* ═══════════════ HOW IT WORKS ═══════════════ */}
       <section className="py-28 lg:py-36 bg-muted/30 border-y border-border relative overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
-        <ParticleField />
+        <ClientOnly><ParticleField /></ClientOnly>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <SectionHeading
             label="Process"
@@ -585,7 +586,7 @@ const Index = () => {
 
       {/* ═══════════════ FINAL CTA ═══════════════ */}
       <section className="py-28 lg:py-44 relative overflow-hidden">
-        <ParticleField />
+        <ClientOnly><ParticleField /></ClientOnly>
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
           <SectionReveal>
             <motion.span
