@@ -50,11 +50,23 @@ for (const route of prerenderRoutes) {
     .replace("<!--app-html-->", html)
     .replace("<!--app-head-->", headTags);
 
-  // If helmet emitted a <title>, strip the static fallback <title> from index.html
-  // to avoid two <title> tags in the same document.
-  if (helmet && helmet.title.toString().includes("<title")) {
-    page = page.replace(/<title>[^<]*<\/title>\s*/i, "");
-  }
+  // Strip static fallback head tags from index.html that Helmet now provides per-route,
+  // so crawlers don't see duplicate (and stale) metadata.
+  const helmetMeta = helmet?.meta.toString() ?? "";
+  const helmetLink = helmet?.link.toString() ?? "";
+  const stripIf = (cond, re) => { if (cond) page = page.replace(re, ""); };
+  stripIf(helmet?.title.toString().includes("<title"), /^[ \t]*<title>[^<]*<\/title>\s*\n?/im);
+  stripIf(/name="description"/.test(helmetMeta), /^[ \t]*<meta\s+name="description"[^>]*>\s*\n?/gim);
+  stripIf(/property="og:title"/.test(helmetMeta), /^[ \t]*<meta\s+property="og:title"[^>]*>\s*\n?/gim);
+  stripIf(/property="og:description"/.test(helmetMeta), /^[ \t]*<meta\s+property="og:description"[^>]*>\s*\n?/gim);
+  stripIf(/property="og:url"/.test(helmetMeta), /^[ \t]*<meta\s+property="og:url"[^>]*>\s*\n?/gim);
+  stripIf(/property="og:type"/.test(helmetMeta), /^[ \t]*<meta\s+property="og:type"[^>]*>\s*\n?/gim);
+  stripIf(/property="og:image"/.test(helmetMeta), /^[ \t]*<meta\s+property="og:image"[^>]*>\s*\n?/gim);
+  stripIf(/name="twitter:title"/.test(helmetMeta), /^[ \t]*<meta\s+name="twitter:title"[^>]*>\s*\n?/gim);
+  stripIf(/name="twitter:description"/.test(helmetMeta), /^[ \t]*<meta\s+name="twitter:description"[^>]*>\s*\n?/gim);
+  stripIf(/name="twitter:image"/.test(helmetMeta), /^[ \t]*<meta\s+name="twitter:image"[^>]*>\s*\n?/gim);
+  stripIf(/name="twitter:card"/.test(helmetMeta), /^[ \t]*<meta\s+name="twitter:card"[^>]*>\s*\n?/gim);
+  stripIf(/rel="canonical"/.test(helmetLink), /^[ \t]*<link\s+rel="canonical"[^>]*>\s*\n?/gim);
 
   const outPath =
     route === "/"
