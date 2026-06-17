@@ -12,6 +12,21 @@ const serverDir = path.join(distDir, "server");
 const templatePath = path.join(distDir, "index.html");
 const template = await fs.readFile(templatePath, "utf-8");
 
+// Polyfill browser globals that some client libs (e.g. Supabase auth) touch at import time.
+const memoryStorage = (() => {
+  const store = new Map();
+  return {
+    getItem: (k) => (store.has(k) ? store.get(k) : null),
+    setItem: (k, v) => void store.set(k, String(v)),
+    removeItem: (k) => void store.delete(k),
+    clear: () => store.clear(),
+    key: (i) => Array.from(store.keys())[i] ?? null,
+    get length() { return store.size; },
+  };
+})();
+if (typeof globalThis.localStorage === "undefined") globalThis.localStorage = memoryStorage;
+if (typeof globalThis.sessionStorage === "undefined") globalThis.sessionStorage = memoryStorage;
+
 // Vite SSR build emits entry-server.js (ESM since package.json has "type": "module")
 const serverEntryPath = path.join(serverDir, "entry-server.js");
 const { render, prerenderRoutes } = await import(pathToFileURL(serverEntryPath).href);
