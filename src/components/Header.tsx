@@ -59,7 +59,7 @@ const Header = () => {
     >
       <div className="mx-auto max-w-7xl px-4 xl:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex shrink-0 items-center gap-3 mr-8 xl:mr-12">
+          <Link to="/" className="flex shrink-0 flex-col items-center gap-1 mr-4 xl:mr-8">
             <img src={logo} alt="Global Freedom Capital" className="h-12 lg:h-14 w-auto" />
             <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground whitespace-nowrap">
               Take the world. It's yours.
