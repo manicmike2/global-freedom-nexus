@@ -67,7 +67,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex flex-1 items-center justify-end gap-5" ref={dropdownRef}>
+          <nav className="hidden xl:flex items-center gap-6" ref={dropdownRef}>
             {navItems.map((item) =>
               item.children ? (
                 <div key={item.label} className="relative">
@@ -118,13 +118,15 @@ const Header = () => {
                 </Link>
               )
             )}
-            <Link
-              to="/contact"
-              className="inline-block px-5 py-2.5 text-xs tracking-[0.12em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 whitespace-nowrap"
-            >
-              Book Consultation
-            </Link>
           </nav>
+
+          {/* Desktop CTA */}
+          <Link
+            to="/contact"
+            className="hidden xl:inline-block px-5 py-2.5 text-xs tracking-[0.12em] uppercase border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 whitespace-nowrap"
+          >
+            Book Consultation
+          </Link>
 
           {/* Mobile toggle */}
           <button
