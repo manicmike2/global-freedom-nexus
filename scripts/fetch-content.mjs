@@ -44,6 +44,14 @@ const DESTINATIONS_QUERY = /* groq */ `
   }
 `;
 
+const PAGES_QUERY = /* groq */ `
+  *[_type == "page"]{
+    "key": _id, title,
+    seo{ title, description },
+    hero{ eyebrow, heading, subheading, "image": image.asset->url, ctaPrimary{label, href}, ctaSecondary{label, href} }
+  }
+`;
+
 async function main() {
   const outDir = path.resolve("src/content");
   await fs.mkdir(outDir, { recursive: true });
@@ -89,6 +97,16 @@ async function main() {
   }
   await fs.writeFile(path.join(outDir, "destinations.json"), JSON.stringify(bySlug, null, 2) + "\n");
   console.log(`[fetch-content] wrote ${Object.keys(bySlug).length} destinations`);
+
+  // Pages -> map keyed by id with the "page-" prefix stripped (e.g. "home")
+  const pages = await client.fetch(PAGES_QUERY);
+  const pageMap = {};
+  for (const p of pages) {
+    const key = String(p.key).replace(/^page-/, "");
+    pageMap[key] = { seo: p.seo ?? null, hero: p.hero ?? null };
+  }
+  await fs.writeFile(path.join(outDir, "pages.json"), JSON.stringify(pageMap, null, 2) + "\n");
+  console.log(`[fetch-content] wrote ${Object.keys(pageMap).length} pages`);
 }
 
 main().catch((err) => {

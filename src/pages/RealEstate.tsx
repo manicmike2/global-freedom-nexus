@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
 import destGrenada from "@/assets/dest-grenada.jpg";
@@ -116,8 +117,8 @@ const RealEstate = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Qualifying Real Estate for Citizenship & Residency | GFC"
-        description="Curated, government-approved real estate qualifying for Caribbean citizenship and EU Golden Visa programs from $200,000. Speak with Global Freedom Capital."
+        title={getPage("real-estate").seo?.title || "Qualifying Real Estate for Citizenship & Residency | GFC"}
+        description={getPage("real-estate").seo?.description || "Curated, government-approved real estate qualifying for Caribbean citizenship and EU Golden Visa programs from $200,000. Speak with Global Freedom Capital."}
         canonical="https://www.globalfreedomcapital.com/real-estate"
         jsonLd={{
           "@context": "https://schema.org",

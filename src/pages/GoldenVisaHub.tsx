@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
 import destPortugal from "@/assets/dest-portugal.jpg";
@@ -33,8 +34,8 @@ const faqItems = [
 const GoldenVisaHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="Golden Visa & EU Residency by Investment Programs | GFC"
-      description="Compare Europe's leading Golden Visa residency programs — Portugal, Greece, Hungary, Bulgaria, Latvia, and Malta — for HNW families. Expert advisory from GFC."
+      title={getPage("golden-visa-hub").seo?.title || "Golden Visa & EU Residency by Investment Programs | GFC"}
+      description={getPage("golden-visa-hub").seo?.description || "Compare Europe's leading Golden Visa residency programs — Portugal, Greece, Hungary, Bulgaria, Latvia, and Malta — for HNW families. Expert advisory from GFC."}
       canonical="https://www.globalfreedomcapital.com/golden-visa"
       jsonLd={{
         "@context": "https://schema.org",

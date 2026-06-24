@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import InternalLink from "@/components/InternalLink";
 import { MessageCircle, Phone, Mail, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -79,8 +80,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Book a Private Investment Migration Consultation | GFC"
-        description="Schedule a confidential consultation with Global Freedom Capital on citizenship by investment and Golden Visa programs for HNW families and family offices."
+        title={getPage("contact").seo?.title || "Book a Private Investment Migration Consultation | GFC"}
+        description={getPage("contact").seo?.description || "Schedule a confidential consultation with Global Freedom Capital on citizenship by investment and Golden Visa programs for HNW families and family offices."}
         canonical="https://www.globalfreedomcapital.com/contact"
       />
       <Header />

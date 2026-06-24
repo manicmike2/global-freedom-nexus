@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import FAQ from "@/components/FAQ";
 import StrategicInsight from "@/components/StrategicInsight";
 import InternalLink from "@/components/InternalLink";
@@ -43,8 +44,8 @@ const ForAttorneys = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Investment Migration Partnerships for U.S. Immigration Attorneys | GFC"
-        description="Expand your practice with Global Freedom Capital — outbound citizenship by investment and Golden Visa referrals for U.S. immigration attorneys and law firms."
+        title={getPage("for-attorneys").seo?.title || "Investment Migration Partnerships for U.S. Immigration Attorneys | GFC"}
+        description={getPage("for-attorneys").seo?.description || "Expand your practice with Global Freedom Capital — outbound citizenship by investment and Golden Visa referrals for U.S. immigration attorneys and law firms."}
         canonical="https://www.globalfreedomcapital.com/for-attorneys"
       />
       <Header />
