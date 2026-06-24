@@ -6,7 +6,10 @@ import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
 import FAQ from "@/components/FAQ";
 import InternalLink from "@/components/InternalLink";
-import { Globe, Shield, Users, Clock, LucideIcon } from "lucide-react";
+import { Globe, Shield, Users, Clock } from "lucide-react";
+
+// Map icon NAME (from the Sanity snapshot) -> lucide component.
+const ICONS: Record<string, typeof Globe> = { Globe, Shield, Users, Clock };
 
 export interface DestinationPageData {
   country: string;
@@ -20,7 +23,7 @@ export interface DestinationPageData {
   seoTitle: string;
   seoDescription: string;
   canonicalPath: string;
-  highlights: { icon: LucideIcon; title: string; desc: string }[];
+  highlights: { icon: string; title: string; desc: string }[];
   investmentOptions: { title: string; amount: string; desc: string }[];
   timeline: { step: string; title: string; desc: string }[];
   eligibility: string[];
@@ -104,13 +107,16 @@ const DestinationPageTemplate = ({ data }: { data: DestinationPageData }) => {
         <div className="container mx-auto px-6 lg:px-12">
           <SectionHeading label="Key Benefits" title={`Why ${data.country}`} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {data.highlights.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
-                <item.icon size={28} className="text-primary mx-auto mb-4" />
-                <h3 className="font-serif text-lg text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+            {data.highlights.map((item, i) => {
+              const Icon = ICONS[item.icon] ?? Globe;
+              return (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
+                  <Icon size={28} className="text-primary mx-auto mb-4" />
+                  <h3 className="font-serif text-lg text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
