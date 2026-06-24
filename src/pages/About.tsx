@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import StrategicInsight from "@/components/StrategicInsight";
 import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
@@ -48,8 +49,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="About Tatiana Muntean — Investment Migration Advisor | GFC"
-        description="Meet Tatiana Muntean, founder of Global Freedom Capital — an investment migration advisor guiding HNW families, family offices, and U.S. immigration attorneys."
+        title={getPage("about").seo?.title || "About Tatiana Muntean — Investment Migration Advisor | GFC"}
+        description={getPage("about").seo?.description || "Meet Tatiana Muntean, founder of Global Freedom Capital — an investment migration advisor guiding HNW families, family offices, and U.S. immigration attorneys."}
         canonical="https://www.globalfreedomcapital.com/about"
         jsonLd={{
           "@context": "https://schema.org",

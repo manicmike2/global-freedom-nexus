@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import InternalLink from "@/components/InternalLink";
 import FAQ from "@/components/FAQ";
 import destGrenada from "@/assets/dest-grenada.jpg";
@@ -37,8 +38,8 @@ const faqItems = [
 const CBIHub = () => (
   <div className="min-h-screen bg-background">
     <PageSEO
-      title="Citizenship by Investment Programs 2026 | GFC"
-      description="Compare the leading citizenship by investment programs for HNW families — Antigua, Saint Kitts, Grenada, Dominica, Saint Lucia, São Tomé, and Sierra Leone."
+      title={getPage("cbi-hub").seo?.title || "Citizenship by Investment Programs 2026 | GFC"}
+      description={getPage("cbi-hub").seo?.description || "Compare the leading citizenship by investment programs for HNW families — Antigua, Saint Kitts, Grenada, Dominica, Saint Lucia, São Tomé, and Sierra Leone."}
       canonical="https://www.globalfreedomcapital.com/citizenship-by-investment"
       jsonLd={{
         "@context": "https://schema.org",

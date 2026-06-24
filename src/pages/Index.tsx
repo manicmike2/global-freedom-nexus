@@ -13,6 +13,7 @@ import ClientOnly from "@/components/ClientOnly";
 import ScrollProgress from "@/components/ScrollProgress";
 import SectionReveal from "@/components/SectionReveal";
 import PageSEO from "@/components/PageSEO";
+import { getPage } from "@/lib/page-content";
 import heroBg from "@/assets/hero-yacht.jpg";
 import boardroom from "@/assets/boardroom.jpg";
 import destGreece from "@/assets/dest-greece.jpg";
@@ -125,8 +126,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <PageSEO
-        title="Investment Migration Advisory for HNW Families | GFC"
-        description="Global Freedom Capital advises HNW families on second citizenship by investment and Golden Visa residency. Private consultations with founder Tatiana Muntean."
+        title={getPage("home").seo?.title || "Investment Migration Advisory for HNW Families | GFC"}
+        description={getPage("home").seo?.description || "Global Freedom Capital advises HNW families on second citizenship by investment and Golden Visa residency. Private consultations with founder Tatiana Muntean."}
         canonical="https://www.globalfreedomcapital.com/"
         jsonLd={{
           "@context": "https://schema.org",
