@@ -107,6 +107,11 @@ async function main() {
   }
   await fs.writeFile(path.join(outDir, "pages.json"), JSON.stringify(pageMap, null, 2) + "\n");
   console.log(`[fetch-content] wrote ${Object.keys(pageMap).length} pages`);
+
+  // FAQ items (ordered)
+  const faq = await client.fetch(/* groq */ `*[_type == "faqItem"] | order(order asc){ question, answer }`);
+  await fs.writeFile(path.join(outDir, "faqItems.json"), JSON.stringify(faq, null, 2) + "\n");
+  console.log(`[fetch-content] wrote ${faq.length} faq items`);
 }
 
 main().catch((err) => {

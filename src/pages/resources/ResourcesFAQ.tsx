@@ -5,8 +5,9 @@ import PageSEO from "@/components/PageSEO";
 import CTAButton from "@/components/CTAButton";
 import FAQ from "@/components/FAQ";
 import InternalLink from "@/components/InternalLink";
+import faqSnapshot from "@/content/faqItems.json";
 
-const faqItems = [
+const faqFallback = [
   { question: "What is Citizenship by Investment?", answer: "Citizenship by Investment (CBI) is a legal, government-authorised pathway that allows qualified individuals and their families to obtain full citizenship in a sovereign nation through a qualifying economic contribution — typically a non-refundable donation to a national development fund or an approved real estate investment. Successful applicants receive a passport with the same rights as citizens by birth, including the right to live, work, and travel under that nationality." },
   { question: "How much does Citizenship by Investment cost?", answer: "Investment thresholds vary by program. Caribbean CBI programs start at $200,000 (Dominica) and range up to $250,000 (Saint Kitts & Nevis) for a single applicant via the donation route. European Golden Visa residency programs range from €250,000 (Greece) to €500,000+ (Portugal). Government fees, due diligence costs, and professional advisory fees are additional and depend on family size." },
   { question: "How long does the CBI process take?", answer: "Caribbean Citizenship by Investment programs typically take 3 to 6 months from submission of a complete application to passport issuance. European Golden Visa residency programs generally take 6 to 12 months. Timelines depend on the completeness of documentation, the speed of due diligence clearance, and the responsiveness of the applicant during the process." },
@@ -16,6 +17,8 @@ const faqItems = [
   { question: "What is the Investment Migration Council (IMC)?", answer: "The Investment Migration Council is the worldwide association for the investment migration industry, setting ethical standards, professional qualifications, and best-practice guidelines for advisors and government programs. IMC membership signals a commitment to compliance, transparency, and client-centric advisory. Our founder Tatiana Muntean is an IMC member." },
   { question: "Does Global Freedom Capital offer a free consultation?", answer: "Yes. We offer a confidential, obligation-free initial consultation to discuss your objectives, family situation, timeline, and the program options most aligned with your goals. There is no cost or commitment involved in this first conversation." },
 ];
+
+const faqItems = faqSnapshot.length ? faqSnapshot : faqFallback;
 
 const ResourcesFAQ = () => (
   <div className="min-h-screen bg-background">
