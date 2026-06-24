@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
+    "fetch-content": "node scripts/fetch-content.mjs",
+    "build": "node scripts/fetch-content.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -43,6 +44,7 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18",
+    "@sanity/client": "^7.23.0",
     "@supabase/supabase-js": "^2.101.1",
     "@tanstack/react-query": "^5.83.0",
     "@types/three": "^0.160.0",
