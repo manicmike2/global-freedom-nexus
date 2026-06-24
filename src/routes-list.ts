@@ -1,5 +1,7 @@
 // All canonical, prerenderable routes. Keep in sync with src/App.tsx.
 // Redirects (Navigate) are intentionally excluded — Vercel/SPA handles those.
+import articles from "./content/articles.json";
+
 export const prerenderRoutes: string[] = [
   "/",
   "/about",
@@ -37,4 +39,6 @@ export const prerenderRoutes: string[] = [
   "/resources/blog/citizenship-by-investment-us-citizens",
   "/resources/blog/golden-visa-vs-citizenship-by-investment",
   "/resources/faq",
+  // Sanity-driven blog articles (/insights/:slug)
+  ...articles.map((a: { slug: string }) => `/insights/${a.slug}`),
 ];
