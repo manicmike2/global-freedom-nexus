@@ -1,3 +1,5 @@
-# Welcome to your Lovable project
+# Welcome!
 
-TODO: Document your project here
+If you're seeing this, do not use this code in any way. Thank you.
+
+-MM
