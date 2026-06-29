@@ -93,7 +93,7 @@ const BlogIndex = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <Link to={`/resources/blog/${article.slug}`} className="group block border border-border p-8 hover:border-primary/30 transition-all duration-300">
+              <Link to={article.href} className="group block border border-border p-8 hover:border-primary/30 transition-all duration-300">
                 <span className="text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">{article.category}</span>
                 <h2 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{article.title}</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{article.excerpt}</p>
