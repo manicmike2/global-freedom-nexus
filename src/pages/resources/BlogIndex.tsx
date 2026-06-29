@@ -4,14 +4,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 import CTAButton from "@/components/CTAButton";
+import { articles as allArticles } from "@/lib/articles";
 
-const articles = [
+// Static hand-curated long-form posts under /resources/blog/*
+const staticPosts = [
   {
     slug: "best-citizenship-by-investment-programs-2026",
     title: "Best Citizenship by Investment Programs in 2026",
     excerpt: "A comprehensive comparison of the top CBI programs available to high-net-worth families in 2026, including Antigua, St Kitts, Grenada, Dominica, and Saint Lucia.",
     date: "April 1, 2026",
     category: "CBI Guide",
+    href: "/resources/blog/best-citizenship-by-investment-programs-2026",
   },
   {
     slug: "antigua-vs-grenada-cbi",
@@ -19,6 +22,7 @@ const articles = [
     excerpt: "A detailed head-to-head comparison of two leading Caribbean citizenship by investment programs — investment costs, processing times, and visa-free access.",
     date: "March 25, 2026",
     category: "Comparison",
+    href: "/resources/blog/antigua-vs-grenada-cbi",
   },
   {
     slug: "citizenship-by-investment-us-citizens",
@@ -26,6 +30,7 @@ const articles = [
     excerpt: "What American families need to know about obtaining a second passport through citizenship by investment, including tax implications and dual citizenship rules.",
     date: "March 18, 2026",
     category: "U.S. Citizens",
+    href: "/resources/blog/citizenship-by-investment-us-citizens",
   },
   {
     slug: "golden-visa-vs-citizenship-by-investment",
@@ -33,8 +38,26 @@ const articles = [
     excerpt: "Understanding the fundamental differences between Golden Visa residency programs and citizenship by investment — costs, timelines, rights, and which is right for you.",
     date: "March 10, 2026",
     category: "Education",
+    href: "/resources/blog/golden-visa-vs-citizenship-by-investment",
   },
 ];
+
+// Merge static long-form posts with every Sanity-sourced insight, dedupe by slug.
+const insightPosts = allArticles.map((a) => ({
+  slug: a.slug,
+  title: a.title,
+  excerpt: a.excerpt,
+  date: a.date,
+  category: a.category,
+  href: `/insights/${a.slug}`,
+}));
+
+const seen = new Set<string>();
+const articles = [...staticPosts, ...insightPosts].filter((a) => {
+  if (seen.has(a.slug)) return false;
+  seen.add(a.slug);
+  return true;
+});
 
 const BlogIndex = () => (
   <div className="min-h-screen bg-background">
@@ -70,7 +93,7 @@ const BlogIndex = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              <Link to={`/resources/blog/${article.slug}`} className="group block border border-border p-8 hover:border-primary/30 transition-all duration-300">
+              <Link to={article.href} className="group block border border-border p-8 hover:border-primary/30 transition-all duration-300">
                 <span className="text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">{article.category}</span>
                 <h2 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{article.title}</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{article.excerpt}</p>
